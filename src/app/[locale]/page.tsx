@@ -3,13 +3,14 @@ import { notFound } from "next/navigation";
 
 import { MarketingPage } from "@/components/landing/marketing-page";
 import { buildLandingMetadata } from "@/lib/content";
+import { loadMarketingGalleryData, ogPreviewFromFrontPage } from "@/lib/marketing-data";
 import { isSupportedLocale, type Locale } from "@/lib/site";
 
 type LocalePageProps = {
   params: Promise<{ locale: string }>;
 };
 
-export const dynamic = "force-static";
+export const revalidate = 60;
 
 export function generateStaticParams() {
   return [{ locale: "de" }, { locale: "fr" }];
@@ -22,7 +23,9 @@ export async function generateMetadata({ params }: LocalePageProps): Promise<Met
     notFound();
   }
 
-  return buildLandingMetadata(locale);
+  const data = await loadMarketingGalleryData();
+  const preview = ogPreviewFromFrontPage(data.frontPage);
+  return buildLandingMetadata(locale as Locale, preview);
 }
 
 export default async function LocalizedHome({ params }: LocalePageProps) {
@@ -32,5 +35,8 @@ export default async function LocalizedHome({ params }: LocalePageProps) {
     notFound();
   }
 
-  return <MarketingPage locale={locale as Locale} />;
+  const data = await loadMarketingGalleryData();
+  return (
+    <MarketingPage locale={locale as Locale} frontPageRows={data.frontPage} showcaseRows={data.showcase} />
+  );
 }

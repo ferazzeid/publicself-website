@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 
 import { MarketingPage } from "@/components/landing/marketing-page";
 import { buildLandingMetadata } from "@/lib/content";
+import { loadMarketingGalleryData, ogPreviewFromFrontPage } from "@/lib/marketing-data";
 
-export const dynamic = "force-static";
+export const revalidate = 60;
 
-export const metadata: Metadata = buildLandingMetadata("en");
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await loadMarketingGalleryData();
+  const preview = ogPreviewFromFrontPage(data.frontPage);
+  return buildLandingMetadata("en", preview);
+}
 
-export default function Home() {
-  return <MarketingPage locale="en" />;
+export default async function Home() {
+  const data = await loadMarketingGalleryData();
+  return <MarketingPage locale="en" frontPageRows={data.frontPage} showcaseRows={data.showcase} />;
 }

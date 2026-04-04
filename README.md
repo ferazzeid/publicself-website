@@ -21,6 +21,10 @@ Point **only** `https://publicself.app` at **this** repository.
 
 - `NEXT_PUBLIC_MARKETING_SITE_URL` = `https://publicself.app`
 - `NEXT_PUBLIC_PRODUCT_SITE_URL` = `https://studio.publicself.app`
+- `NEXT_PUBLIC_SUPABASE_URL` — same Supabase project as the studio app (for anonymous RPC reads).
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` — anon key; used only to call `list_front_page_images_thumbs` and `list_showcase_images` on the server.
+
+Homepage hero and example grid revalidate every **60 seconds** (`revalidate = 60`), so new admin-flagged images appear without a full redeploy when env vars are set. If they are missing, the site falls back to static placeholder images.
 
 ### Verification
 
@@ -38,6 +42,11 @@ Point **only** `https://publicself.app` at **this** repository.
 
 - **`NEXT_PUBLIC_MARKETING_SITE_URL`** — canonical URL for this site (default `https://publicself.app`).
 - **`NEXT_PUBLIC_PRODUCT_SITE_URL`** — tool app URL for CTAs and legal links (default `https://studio.publicself.app`).
+- **`NEXT_PUBLIC_SUPABASE_URL`** / **`NEXT_PUBLIC_SUPABASE_ANON_KEY`** — optional; when both are set, the landing page loads hero and gallery images from Supabase RPCs (see above).
+
+## Locales
+
+English (`en.json`) is the messaging source of truth for the latest positioning. German and French files may lag until they are re-translated.
 
 ## Supabase / SEO notes
 

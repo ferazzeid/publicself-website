@@ -1,92 +1,89 @@
 {
   "seo": {
-    "title": "PublicSelf - Professional profile photos in minutes",
-    "description": "Upload a few selfies, choose a curated preset, and generate clean profile photos without waiting on a client-rendered landing page."
+    "title": "PublicSelf — try outfits, poses, and polish on your own photos",
+    "description": "Upload face and body references, explore formal and casual outfits, run a controlled AI photoshoot with poses you pick, then tune or swap details—plus LinkedIn-ready exports when you want them."
   },
   "nav": {
     "wordmark": "PUBLICSELF"
   },
   "hero": {
-    "badge": "Clean profile photos, fast",
-    "title": "Professional profile photos in minutes.",
-    "description": "Upload a few selfies, pick a curated preset, and generate polished profile images for LinkedIn, portfolios, and personal branding.",
-    "primaryCta": "Try 3 free generations",
+    "badge": "Identity & outfit lab",
+    "title": "Experiment with how you look on camera—without a real shoot.",
+    "description": "Start from your photos, explore outfits and scenes, direct poses like a mini studio, then refine with tune and item tweaks. When you land on a winner, export something sharp enough for LinkedIn or your site—without treating that as the only goal.",
+    "primaryCta": "Try free generations in the studio",
     "secondaryCta": "Log in",
     "examplesCta": "See examples",
-    "trustNote": "Download what you like. Sign in on the studio site when you are ready to generate and manage your looks.",
-    "beforeLabel": "Before",
-    "afterLabel": "After",
-    "imageAlt": "A polished profile portrait created with PublicSelf",
+    "trustNote": "Browse here; sign in on the studio when you are ready to generate, save looks, and download what you keep.",
+    "beforeLabel": "Your input",
+    "afterLabel": "Your direction",
+    "imageAlt": "A polished portrait created with PublicSelf from user-guided outfits and poses",
     "slogans": [
-      "Advanced AI keeps your identity recognizable across every new look.",
-      "Move from a casual selfie to a profile-ready portrait quickly.",
-      "Reuse your best looks across headshots, three-quarter crops, and cleaner backgrounds."
+      "Real pipeline examples—flagged for the homepage when they are safe to show.",
+      "Same person, new outfit, new pose—guided instead of random.",
+      "Tune the shot you like instead of starting from scratch every time."
     ],
     "featureCards": [
       {
-        "title": "Curated presets",
-        "body": "Headshot and 3/4 framing, outfits, backgrounds, and lighting are already shaped for the outcome you want."
+        "title": "Outfits & scenes",
+        "body": "Formal, casual, and in-between—explore wardrobe and setting changes that still feel anchored to your face and body references."
       },
       {
-        "title": "Simple pricing",
-        "body": "Credits power generations and downloads, so you only pay for the results you actually keep."
+        "title": "Photoshoot control",
+        "body": "Pick poses and framing like a small studio session so results match what you had in mind—not a single default crop."
       },
       {
-        "title": "Ephemeral by default",
-        "body": "Download what you need when you like the result. Do not rely on long-term storage."
+        "title": "Tune & swap",
+        "body": "Lock a pose you like, then adjust details or swap items so the image keeps getting closer without burning a full new concept each time."
       }
     ]
   },
   "gallery": {
     "eyebrow": "Examples",
-    "title": "A landing page that shows real visual direction immediately",
-    "description": "Instead of waiting for the browser to fetch homepage content, the first version ships with complete copy, structure, and examples in the HTML from the start.",
+    "title": "Images from the same product pipeline you will use",
+    "description": "These tiles are pulled from your studio project when teammates flag them for the public grid—so the marketing page shows real outputs, not stock filler, whenever that data exists.",
     "items": [
       {
-        "title": "Clean headshots",
-        "body": "Professional framing for resumes, LinkedIn, and profile photos."
+        "title": "Headshot polish",
+        "body": "Clean framing when you want something professional without booking a photographer."
       },
       {
-        "title": "Sharper styling",
-        "body": "Polished outfits, lighting, and backgrounds without building a full shoot from scratch."
+        "title": "Outfit exploration",
+        "body": "Test how different clothes read on camera before you commit to a look."
       },
       {
-        "title": "Editorial variants",
-        "body": "Use the same identity across stronger, more expressive visual directions."
+        "title": "Pose variants",
+        "body": "Same identity, different posture and energy—useful for profiles and creative shots."
       },
       {
-        "title": "Outdoor energy",
-        "body": "Keep your face recognizable while changing the setting and tone."
+        "title": "Outdoor & location",
+        "body": "Change the scene while keeping recognition and proportions believable."
       },
       {
-        "title": "Lifestyle looks",
-        "body": "Test softer, more casual profile images when you want something less formal."
+        "title": "Casual vs formal",
+        "body": "Compare tones side by side instead of guessing from one static headshot."
       },
       {
-        "title": "Consistent branding",
-        "body": "Build a stronger public presence with images that still feel like you."
+        "title": "Refined exports",
+        "body": "When you are happy, download something you can use on LinkedIn or your portfolio."
       }
     ]
   },
   "pricing": {
     "eyebrow": "Credits",
-    "title": "Simple credit packs",
-    "description": "The first marketing version keeps pricing easy to understand and sends people into the existing app when they are ready to create an account.",
-    "cta": "Start in the app",
+    "title": "Credit packs that match the studio checkout",
+    "description": "Numbers below are the same packs as inside the app. Buy credits on the studio when you are ready—no duplicate checkout on this site.",
+    "cta": "Buy credits in the studio",
+    "creditsUnit": "credits",
     "plans": [
       {
         "label": "Starter",
         "name": "PublicSelf Starter",
-        "price": "$15",
-        "credits": "100 credits",
-        "body": "A smaller pack for trying headshots, comparing presets, and generating a first set of profile images."
+        "body": "Enough to try several outfits and poses, compare results, and keep a first batch of downloads."
       },
       {
         "label": "Studio",
         "name": "PublicSelf Studio",
-        "price": "$79",
-        "credits": "600 credits",
-        "body": "A larger pack for experimenting with more looks, more poses, and more download-ready results."
+        "body": "More room to iterate—extra poses, more tune passes, and more keepers without topping up as often."
       }
     ]
   },
@@ -94,28 +91,28 @@
     "eyebrow": "How it works",
     "sections": [
       {
-        "title": "Build your look from seed photos",
-        "subtitle": "Casual or formal - your choice",
-        "body": "Use two selfies to create a look. Go casual or formal, save the version you like, and reuse it when you want a stronger photoshoot result later."
+        "title": "Build your look from reference photos",
+        "subtitle": "Face and body context",
+        "body": "Upload the references the studio asks for so outfits, proportions, and likeness stay grounded. Save a look when one direction feels right so you can reuse it later."
       },
       {
-        "title": "Your AI photoshoot",
-        "subtitle": "Pose, expression, background - and more",
-        "body": "Choose pose, facial expression, and background. Create profile-ready portraits, close-ups, and sharper social images without organizing a real studio session."
+        "title": "Run the studio like a photoshoot",
+        "subtitle": "Poses, crops, and scenes you choose",
+        "body": "Direct the session: poses, framing, and backgrounds that match how you want to appear online. Iterate until something feels usable—not just the first generation."
       },
       {
-        "title": "Experiment and have fun",
-        "subtitle": "Not every credit is perfect - and that is okay",
-        "body": "This is a place to test different visual directions. Try new poses, looks, and framing until you find the version that feels most useful."
+        "title": "Tune, swap, and export",
+        "subtitle": "Refine instead of reinventing",
+        "body": "When a pose is close, tune details or swap pieces. Download what you want to keep; treat LinkedIn-ready output as one outcome among many, not the whole story."
       }
     ]
   },
   "footer": {
     "eyebrow": "Ready when you are",
-    "title": "Start here, then continue in the studio.",
-    "body": "Use this page to learn how PublicSelf works. When you are ready, sign in on the studio site to build looks, run your shoot, and download results.",
-    "primaryCta": "Create your account",
-    "secondaryCta": "Open the app",
+    "title": "Start on the studio when you want real generations.",
+    "body": "Use this page to see what PublicSelf is for. Open the studio to build looks, run shoots, tune results, and buy credits in the same place the product team ships.",
+    "primaryCta": "Open the studio",
+    "secondaryCta": "Log in",
     "legalPrefix": "By continuing you agree to our",
     "terms": "Terms",
     "and": "and",

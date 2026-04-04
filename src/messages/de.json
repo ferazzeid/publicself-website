@@ -73,19 +73,16 @@
     "title": "Einfache Credit-Pakete",
     "description": "Die erste Marketing-Version haelt Preise bewusst einfach und schickt Nutzer erst dann in die bestehende App, wenn sie wirklich starten wollen.",
     "cta": "In der App starten",
+    "creditsUnit": "Credits",
     "plans": [
       {
         "label": "Starter",
         "name": "PublicSelf Starter",
-        "price": "$15",
-        "credits": "100 Credits",
         "body": "Ein kleineres Paket, um Headshots zu testen, Presets zu vergleichen und die ersten Profilbilder zu erzeugen."
       },
       {
         "label": "Studio",
         "name": "PublicSelf Studio",
-        "price": "$79",
-        "credits": "600 Credits",
         "body": "Ein groesseres Paket fuer mehr Looks, mehr Posen und mehr downloadbare Ergebnisse."
       }
     ]

@@ -18,10 +18,10 @@ export function getMessages(locale: Locale): LandingMessages {
   return messagesByLocale[locale];
 }
 
-export function buildLandingMetadata(locale: Locale): Metadata {
+export function buildLandingMetadata(locale: Locale, previewImageUrl?: string): Metadata {
   const messages = getMessages(locale);
   const canonical = getLocaleUrl(locale);
-  const previewImage = heroImages.after;
+  const previewImage = previewImageUrl ?? heroImages.after;
 
   return {
     title: messages.seo.title,
