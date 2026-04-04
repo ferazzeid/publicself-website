@@ -1,0 +1,124 @@
+{
+  "seo": {
+    "title": "PublicSelf - Professionelle Profilfotos in Minuten",
+    "description": "Lade ein paar Selfies hoch, waehle ein kuratiertes Preset und erzeuge saubere Profilfotos auf einer voll indexierbaren Landingpage."
+  },
+  "nav": {
+    "wordmark": "PUBLICSELF"
+  },
+  "hero": {
+    "badge": "Saubere Profilfotos, schnell",
+    "title": "Professionelle Profilfotos in Minuten.",
+    "description": "Lade ein paar Selfies hoch, waehle ein kuratiertes Preset und erzeuge saubere Profilbilder fuer LinkedIn, Portfolios und deine persoenliche Marke.",
+    "primaryCta": "3 kostenlose Generierungen testen",
+    "secondaryCta": "Einloggen",
+    "examplesCta": "Beispiele ansehen",
+    "trustNote": "Lade herunter, was dir gefaellt. Die Landingpage wird jetzt komplett vom Server gerendert, waehrend das eigentliche Tool in der App bleibt.",
+    "beforeLabel": "Vorher",
+    "afterLabel": "Nachher",
+    "imageAlt": "Ein mit PublicSelf erzeugtes Profilportrait",
+    "slogans": [
+      "Fortgeschrittene KI haelt deine Identitaet auch bei neuen Looks wiedererkennbar.",
+      "Vom lockeren Selfie zum profiltauglichen Portrait in kurzer Zeit.",
+      "Nutze deine besten Looks fuer Headshots, 3/4-Crops und sauberere Hintergruende erneut."
+    ],
+    "featureCards": [
+      {
+        "title": "Kurierte Presets",
+        "body": "Headshot und 3/4-Anschnitt, Outfits, Hintergruende und Licht sind bereits auf das gewuenschte Ergebnis ausgerichtet."
+      },
+      {
+        "title": "Einfache Preise",
+        "body": "Credits treiben Generierungen und Downloads an, damit du nur fuer Ergebnisse zahlst, die du wirklich behalten willst."
+      },
+      {
+        "title": "Kurzlebig als Standard",
+        "body": "Lade herunter, was du brauchst, wenn dir das Ergebnis gefaellt. Verlasse dich nicht auf langfristige Speicherung."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Beispiele",
+    "title": "Eine Landingpage, die ihre visuelle Richtung sofort zeigt",
+    "description": "Statt erst im Browser Inhalte nachzuladen, liefert die erste Version Text, Struktur und Beispiele direkt im HTML aus.",
+    "items": [
+      {
+        "title": "Saubere Headshots",
+        "body": "Professioneller Anschnitt fuer Lebenslauf, LinkedIn und Profilfotos."
+      },
+      {
+        "title": "Staerkeres Styling",
+        "body": "Saubere Outfits, Licht und Hintergruende ohne komplettes Fotoshooting."
+      },
+      {
+        "title": "Editoriale Varianten",
+        "body": "Nutze dieselbe Identitaet auch in staerkeren und ausdrucksvolleren Bildrichtungen."
+      },
+      {
+        "title": "Outdoor-Energie",
+        "body": "Dein Gesicht bleibt erkennbar, waehrend Setting und Stimmung wechseln."
+      },
+      {
+        "title": "Lifestyle-Looks",
+        "body": "Teste weichere und lockerere Profilbilder, wenn du etwas weniger Formelles willst."
+      },
+      {
+        "title": "Konsistente Marke",
+        "body": "Baue eine staerkere oeffentliche Praesenz mit Bildern auf, die trotzdem nach dir aussehen."
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "Credits",
+    "title": "Einfache Credit-Pakete",
+    "description": "Die erste Marketing-Version haelt Preise bewusst einfach und schickt Nutzer erst dann in die bestehende App, wenn sie wirklich starten wollen.",
+    "cta": "In der App starten",
+    "plans": [
+      {
+        "label": "Starter",
+        "name": "PublicSelf Starter",
+        "price": "$15",
+        "credits": "100 Credits",
+        "body": "Ein kleineres Paket, um Headshots zu testen, Presets zu vergleichen und die ersten Profilbilder zu erzeugen."
+      },
+      {
+        "label": "Studio",
+        "name": "PublicSelf Studio",
+        "price": "$79",
+        "credits": "600 Credits",
+        "body": "Ein groesseres Paket fuer mehr Looks, mehr Posen und mehr downloadbare Ergebnisse."
+      }
+    ]
+  },
+  "howItWorks": {
+    "eyebrow": "So funktioniert es",
+    "sections": [
+      {
+        "title": "Erstelle deinen Look aus Seed-Fotos",
+        "subtitle": "Casual oder formell - du entscheidest",
+        "body": "Nutze zwei Selfies, um einen Look zu erstellen. Waehl casual oder formell, speichere die Variante, die dir gefaellt, und nutze sie spaeter fuer staerkere Shootingergebnisse erneut."
+      },
+      {
+        "title": "Dein KI-Fotoshooting",
+        "subtitle": "Pose, Ausdruck, Hintergrund - und mehr",
+        "body": "Waehle Pose, Gesichtsausdruck und Hintergrund. Erzeuge profiltaugliche Portraits, Nahaufnahmen und bessere Social-Bilder, ohne ein echtes Studio zu organisieren."
+      },
+      {
+        "title": "Experimentiere und hab Spass",
+        "subtitle": "Nicht jeder Credit ist perfekt - und das ist okay",
+        "body": "Hier kannst du verschiedene visuelle Richtungen testen. Probiere neue Posen, Looks und Anschnitte aus, bis du die nuetzlichste Version gefunden hast."
+      }
+    ]
+  },
+  "footer": {
+    "eyebrow": "Wenn du bereit bist",
+    "title": "Die Marketing-Seite uebernimmt jetzt die oeffentliche Startseite. Die App bleibt das eigentliche Tool.",
+    "body": "Diese Trennung macht die Landingpage leicht crawlbar und laesst die produktseitige App ihren reicheren Client-Flow behalten, ohne eine Vollmigration zu erzwingen.",
+    "primaryCta": "Konto erstellen",
+    "secondaryCta": "App oeffnen",
+    "legalPrefix": "Mit dem Fortfahren stimmst du unseren",
+    "terms": "AGB",
+    "and": "und",
+    "privacy": "Datenschutzrichtlinien"
+  }
+}

@@ -1,0 +1,294 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { LanguageSwitcher } from "@/components/landing/language-switcher";
+import { getMessages } from "@/lib/content";
+import { heroImages, howItWorksImages, showcaseImages } from "@/lib/landing-assets";
+import { getLocalizedProductUrl, type Locale } from "@/lib/site";
+
+type MarketingPageProps = {
+  locale: Locale;
+};
+
+export function MarketingPage({ locale }: MarketingPageProps) {
+  const messages = getMessages(locale);
+  const signupHref = getLocalizedProductUrl(locale, "/auth");
+  const loginHref = getLocalizedProductUrl(locale, "/auth");
+  const termsHref = getLocalizedProductUrl(locale, "/terms");
+  const privacyHref = getLocalizedProductUrl(locale, "/privacy");
+  const steps = [
+    { ...messages.howItWorks.sections[0], imageSrc: howItWorksImages.buildLook, imageRight: true },
+    { ...messages.howItWorks.sections[1], imageSrc: howItWorksImages.aiPhotoshoot, imageRight: false },
+    { ...messages.howItWorks.sections[2], imageSrc: howItWorksImages.experiment, imageRight: true },
+  ];
+
+  return (
+    <main lang={locale} className="bg-zinc-950 text-white">
+      <section className="relative isolate overflow-hidden border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_32%),linear-gradient(180deg,_rgba(24,24,27,0.4),_rgba(9,9,11,0.95))]" />
+        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 sm:px-10 lg:px-12">
+          <header className="flex items-center justify-between gap-6">
+            <Link href="/" className="text-sm font-black uppercase tracking-[0.35em] text-white">
+              {messages.nav.wordmark}
+            </Link>
+            <LanguageSwitcher currentLocale={locale} />
+          </header>
+
+          <div className="grid flex-1 items-center gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:gap-16 lg:py-14">
+            <div className="max-w-2xl">
+              <p className="mb-5 inline-flex rounded-full border border-white/15 bg-white/8 px-4 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-white/80">
+                {messages.hero.badge}
+              </p>
+              <h1 className="max-w-xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                {messages.hero.title}
+              </h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-300 sm:text-xl">
+                {messages.hero.description}
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href={signupHref}
+                  className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] text-zinc-950 transition hover:bg-zinc-200"
+                >
+                  {messages.hero.primaryCta}
+                </Link>
+                <Link
+                  href={loginHref}
+                  className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/20 bg-white/6 px-7 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-white/12"
+                >
+                  {messages.hero.secondaryCta}
+                </Link>
+                <a
+                  href="#examples"
+                  className="inline-flex min-h-14 items-center justify-center rounded-2xl px-7 text-sm font-black uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
+                >
+                  {messages.hero.examplesCta}
+                </a>
+              </div>
+              <p className="mt-5 max-w-lg text-sm leading-6 text-zinc-400">
+                {messages.hero.trustNote}
+              </p>
+
+              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                {messages.hero.featureCards.map((card) => (
+                  <article
+                    key={card.title}
+                    className="rounded-3xl border border-white/12 bg-white/6 p-5 backdrop-blur-sm"
+                  >
+                    <h2 className="text-sm font-black uppercase tracking-[0.18em] text-white">{card.title}</h2>
+                    <p className="mt-3 text-sm leading-6 text-zinc-300">{card.body}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-[520px]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 bg-zinc-900 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
+                <Image
+                  src={heroImages.after}
+                  alt={messages.hero.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 520px"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/15 to-transparent" />
+                <div className="absolute right-5 top-5 max-w-[12rem] rounded-2xl border border-white/10 bg-black/35 px-4 py-3 backdrop-blur-sm">
+                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-white/70">
+                    {messages.gallery.eyebrow}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-white/90">{messages.hero.slogans[0]}</p>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 grid gap-3 sm:grid-cols-[150px_minmax(0,1fr)]">
+                  <div className="rounded-2xl bg-white p-2 text-zinc-900 shadow-2xl">
+                    <Image
+                      src={heroImages.before}
+                      alt={messages.hero.beforeLabel}
+                      width={280}
+                      height={350}
+                      sizes="150px"
+                      className="aspect-[4/5] w-full rounded-xl object-cover"
+                    />
+                    <p className="mt-2 text-center text-[11px] font-black uppercase tracking-[0.18em] text-zinc-700">
+                      {messages.hero.beforeLabel}
+                    </p>
+                  </div>
+                  <div className="self-end rounded-2xl border border-white/10 bg-black/45 p-4 backdrop-blur-sm">
+                    <p className="text-[10px] font-black uppercase tracking-[0.22em] text-white/65">
+                      {messages.hero.afterLabel}
+                    </p>
+                    <p className="mt-2 text-lg font-semibold leading-7 text-white">{messages.hero.slogans[1]}</p>
+                    <p className="mt-2 text-sm leading-6 text-zinc-300">{messages.hero.slogans[2]}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-8 -right-6 hidden w-44 rounded-[1.75rem] border border-white/12 bg-zinc-900 p-3 shadow-2xl sm:block">
+                <Image
+                  src={heroImages.detail}
+                  alt={messages.gallery.items[2].title}
+                  width={320}
+                  height={400}
+                  sizes="176px"
+                  className="aspect-[4/5] w-full rounded-[1.25rem] object-cover"
+                />
+                <p className="mt-3 text-[11px] font-black uppercase tracking-[0.18em] text-white/65">
+                  {messages.gallery.items[2].title}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-zinc-300">{messages.gallery.items[2].body}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="examples" className="border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">
+              {messages.gallery.eyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              {messages.gallery.title}
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.gallery.description}</p>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {showcaseImages.map((image, index) => {
+              const item = messages.gallery.items[index] ?? messages.gallery.items[messages.gallery.items.length - 1];
+              return (
+                <article
+                  key={`${image.src}-${item.title}`}
+                  className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-900"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={900}
+                    height={1125}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="aspect-[4/5] w-full object-cover"
+                  />
+                  <div className="p-5">
+                    <h3 className="text-base font-black tracking-tight text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-zinc-300">{item.body}</p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">
+              {messages.pricing.eyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              {messages.pricing.title}
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.pricing.description}</p>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-2">
+            {messages.pricing.plans.map((plan) => (
+              <article
+                key={plan.name}
+                className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_18px_60px_rgba(0,0,0,0.25)]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-sm font-black uppercase tracking-[0.18em] text-white/60">{plan.label}</p>
+                    <h3 className="mt-3 text-2xl font-black tracking-tight text-white">{plan.name}</h3>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-3xl font-black tracking-tight text-white">{plan.price}</p>
+                    <p className="mt-1 text-sm text-zinc-400">{plan.credits}</p>
+                  </div>
+                </div>
+                <p className="mt-5 text-sm leading-6 text-zinc-300">{plan.body}</p>
+                <Link
+                  href={signupHref}
+                  className="mt-8 inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/15 bg-white/8 px-5 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-white/14"
+                >
+                  {messages.pricing.cta}
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-zinc-950">
+        {steps.map((step, index) => (
+          <div key={step.title} className="border-b border-white/10 px-6 py-20 sm:px-10 lg:px-12">
+            <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <div className={step.imageRight ? "order-1" : "order-1 lg:order-2"}>
+                <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">
+                  {messages.howItWorks.eyebrow} {index + 1}
+                </p>
+                <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{step.title}</h2>
+                <h3 className="mt-4 text-xl font-semibold text-zinc-300">{step.subtitle}</h3>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">{step.body}</p>
+              </div>
+              <div className={step.imageRight ? "order-2" : "order-2 lg:order-1"}>
+                <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-900 shadow-xl">
+                  <Image
+                    src={step.imageSrc}
+                    alt={step.title}
+                    width={1200}
+                    height={900}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <footer className="bg-black px-6 py-16 sm:px-10 lg:px-12">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">
+              {messages.footer.eyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">
+              {messages.footer.title}
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.footer.body}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-zinc-400">
+              <span>{messages.footer.legalPrefix}</span>
+              <Link href={termsHref} className="text-white hover:text-zinc-300">
+                {messages.footer.terms}
+              </Link>
+              <span>{messages.footer.and}</span>
+              <Link href={privacyHref} className="text-white hover:text-zinc-300">
+                {messages.footer.privacy}
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={signupHref}
+              className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] text-zinc-950 transition hover:bg-zinc-200"
+            >
+              {messages.footer.primaryCta}
+            </Link>
+            <Link
+              href={loginHref}
+              className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/20 bg-white/6 px-7 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-white/12"
+            >
+              {messages.footer.secondaryCta}
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
