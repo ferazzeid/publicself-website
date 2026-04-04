@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "PublicSelf - Des photos de profil professionnelles en quelques minutes",
-    "description": "Telecharge quelques selfies, choisis un preset selectionne et genere des photos de profil propres depuis une landing page entierement indexable."
+    "title": "PublicSelf – Des photos de profil professionnelles en quelques minutes",
+    "description": "Télécharge quelques selfies, choisis un preset sélectionné et génère des photos de profil propres depuis une landing page entièrement indexable."
   },
   "nav": {
     "wordmark": "PUBLICSELF"
@@ -9,38 +9,38 @@
   "hero": {
     "badge": "Photos de profil propres, rapidement",
     "title": "Des photos de profil professionnelles en quelques minutes.",
-    "description": "Telecharge quelques selfies, choisis un preset selectionne et genere des images de profil propres pour LinkedIn, les portfolios et ta marque personnelle.",
-    "primaryCta": "Essayer 3 generations gratuites",
+    "description": "Télécharge quelques selfies, choisis un preset sélectionné et génère des images de profil propres pour LinkedIn, les portfolios et ta marque personnelle.",
+    "primaryCta": "Essayer 3 générations gratuites",
     "secondaryCta": "Se connecter",
     "examplesCta": "Voir des exemples",
-    "trustNote": "Telecharge ce que tu aimes. Pour generer et gerer tes looks, connecte-toi sur le site studio.",
+    "trustNote": "Télécharge ce que tu aimes. Pour générer et gérer tes looks, connecte-toi sur le site studio.",
     "beforeLabel": "Avant",
-    "afterLabel": "Apres",
-    "imageAlt": "Un portrait de profil cree avec PublicSelf",
+    "afterLabel": "Après",
+    "imageAlt": "Un portrait de profil créé avec PublicSelf",
     "slogans": [
-      "Une IA avancee garde ton identite reconnaissable a travers chaque nouveau look.",
-      "Passe rapidement d'un selfie simple a un portrait pret pour ton profil.",
-      "Reutilise tes meilleurs looks pour les headshots, les cadrages trois-quarts et des arriere-plans plus propres."
+      "Une IA avancée garde ton identité reconnaissable à travers chaque nouveau look.",
+      "Passe rapidement d'un selfie simple à un portrait prêt pour ton profil.",
+      "Réutilise tes meilleurs looks pour les headshots, les cadrages trois-quarts et des arrière-plans plus propres."
     ],
     "featureCards": [
       {
-        "title": "Presets selectionnes",
-        "body": "Headshot, cadrage 3/4, tenues, decors et lumiere sont deja orientes vers le resultat voulu."
+        "title": "Presets sélectionnés",
+        "body": "Headshot, cadrage 3/4, tenues, décors et lumière sont déjà orientés vers le résultat voulu."
       },
       {
         "title": "Tarification simple",
-        "body": "Les credits alimentent les generations et les telechargements, pour que tu paies seulement les resultats que tu gardes."
+        "body": "Les crédits alimentent les générations et les téléchargements, pour que tu ne paies que les résultats que tu gardes."
       },
       {
-        "title": "Ephemere par defaut",
-        "body": "Telecharge ce dont tu as besoin quand le resultat te plait. Ne compte pas sur un stockage long terme."
+        "title": "Éphémère par défaut",
+        "body": "Télécharge ce dont tu as besoin quand le résultat te plaît. Ne compte pas sur un stockage long terme."
       }
     ]
   },
   "gallery": {
     "eyebrow": "Exemples",
-    "title": "Une landing page qui montre sa direction visuelle immediatement",
-    "description": "Au lieu d'attendre que le navigateur charge le contenu, la premiere version livre le texte, la structure et les exemples directement dans le HTML.",
+    "title": "Une landing page qui montre sa direction visuelle immédiatement",
+    "description": "Au lieu d'attendre que le navigateur charge le contenu, la première version livre le texte, la structure et les exemples directement dans le HTML.",
     "items": [
       {
         "title": "Headshots propres",
@@ -48,74 +48,74 @@
       },
       {
         "title": "Style plus net",
-        "body": "Tenues, lumiere et decors plus propres sans preparer un shooting complet."
+        "body": "Tenues, lumière et décors plus propres sans préparer un shooting complet."
       },
       {
-        "title": "Variantes editoriales",
-        "body": "Utilise la meme identite dans des directions visuelles plus fortes et plus expressives."
+        "title": "Variantes éditoriales",
+        "body": "Utilise la même identité dans des directions visuelles plus fortes et plus expressives."
       },
       {
-        "title": "Energie exterieure",
+        "title": "Énergie extérieure",
         "body": "Ton visage reste reconnaissable pendant que le lieu et le ton changent."
       },
       {
         "title": "Looks lifestyle",
-        "body": "Teste des images de profil plus douces et plus detendues si tu veux quelque chose de moins formel."
+        "body": "Teste des images de profil plus douces et plus détendues si tu veux quelque chose de moins formel."
       },
       {
-        "title": "Marque coherente",
-        "body": "Construis une presence publique plus forte avec des images qui ressemblent toujours a toi."
+        "title": "Marque cohérente",
+        "body": "Construis une présence publique plus forte avec des images qui ressemblent toujours à toi."
       }
     ]
   },
   "pricing": {
-    "eyebrow": "Credits",
-    "title": "Des packs de credits simples",
-    "description": "La premiere version marketing garde la tarification facile a comprendre et envoie ensuite les visiteurs vers l'app existante pour creer leur compte.",
-    "cta": "Demarrer dans l'app",
+    "eyebrow": "Crédits",
+    "title": "Des packs de crédits simples",
+    "description": "La première version marketing garde la tarification facile à comprendre et envoie ensuite les visiteurs vers l'app existante pour créer leur compte.",
+    "cta": "Démarrer dans l'app",
     "creditsUnit": "crédits",
     "plans": [
       {
         "label": "Starter",
         "name": "PublicSelf Starter",
-        "body": "Un plus petit pack pour tester les headshots, comparer les presets et generer une premiere serie d'images de profil."
+        "body": "Un plus petit pack pour tester les headshots, comparer les presets et générer une première série d'images de profil."
       },
       {
         "label": "Studio",
         "name": "PublicSelf Studio",
-        "body": "Un plus grand pack pour essayer davantage de looks, de poses et de resultats prets a telecharger."
+        "body": "Un plus grand pack pour essayer davantage de looks, de poses et de résultats prêts à télécharger."
       }
     ]
   },
   "howItWorks": {
-    "eyebrow": "Comment ca marche",
+    "eyebrow": "Comment ça marche",
     "sections": [
       {
-        "title": "Construis ton look a partir de photos seed",
-        "subtitle": "Decontracte ou formel - a toi de choisir",
-        "body": "Utilise deux selfies pour creer un look. Choisis une version decontractee ou formelle, enregistre celle qui te plait et reutilise-la plus tard pour un resultat plus fort."
+        "title": "Construis ton look à partir de photos seed",
+        "subtitle": "Décontracté ou formel – à toi de choisir",
+        "body": "Utilise deux selfies pour créer un look. Choisis une version décontractée ou formelle, enregistre celle qui te plaît et réutilise-la plus tard pour un résultat plus fort."
       },
       {
         "title": "Ton shooting photo IA",
-        "subtitle": "Pose, expression, decor - et plus",
-        "body": "Choisis la pose, l'expression faciale et le decor. Cree des portraits prets pour le profil, des gros plans et de meilleures images sociales sans organiser un vrai studio."
+        "subtitle": "Pose, expression, décor – et plus",
+        "body": "Choisis la pose, l'expression faciale et le décor. Crée des portraits prêts pour le profil, des gros plans et de meilleures images sociales sans organiser un vrai studio."
       },
       {
-        "title": "Experimente et amuse-toi",
-        "subtitle": "Chaque credit n'est pas parfait - et c'est normal",
-        "body": "Ici tu peux tester plusieurs directions visuelles. Essaie de nouvelles poses, de nouveaux looks et de nouveaux cadrages jusqu'a trouver la version la plus utile."
+        "title": "Expérimente et amuse-toi",
+        "subtitle": "Chaque crédit n'est pas parfait – et c'est normal",
+        "body": "Ici tu peux tester plusieurs directions visuelles. Essaie de nouvelles poses, de nouveaux looks et de nouveaux cadrages jusqu'à trouver la version la plus utile."
       }
     ]
   },
   "footer": {
-    "eyebrow": "Quand tu es pret",
+    "eyebrow": "Quand tu es prêt",
     "title": "Commence ici, poursuis dans le studio.",
-    "body": "Cette page t'explique comment fonctionne PublicSelf. Quand tu es pret, connecte-toi sur le site studio pour creer des looks, lancer ton shooting et telecharger tes images.",
-    "primaryCta": "Creer un compte",
+    "body": "Cette page t'explique comment fonctionne PublicSelf. Quand tu es prêt, connecte-toi sur le site studio pour créer des looks, lancer ton shooting et télécharger tes images.",
+    "primaryCta": "Créer un compte",
     "secondaryCta": "Ouvrir l'app",
     "legalPrefix": "En continuant, tu acceptes nos",
     "terms": "Conditions",
     "and": "et",
-    "privacy": "Politique de confidentialite"
+    "privacy": "Politique de confidentialité"
   }
 }
