@@ -5,7 +5,13 @@ import { LanguageSwitcher } from "@/components/landing/language-switcher";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
 import { heroImages, howItWorksImages, showcaseImages } from "@/lib/landing-assets";
-import { pickVariantUrl, type FrontPageImageRow, type ShowcaseImageRow } from "@/lib/marketing-data";
+import {
+  isSupabaseStorageUrl,
+  pickHeroInputUrl,
+  pickVariantUrl,
+  type FrontPageImageRow,
+  type ShowcaseImageRow,
+} from "@/lib/marketing-data";
 import { getLocalizedProductUrl, type Locale } from "@/lib/site";
 
 type MarketingPageProps = {
@@ -24,7 +30,7 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
 
   const mainRow = frontPageRows[0];
   const heroAfter = pickVariantUrl(mainRow) ?? heroImages.after;
-  const heroBefore = mainRow?.before_image_url || heroImages.before;
+  const heroBefore = pickHeroInputUrl(mainRow) ?? heroImages.before;
   const heroDetail =
     pickVariantUrl(frontPageRows[2]) ?? pickVariantUrl(frontPageRows[1]) ?? heroImages.detail;
 
@@ -60,9 +66,21 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
   })();
 
   const steps = [
-    { ...messages.howItWorks.sections[0], imageSrc: howItWorksImages.buildLook, imageRight: true },
-    { ...messages.howItWorks.sections[1], imageSrc: howItWorksImages.aiPhotoshoot, imageRight: false },
-    { ...messages.howItWorks.sections[2], imageSrc: howItWorksImages.experiment, imageRight: true },
+    {
+      ...messages.howItWorks.sections[0],
+      imageSrc: pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook,
+      imageRight: true,
+    },
+    {
+      ...messages.howItWorks.sections[1],
+      imageSrc: pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot,
+      imageRight: false,
+    },
+    {
+      ...messages.howItWorks.sections[2],
+      imageSrc: pickVariantUrl(showcaseRows[2]) ?? howItWorksImages.experiment,
+      imageRight: true,
+    },
   ];
 
   return (
@@ -130,6 +148,8 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                   sizes="(max-width: 1024px) 100vw, 520px"
                   className="object-cover"
                   priority
+                  unoptimized={isSupabaseStorageUrl(heroAfter)}
+                  quality={isSupabaseStorageUrl(heroAfter) ? undefined : 90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/15 to-transparent" />
                 <div className="absolute right-5 top-5 max-w-[12rem] rounded-2xl border border-white/10 bg-black/35 px-4 py-3 backdrop-blur-sm">
@@ -147,6 +167,8 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                       height={350}
                       sizes="150px"
                       className="aspect-[4/5] w-full rounded-xl object-cover"
+                      unoptimized={isSupabaseStorageUrl(heroBefore)}
+                      quality={isSupabaseStorageUrl(heroBefore) ? undefined : 90}
                     />
                     <p className="mt-2 text-center text-[11px] font-black uppercase tracking-[0.18em] text-zinc-700">
                       {messages.hero.beforeLabel}
@@ -170,6 +192,8 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                   height={400}
                   sizes="176px"
                   className="aspect-[4/5] w-full rounded-[1.25rem] object-cover"
+                  unoptimized={isSupabaseStorageUrl(heroDetail)}
+                  quality={isSupabaseStorageUrl(heroDetail) ? undefined : 90}
                 />
                 <p className="mt-3 text-[11px] font-black uppercase tracking-[0.18em] text-white/65">{detailTitle}</p>
                 <p className="mt-2 text-sm leading-6 text-zinc-300">{detailBody}</p>
@@ -200,6 +224,8 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                   height={1125}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="aspect-[4/5] w-full object-cover"
+                  unoptimized={isSupabaseStorageUrl(tile.src)}
+                  quality={isSupabaseStorageUrl(tile.src) ? undefined : 90}
                 />
                 <div className="p-5">
                   <h3 className="text-base font-black tracking-tight text-white">{tile.title}</h3>
@@ -274,6 +300,8 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                     height={900}
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="aspect-[4/3] w-full object-cover"
+                    unoptimized={isSupabaseStorageUrl(step.imageSrc)}
+                    quality={isSupabaseStorageUrl(step.imageSrc) ? undefined : 90}
                   />
                 </div>
               </div>
