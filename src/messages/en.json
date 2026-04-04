@@ -18,7 +18,7 @@
     "afterLabel": "Your direction",
     "imageAlt": "A polished portrait created with PublicSelf from user-guided outfits and poses",
     "slogans": [
-      "Real pipeline examples—flagged for the homepage when they are safe to show.",
+      "Outfit, pose, and setting—guided so it still feels like you.",
       "Same person, new outfit, new pose—guided instead of random.",
       "Tune the shot you like instead of starting from scratch every time."
     ],
@@ -39,8 +39,8 @@
   },
   "gallery": {
     "eyebrow": "Examples",
-    "title": "Images from the same product pipeline you will use",
-    "description": "These tiles are pulled from your studio project when teammates flag them for the public grid—so the marketing page shows real outputs, not stock filler, whenever that data exists.",
+    "title": "See what you can create",
+    "description": "A mix of sample directions—outfits, poses, and polish. When the studio has shared examples to highlight, they appear here automatically.",
     "items": [
       {
         "title": "Headshot polish",
@@ -71,7 +71,7 @@
   "pricing": {
     "eyebrow": "Credits",
     "title": "Credit packs that match the studio checkout",
-    "description": "Numbers below are the same packs as inside the app. Buy credits on the studio when you are ready—no duplicate checkout on this site.",
+    "description": "Same packs and prices as in the studio. You will sign in there to complete checkout securely.",
     "cta": "Buy credits in the studio",
     "creditsUnit": "credits",
     "plans": [
@@ -110,7 +110,7 @@
   "footer": {
     "eyebrow": "Ready when you are",
     "title": "Start on the studio when you want real generations.",
-    "body": "Use this page to see what PublicSelf is for. Open the studio to build looks, run shoots, tune results, and buy credits in the same place the product team ships.",
+    "body": "Use this page to see what PublicSelf is for. Open the studio to build looks, run shoots, tune results, and buy credits when you are ready.",
     "primaryCta": "Open the studio",
     "secondaryCta": "Log in",
     "legalPrefix": "By continuing you agree to our",
