@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import deMessages from "@/messages/de.json";
 import enMessages from "@/messages/en.json";
 import frMessages from "@/messages/fr.json";
+import deDeep from "@/messages/deep/de.json";
+import enDeep from "@/messages/deep/en.json";
+import frDeep from "@/messages/deep/fr.json";
 import { heroImages } from "@/lib/landing-assets";
 import { getLocaleUrl, type Locale } from "@/lib/site";
 
@@ -12,10 +15,16 @@ const messagesByLocale = {
   fr: frMessages,
 } as const;
 
-export type LandingMessages = typeof enMessages;
+const deepByLocale = {
+  en: enDeep.deep,
+  de: deDeep.deep,
+  fr: frDeep.deep,
+} as const;
+
+export type LandingMessages = (typeof enMessages) & { deep: (typeof enDeep)["deep"] };
 
 export function getMessages(locale: Locale): LandingMessages {
-  return messagesByLocale[locale];
+  return { ...messagesByLocale[locale], deep: deepByLocale[locale] };
 }
 
 export function buildLandingMetadata(locale: Locale, previewImageUrl?: string): Metadata {

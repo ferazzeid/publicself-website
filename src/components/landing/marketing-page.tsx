@@ -1,10 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { DocumentLang } from "@/components/document-lang";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
+import { LandingEditorial } from "@/components/landing/landing-editorial";
+import { LandingFaq } from "@/components/landing/landing-faq";
+import { LandingJsonLd } from "@/components/landing/landing-json-ld";
+import { LandingMidCta } from "@/components/landing/landing-mid-cta";
+import { LandingPillar } from "@/components/landing/landing-pillar";
+import { LandingToc } from "@/components/landing/landing-toc";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
 import { heroImages, howItWorksImages, showcaseImages } from "@/lib/landing-assets";
+import {
+  isRecord,
+  parseFaqItems,
+  parsePillar,
+  parseRichBlocks,
+  parseTocItems,
+} from "@/lib/landingDeepParse";
+import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import {
   isSupabaseStorageUrl,
   pickHeroInputUrl,
@@ -12,7 +27,7 @@ import {
   type FrontPageImageRow,
   type ShowcaseImageRow,
 } from "@/lib/marketing-data";
-import { getLocalizedProductUrl, type Locale } from "@/lib/site";
+import { getLocalizedProductUrl, MARKETING_SITE_URL, type Locale } from "@/lib/site";
 
 type MarketingPageProps = {
   locale: Locale;
@@ -22,6 +37,8 @@ type MarketingPageProps = {
 
 export function MarketingPage({ locale, frontPageRows, showcaseRows }: MarketingPageProps) {
   const messages = getMessages(locale);
+  const deep = messages.deep;
+
   const signupHref = getLocalizedProductUrl(locale, "/auth");
   const loginHref = getLocalizedProductUrl(locale, "/auth");
   const purchaseHref = getLocalizedProductUrl(locale, "/purchase");
@@ -65,26 +82,51 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
     });
   })();
 
-  const steps = [
-    {
-      ...messages.howItWorks.sections[0],
-      imageSrc: pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook,
-      imageRight: true,
-    },
-    {
-      ...messages.howItWorks.sections[1],
-      imageSrc: pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot,
-      imageRight: false,
-    },
-    {
-      ...messages.howItWorks.sections[2],
-      imageSrc: pickVariantUrl(showcaseRows[2]) ?? howItWorksImages.experiment,
-      imageRight: true,
-    },
-  ];
+  const pillarsRoot = isRecord(deep.pillars) ? deep.pillars : null;
+  const pillarBuild = parsePillar(pillarsRoot?.buildLook);
+  const pillarShoot = parsePillar(pillarsRoot?.photoshoot);
+  const pillarExperiment = parsePillar(pillarsRoot?.experiment);
+
+  const faqRoot = isRecord(deep.faq) ? deep.faq : null;
+  const faqH2 = faqRoot && typeof faqRoot.h2 === "string" ? faqRoot.h2 : "";
+  const faqIntro = faqRoot && typeof faqRoot.intro === "string" ? faqRoot.intro : "";
+  const faqItems = parseFaqItems(faqRoot?.items);
+
+  const midCta = isRecord(deep.midCta) ? deep.midCta : null;
+  const midCtaTitle = midCta && typeof midCta.title === "string" ? midCta.title : "";
+  const midCtaBody = midCta && typeof midCta.body === "string" ? midCta.body : "";
+  const midCtaLabel = midCta && typeof midCta.ctaLabel === "string" ? midCta.ctaLabel : "";
+  const midCtaHref = midCta && typeof midCta.href === "string" ? midCta.href : "#pricing";
+
+  const editorial = isRecord(deep.editorial) ? deep.editorial : null;
+  const editorialH2 = editorial && typeof editorial.h2 === "string" ? editorial.h2 : "";
+  const editorialLead = editorial && typeof editorial.lead === "string" ? editorial.lead : "";
+  const editorialBlocks = parseRichBlocks(editorial?.blocks);
+
+  const tocAria = typeof deep.tocAria === "string" ? deep.tocAria : "On this page";
+  const tocTitle = typeof deep.tocTitle === "string" ? deep.tocTitle : "On this page";
+  const tocItems = parseTocItems(deep.tocItems);
+
+  const galleryCaptionTitle = typeof deep.galleryCaptionTitle === "string" ? deep.galleryCaptionTitle : "";
+  const galleryCaptionBody = typeof deep.galleryCaptionBody === "string" ? deep.galleryCaptionBody : "";
+
+  const img0 = pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook;
+  const img1 = pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot;
+  const img2 = pickVariantUrl(showcaseRows[2]) ?? howItWorksImages.experiment;
+
+  const jsonLd = buildLandingJsonLd({
+    baseUrl: MARKETING_SITE_URL,
+    locale,
+    siteName: "PublicSelf",
+    description: messages.seo.description,
+    faqItems,
+  });
 
   return (
     <main lang={locale} className="bg-zinc-950 text-white">
+      <DocumentLang locale={locale} />
+      <LandingJsonLd data={jsonLd} />
+
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_32%),linear-gradient(180deg,_rgba(24,24,27,0.4),_rgba(9,9,11,0.95))]" />
         <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 sm:px-10 lg:px-12">
@@ -104,7 +146,7 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                 {messages.hero.title}
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-300 sm:text-xl">{messages.hero.description}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href={signupHref}
                   className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] !text-zinc-950 transition hover:bg-zinc-200 hover:!text-zinc-950"
@@ -118,7 +160,7 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                   {messages.hero.secondaryCta}
                 </Link>
                 <a
-                  href="#examples"
+                  href="#gallery"
                   className="inline-flex min-h-14 items-center justify-center rounded-2xl px-7 text-sm font-black uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
                 >
                   {messages.hero.examplesCta}
@@ -132,7 +174,7 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
                     key={card.title}
                     className="rounded-3xl border border-white/12 bg-white/6 p-5 backdrop-blur-sm"
                   >
-                    <h2 className="text-sm font-black uppercase tracking-[0.18em] text-white">{card.title}</h2>
+                    <h3 className="text-sm font-black uppercase tracking-[0.18em] text-white">{card.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-zinc-300">{card.body}</p>
                   </article>
                 ))}
@@ -203,12 +245,24 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
         </div>
       </section>
 
-      <section id="examples" className="border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
+      <LandingToc ariaLabel={tocAria} title={tocTitle} items={tocItems} />
+
+      <section id="gallery" className="scroll-mt-20 border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.gallery.eyebrow}</p>
             <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{messages.gallery.title}</h2>
             <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.gallery.description}</p>
+            {(galleryCaptionTitle || galleryCaptionBody) && (
+              <div className="mt-8 max-w-2xl border-l-2 border-amber-500/60 pl-5">
+                {galleryCaptionTitle ? (
+                  <p className="text-lg font-semibold text-zinc-200">{galleryCaptionTitle}</p>
+                ) : null}
+                {galleryCaptionBody ? (
+                  <p className="mt-3 text-base leading-7 text-zinc-400">{galleryCaptionBody}</p>
+                ) : null}
+              </div>
+            )}
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -237,7 +291,60 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
+      {editorialH2 && editorialBlocks.length > 0 ? (
+        <LandingEditorial
+          id="why-identity"
+          h2={editorialH2}
+          lead={editorialLead}
+          blocks={editorialBlocks}
+        />
+      ) : null}
+
+      {pillarBuild ? (
+        <LandingPillar
+          id="pillar-build-look"
+          h2={pillarBuild.h2}
+          lead={pillarBuild.lead}
+          blocks={pillarBuild.blocks}
+          imageSrc={img0}
+          imageAlt={pillarBuild.imageAlt}
+          imageRight={true}
+        />
+      ) : null}
+
+      {pillarShoot ? (
+        <LandingPillar
+          id="pillar-photoshoot"
+          h2={pillarShoot.h2}
+          lead={pillarShoot.lead}
+          blocks={pillarShoot.blocks}
+          imageSrc={img1}
+          imageAlt={pillarShoot.imageAlt}
+          imageRight={false}
+        />
+      ) : null}
+
+      {midCtaTitle && midCtaBody && midCtaLabel ? (
+        <LandingMidCta title={midCtaTitle} body={midCtaBody} ctaLabel={midCtaLabel} href={midCtaHref} />
+      ) : null}
+
+      {pillarExperiment ? (
+        <LandingPillar
+          id="pillar-experiment"
+          h2={pillarExperiment.h2}
+          lead={pillarExperiment.lead}
+          blocks={pillarExperiment.blocks}
+          imageSrc={img2}
+          imageAlt={pillarExperiment.imageAlt}
+          imageRight={true}
+        />
+      ) : null}
+
+      {faqH2 && faqItems.length > 0 ? (
+        <LandingFaq id="faq" h2={faqH2} intro={faqIntro || undefined} items={faqItems} />
+      ) : null}
+
+      <section id="pricing" className="scroll-mt-20 border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
             <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.pricing.eyebrow}</p>
@@ -277,37 +384,6 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
             })}
           </div>
         </div>
-      </section>
-
-      <section className="bg-zinc-950">
-        {steps.map((step, index) => (
-          <div key={step.title} className="border-b border-white/10 px-6 py-20 sm:px-10 lg:px-12">
-            <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
-              <div className={step.imageRight ? "order-1" : "order-1 lg:order-2"}>
-                <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">
-                  {messages.howItWorks.eyebrow} {index + 1}
-                </p>
-                <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{step.title}</h2>
-                <h3 className="mt-4 text-xl font-semibold text-zinc-300">{step.subtitle}</h3>
-                <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">{step.body}</p>
-              </div>
-              <div className={step.imageRight ? "order-2" : "order-2 lg:order-1"}>
-                <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-900 shadow-xl">
-                  <Image
-                    src={step.imageSrc}
-                    alt={step.title}
-                    width={1200}
-                    height={900}
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="aspect-[4/3] w-full object-cover"
-                    unoptimized={isSupabaseStorageUrl(step.imageSrc)}
-                    quality={isSupabaseStorageUrl(step.imageSrc) ? undefined : 90}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
       </section>
 
       <footer className="bg-black px-6 py-16 sm:px-10 lg:px-12">
