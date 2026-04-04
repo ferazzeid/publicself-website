@@ -10,7 +10,7 @@ Point **only** `https://publicself.app` at **this** repository.
 
 | Setting | Value |
 |--------|--------|
-| **Repository** | This repo (e.g. `your-org/publicself-marketing`) |
+| **Repository** | `https://github.com/ferazzeid/publicself-website` (branch `main`) |
 | **Build pack** | Dockerfile |
 | **Dockerfile path** | `Dockerfile` |
 | **Build context** | `.` (repository root) |
