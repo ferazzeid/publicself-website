@@ -119,18 +119,18 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
           </header>
         </div>
 
-        <div className="relative z-10 mt-4 sm:mt-6">
-          <div className="relative mx-auto min-h-[min(52vh,420px)] w-full max-w-7xl overflow-hidden sm:min-h-[min(50vh,480px)] lg:min-h-[min(52vh,520px)] lg:rounded-[2rem] lg:border lg:border-white/10 lg:shadow-[0_40px_120px_rgba(0,0,0,0.35)]">
+        <div className="relative z-10 mt-4 w-full sm:mt-6">
+          <div className="relative min-h-[min(52vh,420px)] w-full overflow-hidden bg-zinc-950 sm:min-h-[min(50vh,480px)] lg:min-h-[min(52vh,520px)]">
             <Image
               src={marketingHeroScreenshot}
               alt={messages.hero.imageAlt}
               fill
-              sizes="(max-width: 1024px) 100vw, 1280px"
-              className="object-cover object-[52%_0%] sm:object-[58%_10%] lg:object-[55%_8%]"
+              sizes="100vw"
+              className="object-contain object-top sm:object-center"
               priority
             />
             <div
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.94)_0%,rgba(9,9,11,0.72)_38%,rgba(9,9,11,0.28)_55%,rgba(9,9,11,0.05)_72%,transparent_100%),linear-gradient(180deg,rgba(9,9,11,0.15)_0%,transparent_35%,transparent_55%,rgba(9,9,11,0.45)_82%,rgba(9,9,11,0.96)_100%)]"
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.93)_0%,rgba(9,9,11,0.65)_min(28%,18rem),rgba(9,9,11,0.2)_min(42%,26rem),transparent_55%),linear-gradient(180deg,rgba(9,9,11,0.2)_0%,transparent_30%,transparent_58%,rgba(9,9,11,0.35)_85%,rgba(9,9,11,0.92)_100%)]"
               aria-hidden
             />
             <div className="relative z-10 mx-auto flex min-h-[min(52vh,420px)] max-w-7xl flex-col justify-between px-6 py-10 sm:min-h-[min(50vh,480px)] sm:px-10 sm:py-12 lg:min-h-[min(52vh,520px)] lg:px-12 lg:py-14">
