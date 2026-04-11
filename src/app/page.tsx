@@ -14,5 +14,5 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Home() {
   const data = await loadMarketingGalleryData();
-  return <MarketingPage locale="en" frontPageRows={data.frontPage} showcaseRows={data.showcase} />;
+  return <MarketingPage locale="en" showcaseRows={data.showcase} />;
 }

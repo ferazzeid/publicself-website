@@ -1,3 +1,6 @@
+/** Full-bleed marketing hero (studio screenshot). Served from `/public`. */
+export const marketingHeroScreenshot = "/hero-publicself.jpg";
+
 export const heroImages = {
   before:
     "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop",

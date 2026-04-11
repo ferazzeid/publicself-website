@@ -11,7 +11,7 @@ import { LandingPillar } from "@/components/landing/landing-pillar";
 import { LandingToc } from "@/components/landing/landing-toc";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
-import { heroImages, howItWorksImages, showcaseImages } from "@/lib/landing-assets";
+import { howItWorksImages, marketingHeroScreenshot, showcaseImages } from "@/lib/landing-assets";
 import {
   isRecord,
   parseFaqItems,
@@ -20,22 +20,15 @@ import {
   parseTocItems,
 } from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
-import {
-  isSupabaseStorageUrl,
-  pickHeroInputUrl,
-  pickVariantUrl,
-  type FrontPageImageRow,
-  type ShowcaseImageRow,
-} from "@/lib/marketing-data";
+import { isSupabaseStorageUrl, pickVariantUrl, type ShowcaseImageRow } from "@/lib/marketing-data";
 import { getLocalizedProductUrl, MARKETING_SITE_URL, type Locale } from "@/lib/site";
 
 type MarketingPageProps = {
   locale: Locale;
-  frontPageRows: FrontPageImageRow[];
   showcaseRows: ShowcaseImageRow[];
 };
 
-export function MarketingPage({ locale, frontPageRows, showcaseRows }: MarketingPageProps) {
+export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
   const messages = getMessages(locale);
   const deep = messages.deep;
 
@@ -45,18 +38,7 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
   const termsHref = getLocalizedProductUrl(locale, "/terms");
   const privacyHref = getLocalizedProductUrl(locale, "/privacy");
 
-  const mainRow = frontPageRows[0];
-  const heroAfter = pickVariantUrl(mainRow) ?? heroImages.after;
-  const heroBefore = pickHeroInputUrl(mainRow) ?? heroImages.before;
-  const heroDetail =
-    pickVariantUrl(frontPageRows[2]) ?? pickVariantUrl(frontPageRows[1]) ?? heroImages.detail;
-
-  const heroTopLine = mainRow?.slide_title ?? messages.hero.slogans[0];
-  const heroMainLine = mainRow?.slide_description ?? messages.hero.slogans[1];
-  const heroSubLine = messages.hero.slogans[2];
-
-  const detailTitle = frontPageRows[2]?.slide_title ?? messages.gallery.items[2].title;
-  const detailBody = messages.gallery.items[2].body;
+  const heroCaption = messages.hero.slogans[0];
 
   const galleryTiles = (() => {
     const fromDb = showcaseRows
@@ -127,120 +109,84 @@ export function MarketingPage({ locale, frontPageRows, showcaseRows }: Marketing
       <DocumentLang locale={locale} />
       <LandingJsonLd data={jsonLd} />
 
-      <section className="relative isolate overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.18),_transparent_32%),linear-gradient(180deg,_rgba(24,24,27,0.4),_rgba(9,9,11,0.95))]" />
-        <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 py-6 sm:px-10 lg:px-12">
+      <section className="relative isolate overflow-hidden border-b border-white/10 bg-zinc-950">
+        <div className="relative z-20 mx-auto max-w-7xl px-6 pt-6 sm:px-10 lg:px-12">
           <header className="flex items-center justify-between gap-6">
             <Link href="/" className="text-sm font-black uppercase tracking-[0.35em] text-white">
               {messages.nav.wordmark}
             </Link>
             <LanguageSwitcher currentLocale={locale} />
           </header>
+        </div>
 
-          <div className="grid flex-1 items-center gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:gap-16 lg:py-14">
-            <div className="max-w-2xl">
-              <p className="mb-5 inline-flex rounded-full border border-white/15 bg-white/8 px-4 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-white/80">
-                {messages.hero.badge}
-              </p>
-              <h1 className="max-w-xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {messages.hero.title}
-              </h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-300 sm:text-xl">{messages.hero.description}</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link
-                  href={signupHref}
-                  className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] !text-zinc-950 transition hover:bg-zinc-200 hover:!text-zinc-950"
-                >
-                  {messages.hero.primaryCta}
-                </Link>
-                <Link
-                  href={loginHref}
-                  className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/20 bg-white/6 px-7 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-white/12"
-                >
-                  {messages.hero.secondaryCta}
-                </Link>
-                <a
-                  href="#gallery"
-                  className="inline-flex min-h-14 items-center justify-center rounded-2xl px-7 text-sm font-black uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
-                >
-                  {messages.hero.examplesCta}
-                </a>
+        <div className="relative z-10 mt-4 sm:mt-6">
+          <div className="relative mx-auto min-h-[min(52vh,420px)] w-full max-w-7xl overflow-hidden sm:min-h-[min(50vh,480px)] lg:min-h-[min(52vh,520px)] lg:rounded-[2rem] lg:border lg:border-white/10 lg:shadow-[0_40px_120px_rgba(0,0,0,0.35)]">
+            <Image
+              src={marketingHeroScreenshot}
+              alt={messages.hero.imageAlt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 1280px"
+              className="object-cover object-[52%_0%] sm:object-[58%_10%] lg:object-[55%_8%]"
+              priority
+            />
+            <div
+              className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.94)_0%,rgba(9,9,11,0.72)_38%,rgba(9,9,11,0.28)_55%,rgba(9,9,11,0.05)_72%,transparent_100%),linear-gradient(180deg,rgba(9,9,11,0.15)_0%,transparent_35%,transparent_55%,rgba(9,9,11,0.45)_82%,rgba(9,9,11,0.96)_100%)]"
+              aria-hidden
+            />
+            <div className="relative z-10 mx-auto flex min-h-[min(52vh,420px)] max-w-7xl flex-col justify-between px-6 py-10 sm:min-h-[min(50vh,480px)] sm:px-10 sm:py-12 lg:min-h-[min(52vh,520px)] lg:px-12 lg:py-14">
+              <div className="max-w-xl">
+                <p className="mb-4 inline-flex rounded-full border border-white/20 bg-black/35 px-4 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-white/90 backdrop-blur-sm">
+                  {messages.hero.badge}
+                </p>
+                <h1 className="max-w-[22ch] text-4xl font-black leading-[1.06] tracking-tight text-white [text-shadow:0_2px_28px_rgba(0,0,0,0.5)] sm:max-w-xl sm:text-5xl lg:text-6xl">
+                  {messages.hero.title}
+                </h1>
+                <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-white/90 [text-shadow:0_1px_16px_rgba(0,0,0,0.45)] sm:text-base">
+                  {heroCaption}
+                </p>
+                <p className="mt-5 max-w-xl text-base leading-7 text-zinc-100 [text-shadow:0_1px_20px_rgba(0,0,0,0.55)] sm:text-lg sm:leading-8">
+                  {messages.hero.description}
+                </p>
               </div>
-              <p className="mt-5 max-w-lg text-sm leading-6 text-zinc-400">{messages.hero.trustNote}</p>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {messages.hero.featureCards.map((card) => (
-                  <article
-                    key={card.title}
-                    className="rounded-3xl border border-white/12 bg-white/6 p-5 backdrop-blur-sm"
+              <div className="mt-10 space-y-4 sm:mt-12">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                  <Link
+                    href={signupHref}
+                    className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] !text-zinc-950 shadow-lg transition hover:bg-zinc-200 hover:!text-zinc-950"
                   >
-                    <h3 className="text-sm font-black uppercase tracking-[0.18em] text-white">{card.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-zinc-300">{card.body}</p>
-                  </article>
-                ))}
+                    {messages.hero.primaryCta}
+                  </Link>
+                  <Link
+                    href={loginHref}
+                    className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-2xl border border-white/25 bg-black/45 px-7 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-black/60"
+                  >
+                    {messages.hero.secondaryCta}
+                  </Link>
+                  <a
+                    href="#gallery"
+                    className="inline-flex min-h-14 items-center justify-center rounded-2xl px-2 text-sm font-black uppercase tracking-[0.18em] text-white/90 transition hover:text-white sm:px-4"
+                  >
+                    {messages.hero.examplesCta}
+                  </a>
+                </div>
+                <p className="max-w-lg text-sm leading-6 text-zinc-200/95">{messages.hero.trustNote}</p>
               </div>
             </div>
+          </div>
+        </div>
 
-            <div className="relative mx-auto w-full max-w-[520px]">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/12 bg-zinc-900 shadow-[0_30px_100px_rgba(0,0,0,0.45)]">
-                <Image
-                  src={heroAfter}
-                  alt={messages.hero.imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 520px"
-                  className="object-cover"
-                  priority
-                  unoptimized={isSupabaseStorageUrl(heroAfter)}
-                  quality={isSupabaseStorageUrl(heroAfter) ? undefined : 90}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/15 to-transparent" />
-                <div className="absolute right-5 top-5 max-w-[12rem] rounded-2xl border border-white/10 bg-black/35 px-4 py-3 backdrop-blur-sm">
-                  <p className="text-[10px] font-black uppercase tracking-[0.22em] text-white/70">
-                    {messages.gallery.eyebrow}
-                  </p>
-                  <p className="mt-2 text-sm leading-6 text-white/90">{heroTopLine}</p>
-                </div>
-                <div className="absolute bottom-5 left-5 right-5 grid gap-3 sm:grid-cols-[150px_minmax(0,1fr)]">
-                  <div className="rounded-2xl bg-white p-2 text-zinc-900 shadow-2xl">
-                    <Image
-                      src={heroBefore}
-                      alt={messages.hero.beforeLabel}
-                      width={280}
-                      height={350}
-                      sizes="150px"
-                      className="aspect-[4/5] w-full rounded-xl object-cover"
-                      unoptimized={isSupabaseStorageUrl(heroBefore)}
-                      quality={isSupabaseStorageUrl(heroBefore) ? undefined : 90}
-                    />
-                    <p className="mt-2 text-center text-[11px] font-black uppercase tracking-[0.18em] text-zinc-700">
-                      {messages.hero.beforeLabel}
-                    </p>
-                  </div>
-                  <div className="self-end rounded-2xl border border-white/10 bg-black/45 p-4 backdrop-blur-sm">
-                    <p className="text-[10px] font-black uppercase tracking-[0.22em] text-white/65">
-                      {messages.hero.afterLabel}
-                    </p>
-                    <p className="mt-2 text-lg font-semibold leading-7 text-white">{heroMainLine}</p>
-                    <p className="mt-2 text-sm leading-6 text-zinc-300">{heroSubLine}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute -bottom-8 -right-6 hidden w-44 rounded-[1.75rem] border border-white/12 bg-zinc-900 p-3 shadow-2xl sm:block">
-                <Image
-                  src={heroDetail}
-                  alt={detailTitle}
-                  width={320}
-                  height={400}
-                  sizes="176px"
-                  className="aspect-[4/5] w-full rounded-[1.25rem] object-cover"
-                  unoptimized={isSupabaseStorageUrl(heroDetail)}
-                  quality={isSupabaseStorageUrl(heroDetail) ? undefined : 90}
-                />
-                <p className="mt-3 text-[11px] font-black uppercase tracking-[0.18em] text-white/65">{detailTitle}</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-300">{detailBody}</p>
-              </div>
-            </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pb-14 pt-8 sm:px-10 lg:px-12">
+          <div className="grid gap-4 sm:grid-cols-3">
+            {messages.hero.featureCards.map((card) => (
+              <article
+                key={card.title}
+                className="rounded-3xl border border-white/12 bg-white/[0.06] p-5 backdrop-blur-sm"
+              >
+                <h3 className="text-sm font-black uppercase tracking-[0.18em] text-white">{card.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">{card.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>

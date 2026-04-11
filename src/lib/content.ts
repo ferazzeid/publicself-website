@@ -6,8 +6,8 @@ import frMessages from "@/messages/fr.json";
 import deDeep from "@/messages/deep/de.json";
 import enDeep from "@/messages/deep/en.json";
 import frDeep from "@/messages/deep/fr.json";
-import { heroImages } from "@/lib/landing-assets";
-import { getLocaleUrl, type Locale } from "@/lib/site";
+import { marketingHeroScreenshot } from "@/lib/landing-assets";
+import { getLocaleUrl, MARKETING_SITE_URL, type Locale } from "@/lib/site";
 
 const messagesByLocale = {
   en: enMessages,
@@ -30,7 +30,8 @@ export function getMessages(locale: Locale): LandingMessages {
 export function buildLandingMetadata(locale: Locale, previewImageUrl?: string): Metadata {
   const messages = getMessages(locale);
   const canonical = getLocaleUrl(locale);
-  const previewImage = previewImageUrl ?? heroImages.after;
+  const previewImage =
+    previewImageUrl ?? `${MARKETING_SITE_URL}${marketingHeroScreenshot}`;
 
   return {
     title: messages.seo.title,

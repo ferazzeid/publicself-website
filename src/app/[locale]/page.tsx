@@ -36,7 +36,5 @@ export default async function LocalizedHome({ params }: LocalePageProps) {
   }
 
   const data = await loadMarketingGalleryData();
-  return (
-    <MarketingPage locale={locale as Locale} frontPageRows={data.frontPage} showcaseRows={data.showcase} />
-  );
+  return <MarketingPage locale={locale as Locale} showcaseRows={data.showcase} />;
 }
