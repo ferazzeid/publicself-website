@@ -5,7 +5,6 @@ import { DocumentLang } from "@/components/document-lang";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
 import { MarketingScreenshotSlider } from "@/components/landing/marketing-screenshot-slider";
 import { MarketingGalleryCarousel } from "@/components/landing/marketing-gallery-carousel";
-import { LandingEditorial } from "@/components/landing/landing-editorial";
 import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
 import { LandingMidCta } from "@/components/landing/landing-mid-cta";
@@ -94,10 +93,12 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
   const midCtaLabel = midCta && typeof midCta.ctaLabel === "string" ? midCta.ctaLabel : "";
   const midCtaHref = midCta && typeof midCta.href === "string" ? midCta.href : "#pricing";
 
-  const editorial = isRecord(deep.editorial) ? deep.editorial : null;
-  const editorialH2 = editorial && typeof editorial.h2 === "string" ? editorial.h2 : "";
-  const editorialLead = editorial && typeof editorial.lead === "string" ? editorial.lead : "";
-  const editorialBlocks = parseRichBlocks(editorial?.blocks);
+  const ed = deep.editorial;
+  const editorialH2 = typeof ed?.h2 === "string" ? ed.h2 : "";
+  const editorialLead = typeof ed?.lead === "string" ? ed.lead : "";
+  const editorialBlocks = parseRichBlocks(
+    ed && typeof ed === "object" && ed !== null && "blocks" in ed ? (ed as { blocks: unknown }).blocks : undefined,
+  );
 
   const img0 = pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook;
   const img1 = pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot;
@@ -180,13 +181,50 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
         </div>
       </section>
 
-      {editorialH2 && editorialLead ? (
-        <LandingEditorial
+      {editorialH2 || editorialLead || editorialBlocks.length > 0 ? (
+        <section
           id="why-identity"
-          h2={editorialH2}
-          lead={editorialLead}
-          blocks={editorialBlocks}
-        />
+          className="scroll-mt-20 border-t border-white/[0.06] border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12"
+          aria-labelledby={editorialH2 ? "why-identity-heading" : undefined}
+        >
+          <div className="mx-auto max-w-3xl">
+            {editorialH2 ? (
+              <h2
+                id="why-identity-heading"
+                className="text-3xl font-black tracking-tight text-white sm:text-4xl"
+              >
+                {editorialH2}
+              </h2>
+            ) : null}
+            {editorialLead ? (
+              <p className="mt-5 text-lg font-medium leading-8 text-zinc-400">{editorialLead}</p>
+            ) : null}
+            {editorialBlocks.length > 0 ? (
+              <div
+                id="why-identity-body"
+                className="mt-12 space-y-12 text-lg leading-8 text-zinc-300"
+              >
+                {editorialBlocks.map((block, i) => (
+                  <div key={`${block.h3}-${i}`}>
+                    <h3 className="text-xl font-bold tracking-tight text-white">{block.h3}</h3>
+                    {block.paragraphs.map((p, j) => (
+                      <p key={j} className="mt-4">
+                        {p}
+                      </p>
+                    ))}
+                    {block.bullets && block.bullets.length > 0 ? (
+                      <ul className="mt-4 list-disc space-y-2 pl-5">
+                        {block.bullets.map((b, k) => (
+                          <li key={k}>{b}</li>
+                        ))}
+                      </ul>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </div>
+        </section>
       ) : null}
 
       <section
