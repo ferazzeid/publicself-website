@@ -81,8 +81,8 @@
   },
   "pricing": {
     "eyebrow": "Credits",
-    "title": "Einfache Credit-Pakete",
-    "description": "Die erste Marketing-Version hält Preise bewusst einfach und schickt Nutzer erst dann in die bestehende App, wenn sie wirklich starten wollen.",
+    "title": "Bereit für Credits im Studio?",
+    "description": "Gleiche Pakete und Preise wie in der App. Wähle hier ein Paket und schließe den Kauf nach dem Login im Studio sicher ab.",
     "cta": "In der App starten",
     "creditsUnit": "Credits",
     "plans": [

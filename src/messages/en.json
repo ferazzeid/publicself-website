@@ -81,8 +81,8 @@
   },
   "pricing": {
     "eyebrow": "Credits",
-    "title": "Credit packs that match the studio checkout",
-    "description": "Same packs and prices as in the studio. You will sign in there to complete checkout securely.",
+    "title": "Ready to try credits in the studio?",
+    "description": "Same packs and prices as inside the app. Pick a pack here, then sign in on the studio to complete checkout securely.",
     "cta": "Buy credits in the studio",
     "creditsUnit": "credits",
     "plans": [

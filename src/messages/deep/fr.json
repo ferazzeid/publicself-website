@@ -197,12 +197,6 @@
         ]
       }
     },
-    "midCta": {
-      "title": "Prêt à essayer quelques crédits ?",
-      "body": "Tu peux entrer depuis le diaporama du haut, ou aller directement aux packs si tu sais déjà que tu veux plus de marge pour jouer.",
-      "ctaLabel": "Voir les packs de crédits",
-      "href": "#pricing"
-    },
     "faq": {
       "h2": "Questions fréquentes",
       "intro": "Des réponses directes sur le comportement réel de PublicSelf—pour savoir à quoi t’attendre avant de dépenser du temps ou des crédits.",

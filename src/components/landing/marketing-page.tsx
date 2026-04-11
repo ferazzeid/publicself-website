@@ -7,7 +7,6 @@ import { MarketingScreenshotSlider } from "@/components/landing/marketing-screen
 import { MarketingGalleryCarousel } from "@/components/landing/marketing-gallery-carousel";
 import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
-import { LandingMidCta } from "@/components/landing/landing-mid-cta";
 import { LandingPillar } from "@/components/landing/landing-pillar";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
@@ -86,12 +85,6 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
   const faqH2 = faqRoot && typeof faqRoot.h2 === "string" ? faqRoot.h2 : "";
   const faqIntro = faqRoot && typeof faqRoot.intro === "string" ? faqRoot.intro : "";
   const faqItems = parseFaqItems(faqRoot?.items);
-
-  const midCta = isRecord(deep.midCta) ? deep.midCta : null;
-  const midCtaTitle = midCta && typeof midCta.title === "string" ? midCta.title : "";
-  const midCtaBody = midCta && typeof midCta.body === "string" ? midCta.body : "";
-  const midCtaLabel = midCta && typeof midCta.ctaLabel === "string" ? midCta.ctaLabel : "";
-  const midCtaHref = midCta && typeof midCta.href === "string" ? midCta.href : "#pricing";
 
   const ed = deep.editorial;
   const editorialH2 = typeof ed?.h2 === "string" ? ed.h2 : "";
@@ -267,6 +260,70 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
         </div>
       </section>
 
+      <section
+        id="pricing"
+        className="scroll-mt-20 relative overflow-hidden border-y border-amber-500/25 bg-zinc-950 px-6 py-24 md:py-32 sm:px-10 lg:px-12"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_-35%,rgba(245,158,11,0.16),transparent_55%)]"
+          aria-hidden
+        />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-400/95">
+              {messages.pricing.eyebrow}
+            </p>
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.035em] text-white md:text-5xl lg:text-[3.15rem] lg:leading-[1.08]">
+              {messages.pricing.title}
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-zinc-300 md:text-xl md:leading-relaxed">
+              {messages.pricing.description}
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-2 lg:gap-8">
+            {CREDIT_PACKS_LIST.map((pack, index) => {
+              const plan = messages.pricing.plans[index];
+              if (!plan) return null;
+              const creditsLine = `${pack.credits} ${messages.pricing.creditsUnit}`;
+              const isPrimary = index === 0;
+              return (
+                <article
+                  key={pack.name}
+                  className={`rounded-[2rem] border p-8 shadow-[0_24px_80px_rgba(0,0,0,0.35)] md:p-10 ${
+                    isPrimary
+                      ? "border-amber-500/35 bg-gradient-to-b from-amber-500/[0.12] to-white/[0.04] ring-1 ring-amber-500/20"
+                      : "border-white/12 bg-white/[0.04]"
+                  }`}
+                >
+                  <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200/80">{plan.label}</p>
+                      <h3 className="mt-3 text-2xl font-semibold tracking-tight text-white md:text-3xl">{plan.name}</h3>
+                    </div>
+                    <div className="sm:text-right">
+                      <p className="text-4xl font-semibold tracking-tight text-white md:text-[2.75rem]">${pack.usd}</p>
+                      <p className="mt-1 text-sm text-zinc-400">{creditsLine}</p>
+                    </div>
+                  </div>
+                  <p className="mt-6 text-base leading-7 text-zinc-300">{plan.body}</p>
+                  <Link
+                    href={purchaseHref}
+                    className={`mt-8 inline-flex min-h-14 w-full items-center justify-center rounded-2xl px-6 text-sm font-semibold uppercase tracking-[0.16em] transition sm:w-auto ${
+                      isPrimary
+                        ? "bg-amber-500 !text-zinc-950 hover:bg-amber-400"
+                        : "border border-white/20 bg-white/[0.06] text-white hover:bg-white/12"
+                    }`}
+                  >
+                    {messages.pricing.cta}
+                  </Link>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section id="gallery" className="scroll-mt-20 border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
@@ -309,10 +366,6 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
         />
       ) : null}
 
-      {midCtaTitle && midCtaBody && midCtaLabel ? (
-        <LandingMidCta title={midCtaTitle} body={midCtaBody} ctaLabel={midCtaLabel} href={midCtaHref} />
-      ) : null}
-
       {pillarExperiment ? (
         <LandingPillar
           id="pillar-experiment"
@@ -328,48 +381,6 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
       {faqH2 && faqItems.length > 0 ? (
         <LandingFaq id="faq" h2={faqH2} intro={faqIntro || undefined} items={faqItems} />
       ) : null}
-
-      <section id="pricing" className="scroll-mt-20 border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-2xl">
-            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.pricing.eyebrow}</p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{messages.pricing.title}</h2>
-            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.pricing.description}</p>
-          </div>
-
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {CREDIT_PACKS_LIST.map((pack, index) => {
-              const plan = messages.pricing.plans[index];
-              if (!plan) return null;
-              const creditsLine = `${pack.credits} ${messages.pricing.creditsUnit}`;
-              return (
-                <article
-                  key={pack.name}
-                  className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 shadow-[0_18px_60px_rgba(0,0,0,0.25)]"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-sm font-black uppercase tracking-[0.18em] text-white/60">{plan.label}</p>
-                      <h3 className="mt-3 text-2xl font-black tracking-tight text-white">{plan.name}</h3>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-3xl font-black tracking-tight text-white">${pack.usd}</p>
-                      <p className="mt-1 text-sm text-zinc-400">{creditsLine}</p>
-                    </div>
-                  </div>
-                  <p className="mt-5 text-sm leading-6 text-zinc-300">{plan.body}</p>
-                  <Link
-                    href={purchaseHref}
-                    className="mt-8 inline-flex min-h-12 items-center justify-center rounded-2xl border border-white/15 bg-white/8 px-5 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-white/14"
-                  >
-                    {messages.pricing.cta}
-                  </Link>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       <footer className="bg-black px-6 py-16 sm:px-10 lg:px-12">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:flex-row lg:items-end lg:justify-between">

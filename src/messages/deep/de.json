@@ -197,12 +197,6 @@
         ]
       }
     },
-    "midCta": {
-      "title": "Bereit für ein paar Credits?",
-      "body": "Starte über die Slideshow oder spring direkt zu den Paketen, wenn du schon weißt, dass du mehr Spielraum willst.",
-      "ctaLabel": "Credit-Pakete ansehen",
-      "href": "#pricing"
-    },
     "faq": {
       "h2": "Häufige Fragen",
       "intro": "Klare Antworten zum Verhalten von PublicSelf—damit du weißt, was dich erwartet, bevor du Zeit oder Credits investierst.",

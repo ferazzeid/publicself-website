@@ -81,8 +81,8 @@
   },
   "pricing": {
     "eyebrow": "Crédits",
-    "title": "Des packs de crédits simples",
-    "description": "La première version marketing garde la tarification facile à comprendre et envoie ensuite les visiteurs vers l'app existante pour créer leur compte.",
+    "title": "Prêt à prendre des crédits dans le studio ?",
+    "description": "Les mêmes packs et prix que dans l’app. Choisis un pack ici, puis connecte-toi au studio pour payer en toute sécurité.",
     "cta": "Démarrer dans l'app",
     "creditsUnit": "crédits",
     "plans": [

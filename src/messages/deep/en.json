@@ -197,12 +197,6 @@
         ]
       }
     },
-    "midCta": {
-      "title": "Ready to try a few credits?",
-      "body": "You can jump in from the hero slideshow, or skip straight to packages if you already know you want more room to play.",
-      "ctaLabel": "View credit packs",
-      "href": "#pricing"
-    },
     "faq": {
       "h2": "Frequently asked questions",
       "intro": "Straight answers about how PublicSelf behaves in practice—so you know what to expect before you spend time or credits.",
