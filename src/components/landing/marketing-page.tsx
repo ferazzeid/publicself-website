@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { DocumentLang } from "@/components/document-lang";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
+import { MarketingScreenshotSlider } from "@/components/landing/marketing-screenshot-slider";
 import { LandingEditorial } from "@/components/landing/landing-editorial";
 import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
@@ -11,7 +12,12 @@ import { LandingPillar } from "@/components/landing/landing-pillar";
 import { LandingToc } from "@/components/landing/landing-toc";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
-import { howItWorksImages, marketingHeroScreenshot, showcaseImages } from "@/lib/landing-assets";
+import {
+  howItWorksImages,
+  marketingHeroScreenshot,
+  marketingProductSlides,
+  showcaseImages,
+} from "@/lib/landing-assets";
 import {
   isRecord,
   parseFaqItems,
@@ -39,6 +45,15 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
   const privacyHref = getLocalizedProductUrl(locale, "/privacy");
 
   const heroCaption = messages.hero.slogans[0];
+
+  const screenshotSlides = marketingProductSlides.map((item, i) => {
+    const caption = messages.screenshots.slides[i]?.caption ?? "";
+    return {
+      src: item.src,
+      alt: caption ? `${messages.screenshots.title} — ${caption}` : messages.hero.imageAlt,
+      caption: caption || messages.screenshots.title,
+    };
+  });
 
   const galleryTiles = (() => {
     const fromDb = showcaseRows
@@ -109,85 +124,110 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
       <DocumentLang locale={locale} />
       <LandingJsonLd data={jsonLd} />
 
-      <section className="relative isolate overflow-hidden border-b border-white/10 bg-zinc-950">
-        <div className="relative z-20 mx-auto max-w-7xl px-6 pt-6 sm:px-10 lg:px-12">
-          <header className="flex items-center justify-between gap-6">
-            <Link href="/" className="text-sm font-black uppercase tracking-[0.35em] text-white">
+      <section className="relative isolate min-h-[100dvh] w-full overflow-hidden bg-black">
+        <Image
+          src={marketingHeroScreenshot}
+          alt={messages.hero.imageAlt}
+          fill
+          sizes="100vw"
+          className="object-cover object-[center_24%] sm:object-[center_30%]"
+          priority
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,transparent_32%,transparent_58%,rgba(0,0,0,0.55)_100%)]"
+          aria-hidden
+        />
+
+        <div className="absolute inset-x-0 top-0 z-20 pt-[max(1.25rem,env(safe-area-inset-top))]">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-12">
+            <Link
+              href="/"
+              className="text-[11px] font-semibold uppercase tracking-[0.38em] text-white [text-shadow:0_1px_14px_rgba(0,0,0,0.55)] sm:text-xs"
+            >
               {messages.nav.wordmark}
             </Link>
-            <LanguageSwitcher currentLocale={locale} />
-          </header>
+            <LanguageSwitcher currentLocale={locale} overlay />
+          </div>
         </div>
 
-        <div className="relative z-10 mt-4 w-full sm:mt-6">
-          <div className="relative min-h-[min(52vh,420px)] w-full overflow-hidden bg-zinc-950 sm:min-h-[min(50vh,480px)] lg:min-h-[min(52vh,520px)]">
-            <Image
-              src={marketingHeroScreenshot}
-              alt={messages.hero.imageAlt}
-              fill
-              sizes="100vw"
-              className="object-contain object-top sm:object-center"
-              priority
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.93)_0%,rgba(9,9,11,0.65)_min(28%,18rem),rgba(9,9,11,0.2)_min(42%,26rem),transparent_55%),linear-gradient(180deg,rgba(9,9,11,0.2)_0%,transparent_30%,transparent_58%,rgba(9,9,11,0.35)_85%,rgba(9,9,11,0.92)_100%)]"
-              aria-hidden
-            />
-            <div className="relative z-10 mx-auto flex min-h-[min(52vh,420px)] max-w-7xl flex-col justify-between px-6 py-10 sm:min-h-[min(50vh,480px)] sm:px-10 sm:py-12 lg:min-h-[min(52vh,520px)] lg:px-12 lg:py-14">
-              <div className="max-w-xl">
-                <p className="mb-4 inline-flex rounded-full border border-white/20 bg-black/35 px-4 py-2 text-[11px] font-black uppercase tracking-[0.28em] text-white/90 backdrop-blur-sm">
-                  {messages.hero.badge}
-                </p>
-                <h1 className="max-w-[22ch] text-4xl font-black leading-[1.06] tracking-tight text-white [text-shadow:0_2px_28px_rgba(0,0,0,0.5)] sm:max-w-xl sm:text-5xl lg:text-6xl">
-                  {messages.hero.title}
-                </h1>
-                <p className="mt-3 max-w-xl text-sm font-semibold leading-6 text-white/90 [text-shadow:0_1px_16px_rgba(0,0,0,0.45)] sm:text-base">
-                  {heroCaption}
-                </p>
-                <p className="mt-5 max-w-xl text-base leading-7 text-zinc-100 [text-shadow:0_1px_20px_rgba(0,0,0,0.55)] sm:text-lg sm:leading-8">
-                  {messages.hero.description}
-                </p>
-              </div>
-
-              <div className="mt-10 space-y-4 sm:mt-12">
-                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-                  <Link
-                    href={signupHref}
-                    className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] !text-zinc-950 shadow-lg transition hover:bg-zinc-200 hover:!text-zinc-950"
-                  >
-                    {messages.hero.primaryCta}
-                  </Link>
-                  <Link
-                    href={loginHref}
-                    className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-2xl border border-white/25 bg-black/45 px-7 text-sm font-black uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:bg-black/60"
-                  >
-                    {messages.hero.secondaryCta}
-                  </Link>
-                  <a
-                    href="#gallery"
-                    className="inline-flex min-h-14 items-center justify-center rounded-2xl px-2 text-sm font-black uppercase tracking-[0.18em] text-white/90 transition hover:text-white sm:px-4"
-                  >
-                    {messages.hero.examplesCta}
-                  </a>
-                </div>
-                <p className="max-w-lg text-sm leading-6 text-zinc-200/95">{messages.hero.trustNote}</p>
-              </div>
+        <div className="relative z-10 flex min-h-[100dvh] flex-col px-6 pb-10 pt-[clamp(5.75rem,15vw,8.5rem)] sm:px-10 lg:px-12">
+          <div className="flex flex-1 flex-col justify-center">
+            <div className="mx-auto w-full max-w-4xl text-center">
+              <p className="mb-6 inline-flex rounded-full border border-white/15 bg-black/25 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/85 backdrop-blur-md sm:text-[11px]">
+                {messages.hero.badge}
+              </p>
+              <h1 className="text-[clamp(1.85rem,5.2vw,3.65rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-white [text-shadow:0_2px_48px_rgba(0,0,0,0.42)]">
+                {messages.hero.title}
+              </h1>
+              <p className="mx-auto mt-5 max-w-2xl text-[clamp(0.95rem,2.3vw,1.2rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/88 [text-shadow:0_1px_24px_rgba(0,0,0,0.38)]">
+                {heroCaption}
+              </p>
             </div>
           </div>
-        </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pb-14 pt-8 sm:px-10 lg:px-12">
-          <div className="grid gap-4 sm:grid-cols-3">
-            {messages.hero.featureCards.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-3xl border border-white/12 bg-white/[0.06] p-5 backdrop-blur-sm"
+          <div className="mx-auto w-full max-w-2xl space-y-7">
+            <p className="text-center text-[15px] leading-relaxed tracking-[-0.012em] text-zinc-200/95 sm:text-[1.05rem] [text-shadow:0_1px_16px_rgba(0,0,0,0.35)]">
+              {messages.hero.description}
+            </p>
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
+              <Link
+                href={signupHref}
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-8 text-[11px] font-semibold uppercase tracking-[0.16em] !text-zinc-950 transition hover:bg-zinc-100"
               >
-                <h3 className="text-sm font-black uppercase tracking-[0.18em] text-white">{card.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-zinc-300">{card.body}</p>
-              </article>
-            ))}
+                {messages.hero.primaryCta}
+              </Link>
+              <Link
+                href={loginHref}
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/22 bg-white/[0.08] px-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white/[0.12]"
+              >
+                {messages.hero.secondaryCta}
+              </Link>
+              <a
+                href="#studio-walkthrough"
+                className="inline-flex min-h-12 items-center justify-center rounded-full px-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/82 transition hover:text-white"
+              >
+                {messages.hero.examplesCta}
+              </a>
+            </div>
+            <p className="text-center text-[13px] leading-relaxed text-zinc-400">{messages.hero.trustNote}</p>
           </div>
+        </div>
+      </section>
+
+      <section
+        id="studio-walkthrough"
+        className="scroll-mt-20 border-t border-white/[0.06] bg-zinc-950 px-6 py-20 md:py-28 sm:px-10 lg:px-12"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-zinc-500">
+              {messages.screenshots.eyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-white md:text-[2.125rem]">
+              {messages.screenshots.title}
+            </h2>
+          </div>
+          <div className="mt-14 md:mt-20">
+            <MarketingScreenshotSlider
+              slides={screenshotSlides}
+              prevLabel={messages.screenshots.prev}
+              nextLabel={messages.screenshots.next}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/[0.06] bg-zinc-950 px-6 py-16 sm:px-10 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3 md:gap-6">
+          {messages.hero.featureCards.map((card) => (
+            <article
+              key={card.title}
+              className="rounded-2xl border border-white/[0.06] bg-transparent px-6 py-8 md:px-7 md:py-9"
+            >
+              <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">{card.title}</h3>
+              <p className="mt-4 text-[15px] leading-relaxed tracking-[-0.01em] text-zinc-300">{card.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 

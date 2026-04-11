@@ -1,5 +1,14 @@
-/** Full-bleed marketing hero (studio screenshot). Served from `/public`. */
-export const marketingHeroScreenshot = "/hero-publicself.jpg";
+/**
+ * Full-bleed marketing hero. Generate from raw shots with:
+ * `npm run optimize:images -- path/to/raw.jpg [more-for-slides.jpg ...]`
+ */
+export const marketingHeroScreenshot = "/marketing/hero-main.jpg";
+
+/**
+ * Product walkthrough slides (optimized JPEGs under /public/marketing/slides/).
+ * Add slide-02.jpg … and entries here when you have more screens.
+ */
+export const marketingProductSlides = [{ id: "01", src: "/marketing/slides/slide-01.jpg" }] as const;
 
 export const heroImages = {
   before:

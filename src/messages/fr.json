@@ -37,6 +37,17 @@
       }
     ]
   },
+  "screenshots": {
+    "eyebrow": "Dans le studio",
+    "title": "Comment ça s’articule",
+    "prev": "Image précédente",
+    "next": "Image suivante",
+    "slides": [
+      {
+        "caption": "Prépare tes références, puis explore tenues, poses et finitions dans l’espace shoot."
+      }
+    ]
+  },
   "gallery": {
     "eyebrow": "Exemples",
     "title": "Une landing page qui montre sa direction visuelle immédiatement",

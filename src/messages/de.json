@@ -37,6 +37,17 @@
       }
     ]
   },
+  "screenshots": {
+    "eyebrow": "Im Studio",
+    "title": "So fügt es sich zusammen",
+    "prev": "Vorheriges Bild",
+    "next": "Nächstes Bild",
+    "slides": [
+      {
+        "caption": "Bereite Referenzen vor und erkunde Outfits, Posen und Feinschliff im Shoot‑Workspace."
+      }
+    ]
+  },
   "gallery": {
     "eyebrow": "Beispiele",
     "title": "Eine Landingpage, die ihre visuelle Richtung sofort zeigt",

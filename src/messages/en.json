@@ -16,7 +16,7 @@
     "trustNote": "Browse here; sign in on the studio when you are ready to generate, save looks, and download what you keep.",
     "beforeLabel": "Your input",
     "afterLabel": "Your direction",
-    "imageAlt": "A polished portrait created with PublicSelf from user-guided outfits and poses",
+    "imageAlt": "A composed portrait on a dark background — calm presence, tailored look, and creative styling",
     "slogans": [
       "Outfit, pose, and setting—guided so it still feels like you.",
       "Same person, new outfit, new pose—guided instead of random.",
@@ -34,6 +34,17 @@
       {
         "title": "Tune & swap",
         "body": "Lock a pose you like, then adjust details or swap items so the image keeps getting closer without burning a full new concept each time."
+      }
+    ]
+  },
+  "screenshots": {
+    "eyebrow": "Inside the studio",
+    "title": "How it comes together",
+    "prev": "Previous image",
+    "next": "Next image",
+    "slides": [
+      {
+        "caption": "Prepare your references, then explore outfits, poses, and polish in the shoot workspace."
       }
     ]
   },
