@@ -50,6 +50,8 @@
     "eyebrow": "Examples",
     "title": "See what you can create",
     "description": "A mix of sample directions—outfits, poses, and polish. When the studio has shared examples to highlight, they appear here automatically.",
+    "carouselPrev": "Previous examples",
+    "carouselNext": "Next examples",
     "items": [
       {
         "title": "Headshot polish",

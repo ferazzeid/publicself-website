@@ -50,6 +50,8 @@
     "eyebrow": "Beispiele",
     "title": "Eine Landingpage, die ihre visuelle Richtung sofort zeigt",
     "description": "Statt erst im Browser Inhalte nachzuladen, liefert die erste Version Text, Struktur und Beispiele direkt im HTML aus.",
+    "carouselPrev": "Vorherige Beispiele",
+    "carouselNext": "Weitere Beispiele",
     "items": [
       {
         "title": "Saubere Headshots",

@@ -50,6 +50,8 @@
     "eyebrow": "Exemples",
     "title": "Une landing page qui montre sa direction visuelle immédiatement",
     "description": "Au lieu d'attendre que le navigateur charge le contenu, la première version livre le texte, la structure et les exemples directement dans le HTML.",
+    "carouselPrev": "Exemples précédents",
+    "carouselNext": "Exemples suivants",
     "items": [
       {
         "title": "Headshots propres",

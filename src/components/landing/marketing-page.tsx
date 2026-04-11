@@ -4,7 +4,7 @@ import Link from "next/link";
 import { DocumentLang } from "@/components/document-lang";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
 import { MarketingScreenshotSlider } from "@/components/landing/marketing-screenshot-slider";
-import { LandingEditorial } from "@/components/landing/landing-editorial";
+import { MarketingGalleryCarousel } from "@/components/landing/marketing-gallery-carousel";
 import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
 import { LandingMidCta } from "@/components/landing/landing-mid-cta";
@@ -21,7 +21,6 @@ import {
   isRecord,
   parseFaqItems,
   parsePillar,
-  parseRichBlocks,
 } from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import { isSupabaseStorageUrl, pickVariantUrl, type ShowcaseImageRow } from "@/lib/marketing-data";
@@ -96,10 +95,6 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
   const editorial = isRecord(deep.editorial) ? deep.editorial : null;
   const editorialH2 = editorial && typeof editorial.h2 === "string" ? editorial.h2 : "";
   const editorialLead = editorial && typeof editorial.lead === "string" ? editorial.lead : "";
-  const editorialBlocks = parseRichBlocks(editorial?.blocks);
-
-  const galleryCaptionTitle = typeof deep.galleryCaptionTitle === "string" ? deep.galleryCaptionTitle : "";
-  const galleryCaptionBody = typeof deep.galleryCaptionBody === "string" ? deep.galleryCaptionBody : "";
 
   const img0 = pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook;
   const img1 = pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot;
@@ -164,9 +159,6 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
           </div>
 
           <div className="w-full max-w-2xl space-y-6">
-            <p className="text-left text-[15px] leading-relaxed tracking-[-0.012em] text-zinc-200/95 sm:text-[1.05rem] [text-shadow:0_1px_16px_rgba(0,0,0,0.35)]">
-              {messages.hero.description}
-            </p>
             <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href={signupHref}
@@ -184,6 +176,19 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
           </div>
         </div>
       </section>
+
+      {editorialH2 && editorialLead ? (
+        <section className="border-t border-white/[0.06] bg-zinc-950 px-6 py-16 sm:px-10 md:py-20 lg:px-12">
+          <div className="mx-auto max-w-3xl text-left">
+            <h2 className="text-[clamp(1.65rem,3.5vw,2.25rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-white">
+              {editorialH2}
+            </h2>
+            <p className="mt-5 text-[17px] leading-relaxed tracking-[-0.01em] text-zinc-400 md:text-lg">
+              {editorialLead}
+            </p>
+          </div>
+        </section>
+      ) : null}
 
       <section
         id="studio-walkthrough"
@@ -205,6 +210,9 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
               nextLabel={messages.screenshots.next}
             />
           </div>
+          <p className="mx-auto mt-16 max-w-3xl text-left text-[17px] leading-relaxed tracking-[-0.01em] text-zinc-300 md:mt-20 md:text-lg">
+            {messages.hero.description}
+          </p>
         </div>
       </section>
 
@@ -228,52 +236,17 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
             <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.gallery.eyebrow}</p>
             <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{messages.gallery.title}</h2>
             <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.gallery.description}</p>
-            {(galleryCaptionTitle || galleryCaptionBody) && (
-              <div className="mt-8 max-w-2xl border-l-2 border-amber-500/60 pl-5">
-                {galleryCaptionTitle ? (
-                  <p className="text-lg font-semibold text-zinc-200">{galleryCaptionTitle}</p>
-                ) : null}
-                {galleryCaptionBody ? (
-                  <p className="mt-3 text-base leading-7 text-zinc-400">{galleryCaptionBody}</p>
-                ) : null}
-              </div>
-            )}
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryTiles.map((tile) => (
-              <article
-                key={`${tile.src}-${tile.title}`}
-                className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-900"
-              >
-                <Image
-                  src={tile.src}
-                  alt={tile.alt}
-                  width={900}
-                  height={1125}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="aspect-[4/5] w-full object-cover"
-                  unoptimized={isSupabaseStorageUrl(tile.src)}
-                  quality={isSupabaseStorageUrl(tile.src) ? undefined : 90}
-                />
-                <div className="p-5">
-                  <h3 className="text-base font-black tracking-tight text-white">{tile.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-300">{tile.body}</p>
-                </div>
-              </article>
-            ))}
+          <div className="mt-12">
+            <MarketingGalleryCarousel
+              tiles={galleryTiles}
+              prevLabel={messages.gallery.carouselPrev}
+              nextLabel={messages.gallery.carouselNext}
+            />
           </div>
         </div>
       </section>
-
-      {editorialH2 && editorialBlocks.length > 0 ? (
-        <LandingEditorial
-          id="why-identity"
-          h2={editorialH2}
-          lead={editorialLead}
-          blocks={editorialBlocks}
-        />
-      ) : null}
 
       {pillarBuild ? (
         <LandingPillar
