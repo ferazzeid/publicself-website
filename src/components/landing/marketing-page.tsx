@@ -9,7 +9,6 @@ import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
 import { LandingMidCta } from "@/components/landing/landing-mid-cta";
 import { LandingPillar } from "@/components/landing/landing-pillar";
-import { LandingToc } from "@/components/landing/landing-toc";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
 import {
@@ -23,7 +22,6 @@ import {
   parseFaqItems,
   parsePillar,
   parseRichBlocks,
-  parseTocItems,
 } from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import { isSupabaseStorageUrl, pickVariantUrl, type ShowcaseImageRow } from "@/lib/marketing-data";
@@ -99,10 +97,6 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
   const editorialH2 = editorial && typeof editorial.h2 === "string" ? editorial.h2 : "";
   const editorialLead = editorial && typeof editorial.lead === "string" ? editorial.lead : "";
   const editorialBlocks = parseRichBlocks(editorial?.blocks);
-
-  const tocAria = typeof deep.tocAria === "string" ? deep.tocAria : "On this page";
-  const tocTitle = typeof deep.tocTitle === "string" ? deep.tocTitle : "On this page";
-  const tocItems = parseTocItems(deep.tocItems);
 
   const galleryCaptionTitle = typeof deep.galleryCaptionTitle === "string" ? deep.galleryCaptionTitle : "";
   const galleryCaptionBody = typeof deep.galleryCaptionBody === "string" ? deep.galleryCaptionBody : "";
@@ -227,8 +221,6 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
           ))}
         </div>
       </section>
-
-      <LandingToc ariaLabel={tocAria} title={tocTitle} items={tocItems} />
 
       <section id="gallery" className="scroll-mt-20 border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
         <div className="mx-auto max-w-7xl">

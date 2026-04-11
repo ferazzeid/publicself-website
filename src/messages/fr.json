@@ -22,16 +22,16 @@
     ],
     "featureCards": [
       {
-        "title": "Presets sélectionnés",
-        "body": "Headshot, cadrage 3/4, tenues, décors et lumière sont déjà orientés vers le résultat voulu."
+        "title": "Créer une tenue",
+        "body": "À partir de tes références, compose un look qui reste crédible pour toi."
       },
       {
-        "title": "Tarification simple",
-        "body": "Les crédits alimentent les générations et les téléchargements, pour que tu ne paies que les résultats que tu gardes."
+        "title": "Créer un shooting dans une nouvelle tenue",
+        "body": "Lance un shooting avec poses, cadrage et décors au choix."
       },
       {
-        "title": "Éphémère par défaut",
-        "body": "Télécharge ce dont tu as besoin quand le résultat te plaît. Ne compte pas sur un stockage long terme."
+        "title": "Ajuster, télécharger ou upscaler",
+        "body": "Affine une image qui te plaît, puis exporte ou augmente la résolution de ce que tu veux garder."
       }
     ]
   },

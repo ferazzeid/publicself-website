@@ -22,16 +22,16 @@
     ],
     "featureCards": [
       {
-        "title": "Outfits & scenes",
-        "body": "Formal, casual, and in-between—explore wardrobe and setting changes that still feel anchored to your face and body references."
+        "title": "Create outfit",
+        "body": "Start from your references and shape a look that still feels like you."
       },
       {
-        "title": "Photoshoot control",
-        "body": "Pick poses and framing like a small studio session so results match what you had in mind—not a single default crop."
+        "title": "Create photoshoot in a new outfit",
+        "body": "Run a shoot with poses, framing, and scenes you choose."
       },
       {
-        "title": "Tune & swap",
-        "body": "Lock a pose you like, then adjust details or swap items so the image keeps getting closer without burning a full new concept each time."
+        "title": "Adjust, download, or upscale",
+        "body": "Fine-tune a shot you like, then export or upscale what you want to keep."
       }
     ]
   },
