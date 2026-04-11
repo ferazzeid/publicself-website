@@ -130,11 +130,12 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
           alt={messages.hero.imageAlt}
           fill
           sizes="100vw"
-          className="object-cover object-[center_24%] sm:object-[center_30%]"
+          quality={88}
+          className="object-contain object-center"
           priority
         />
         <div
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,transparent_32%,transparent_58%,rgba(0,0,0,0.55)_100%)]"
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.42)_0%,transparent_26%,transparent_62%,rgba(0,0,0,0.48)_100%)]"
           aria-hidden
         />
 
@@ -150,26 +151,29 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
           </div>
         </div>
 
-        <div className="relative z-10 flex min-h-[100dvh] flex-col px-6 pb-10 pt-[clamp(5.75rem,15vw,8.5rem)] sm:px-10 lg:px-12">
+        <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl flex-col justify-between px-6 pb-12 pt-[clamp(5.75rem,15vw,8.5rem)] sm:px-10 lg:px-12">
           <div className="flex flex-1 flex-col justify-center">
-            <div className="mx-auto w-full max-w-4xl text-center">
-              <p className="mb-6 inline-flex rounded-full border border-white/15 bg-black/25 px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-white/85 backdrop-blur-md sm:text-[11px]">
-                {messages.hero.badge}
-              </p>
-              <h1 className="text-[clamp(1.85rem,5.2vw,3.65rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-white [text-shadow:0_2px_48px_rgba(0,0,0,0.42)]">
+            <div className="w-full max-w-2xl text-left">
+              <div className="mb-6 flex items-center gap-4">
+                <span className="h-px w-10 shrink-0 bg-white/45 sm:w-12" aria-hidden />
+                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80 sm:text-[11px]">
+                  {messages.hero.badge}
+                </p>
+              </div>
+              <h1 className="text-[clamp(1.85rem,4.2vw,3.35rem)] font-semibold leading-[1.08] tracking-[-0.035em] text-white [text-shadow:0_2px_48px_rgba(0,0,0,0.42)]">
                 {messages.hero.title}
               </h1>
-              <p className="mx-auto mt-5 max-w-2xl text-[clamp(0.95rem,2.3vw,1.2rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/88 [text-shadow:0_1px_24px_rgba(0,0,0,0.38)]">
+              <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.125rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/88 [text-shadow:0_1px_24px_rgba(0,0,0,0.38)]">
                 {heroCaption}
               </p>
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-2xl space-y-7">
-            <p className="text-center text-[15px] leading-relaxed tracking-[-0.012em] text-zinc-200/95 sm:text-[1.05rem] [text-shadow:0_1px_16px_rgba(0,0,0,0.35)]">
+          <div className="w-full max-w-2xl space-y-6">
+            <p className="text-left text-[15px] leading-relaxed tracking-[-0.012em] text-zinc-200/95 sm:text-[1.05rem] [text-shadow:0_1px_16px_rgba(0,0,0,0.35)]">
               {messages.hero.description}
             </p>
-            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href={signupHref}
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-8 text-[11px] font-semibold uppercase tracking-[0.16em] !text-zinc-950 transition hover:bg-zinc-100"
@@ -182,14 +186,7 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
               >
                 {messages.hero.secondaryCta}
               </Link>
-              <a
-                href="#studio-walkthrough"
-                className="inline-flex min-h-12 items-center justify-center rounded-full px-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/82 transition hover:text-white"
-              >
-                {messages.hero.examplesCta}
-              </a>
             </div>
-            <p className="text-center text-[13px] leading-relaxed text-zinc-400">{messages.hero.trustNote}</p>
           </div>
         </div>
       </section>

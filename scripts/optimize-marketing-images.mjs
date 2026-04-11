@@ -32,8 +32,8 @@ const [heroInput, ...slideInputs] = inputs;
 async function writeHero(filePath) {
   await sharp(filePath)
     .rotate()
-    .resize({ width: 2560, height: 2560, fit: "inside", withoutEnlargement: true })
-    .jpeg({ quality: 82, mozjpeg: true, chromaSubsampling: "4:4:4" })
+    .resize({ width: 3200, height: 3200, fit: "inside", withoutEnlargement: true })
+    .jpeg({ quality: 88, mozjpeg: true, chromaSubsampling: "4:4:4" })
     .toFile(outHero);
   console.log("Wrote", path.relative(root, outHero));
 }

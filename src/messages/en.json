@@ -7,19 +7,17 @@
     "wordmark": "PUBLICSELF"
   },
   "hero": {
-    "badge": "Identity & outfit lab",
-    "title": "Experiment with how you look on camera—without a real shoot.",
+    "badge": "On-camera presence",
+    "title": "Experiment with how you look on camera, without a real shoot.",
     "description": "Start from your photos, explore outfits and scenes, direct poses like a mini studio, then refine with tune and item tweaks. When you land on a shot you like, export it in a quality that works for LinkedIn, your website, or your portfolio.",
     "primaryCta": "Try free generations in the studio",
     "secondaryCta": "Log in",
-    "examplesCta": "See examples",
-    "trustNote": "Browse here; sign in on the studio when you are ready to generate, save looks, and download what you keep.",
     "beforeLabel": "Your input",
     "afterLabel": "Your direction",
-    "imageAlt": "A composed portrait on a dark background — calm presence, tailored look, and creative styling",
+    "imageAlt": "A composed portrait on a dark background: calm presence, tailored look, and creative styling",
     "slogans": [
-      "Outfit, pose, and setting—guided so it still feels like you.",
-      "Same person, new outfit, new pose—guided instead of random.",
+      "Outfit, pose, and setting, guided so it still feels like you.",
+      "Same person, new outfit, new pose, guided instead of random.",
       "Tune the shot you like instead of starting from scratch every time."
     ],
     "featureCards": [
