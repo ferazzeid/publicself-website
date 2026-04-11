@@ -5,6 +5,7 @@ import { DocumentLang } from "@/components/document-lang";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
 import { MarketingScreenshotSlider } from "@/components/landing/marketing-screenshot-slider";
 import { MarketingGalleryCarousel } from "@/components/landing/marketing-gallery-carousel";
+import { LandingEditorial } from "@/components/landing/landing-editorial";
 import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
 import { LandingMidCta } from "@/components/landing/landing-mid-cta";
@@ -21,6 +22,7 @@ import {
   isRecord,
   parseFaqItems,
   parsePillar,
+  parseRichBlocks,
 } from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import { isSupabaseStorageUrl, pickVariantUrl, type ShowcaseImageRow } from "@/lib/marketing-data";
@@ -95,6 +97,7 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
   const editorial = isRecord(deep.editorial) ? deep.editorial : null;
   const editorialH2 = editorial && typeof editorial.h2 === "string" ? editorial.h2 : "";
   const editorialLead = editorial && typeof editorial.lead === "string" ? editorial.lead : "";
+  const editorialBlocks = parseRichBlocks(editorial?.blocks);
 
   const img0 = pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook;
   const img1 = pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot;
@@ -178,16 +181,12 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
       </section>
 
       {editorialH2 && editorialLead ? (
-        <section className="border-t border-white/[0.06] bg-zinc-950 px-6 py-16 sm:px-10 md:py-20 lg:px-12">
-          <div className="mx-auto max-w-3xl text-left">
-            <h2 className="text-[clamp(1.65rem,3.5vw,2.25rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-white">
-              {editorialH2}
-            </h2>
-            <p className="mt-5 text-[17px] leading-relaxed tracking-[-0.01em] text-zinc-400 md:text-lg">
-              {editorialLead}
-            </p>
-          </div>
-        </section>
+        <LandingEditorial
+          id="why-identity"
+          h2={editorialH2}
+          lead={editorialLead}
+          blocks={editorialBlocks}
+        />
       ) : null}
 
       <section

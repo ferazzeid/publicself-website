@@ -11,7 +11,7 @@ export function LandingEditorial({ id, h2, lead, blocks }: LandingEditorialProps
   return (
     <section
       id={id}
-      className="scroll-mt-20 border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12"
+      className="scroll-mt-20 border-t border-white/[0.06] border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12"
       aria-labelledby={`${id}-heading`}
     >
       <div className="mx-auto max-w-3xl">
