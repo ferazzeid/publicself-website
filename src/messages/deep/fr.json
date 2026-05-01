@@ -4,48 +4,26 @@
     "tocTitle": "Sur cette page",
     "tocItems": [
       { "anchor": "gallery", "label": "Galerie" },
-      { "anchor": "why-identity", "label": "Pourquoi expérimenter ?" },
+      { "anchor": "why-identity", "label": "À quoi ça sert" },
       { "anchor": "pillar-build-look", "label": "Créer ton look" },
       { "anchor": "pillar-photoshoot", "label": "Shooting IA" },
       { "anchor": "pillar-experiment", "label": "Expérimenter & Tune" },
       { "anchor": "faq", "label": "FAQ" },
-      { "anchor": "pricing", "label": "Crédits & tarifs" }
+      { "anchor": "pricing", "label": "Crédits" }
     ],
     "editorial": {
       "h2": "Une aire de jeu à faible enjeu pour qui tu pourrais être",
-      "lead": "Nous vivons un moment étrangement généreux : tu peux essayer des versions de toi-même sans réserver un studio, sans acheter une garde-robe, sans t’engager dans une nouvelle coupe. PublicSelf est un outil créatif pour cette curiosité—un espace de portraits IA et de shooting virtuel où les crédits achètent des tentatives, pas des garanties.",
+      "lead": "Essaie des versions de toi sans réserver un studio, acheter une garde-robe ou t'engager dans une nouvelle coupe. Les crédits achètent des tentatives, pas des garanties.",
       "blocks": [
         {
-          "h3": "L’identité comme loisir, pas comme performance",
-          "paragraphs": [
-            "Certaines personnes veulent un portrait net pour LinkedIn. D’autres veulent ressentir ce que ça ferait d’apparaître en ligne dans un costume plus tranché, un manteau plus fou, un sourire plus doux, ou une énergie différente—sans payer un nouveau shooting à chaque changement d’avis.",
-            "C’est le cœur émotionnel du produit : expérimenter avec peu d’effort et un coût relativement bas. Tu ne « triches » pas moralement ; tu esquisses des possibilités, comme un auteur esquisse des scènes."
-          ]
-        },
-        {
-          "h3": "Pourquoi maintenant, à l’ère de l’IA générative",
-          "paragraphs": [
-            "Les modèles d’image modernes savent souvent tenir un visage à travers des variations—quand les entrées sont claires et la chaîne honnête. L’itération devient réaliste : toujours toi, autre pose, décor, direction vestimentaire ou ambiance.",
-            "Le but n’est pas de remplacer les photographes partout. C’est d’offrir un studio privé à la demande : tester dix idées en soirée, télécharger ce qui plaît, poster si ça sonne juste."
-          ],
+          "h3": "À quoi sert PublicSelf",
+          "paragraphs": [],
           "bullets": [
-            "Explorer des versions de soi avant d’investir dans des vêtements ou des shootings",
-            "Générer des cadrages « profil » à côté de photos plus ludiques ou narratives",
-            "Traiter les crédits comme du papier à croquis—certaines pages seront des hits, d’autres non"
-          ]
-        },
-        {
-          "h3": "Pas un outil de mockup e-commerce",
-          "paragraphs": [
-            "PublicSelf vise les vraies personnes qui jouent avec leur image—pas les marchands qui ont besoin de packshots SKU parfaits. Si tu veux visualiser une version de toi pour les réseaux, les profils, des projets créatifs ou ton propre plaisir, tu es au bon endroit.",
-            "Nous sommes honnêtes sur les limites : l’IA dérive, les accessoires collent bizarrement, la lumière ment. D’où l’importance de l’itération, de Tune (quand dispo) et d’un état d’esprit détendu."
-          ]
-        },
-        {
-          "h3": "Un jouet mental pour adultes",
-          "paragraphs": [
-            "Imagine un jouet sophistiqué : tu tires des leviers, tu vois le résultat, tu ris ou tu fronces les sourcils, tu ajustes. Le plaisir est dans la boucle—pose, objet, décor, encore—jusqu’à ce que quelque chose clique : « OK, je pourrais poster ça. »",
-            "Quand ça marche, c’est parfois libérateur : répéter confiance, esthétique ou récit sans prendre d’abord des risques réels."
+            "Esquisser des versions alternatives de toi avant d'investir dans des vêtements ou un shooting.",
+            "Générer des cadrages prêts pour le profil à côté de clichés plus ludiques et narratifs.",
+            "Itérer rapidement : toujours toi, autre pose, décor ou direction de tenue.",
+            "Traiter les crédits comme du papier à croquis — certaines pages sont des hits, d'autres non.",
+            "Pensé pour les portraits personnels, pas pour la photo produit SKU-parfaite."
           ]
         }
       ]
@@ -53,145 +31,104 @@
     "pillars": {
       "buildLook": {
         "h2": "Construis ton look à partir de photos source",
-        "lead": "Ton look commence par un petit jeu d’images source—souvent un plan corps entier plus une référence visage nette. PublicSelf en déduit une identité visuelle réutilisable pour le shooting IA.",
+        "lead": "Pars d'un petit jeu d'images source — souvent un plan corps entier plus une référence visage nette. PublicSelf en déduit une identité visuelle réutilisable.",
         "imageAlt": "Construire un look personnel à partir de photos source pour une séance portrait IA",
         "blocks": [
           {
-            "h3": "Ce que font vraiment les photos source",
-            "paragraphs": [
-              "Les photos source ne sont pas décoratives. Elles ancrent teint, structure du visage, ligne des cheveux et proportions pour que les générations suivantes aient une cible cohérente. Mieux éclairées et plus claires, elles réduisent les surprises.",
-              "Pas besoin d’appareil pro. Il faut de l’intention : lumière correcte, visage dégagé, pas de filtres extrêmes qui effacent ce que tu veux préserver."
+            "h3": "Ce que les photos source ancrent",
+            "paragraphs": [],
+            "bullets": [
+              "Teint, structure du visage, ligne des cheveux et proportions du corps.",
+              "Une cible cohérente pour que les générations suivantes restent reconnaissables.",
+              "Mieux éclairées et plus claires, elles réduisent les surprises."
             ]
           },
           {
-            "h3": "Décontracté, formel ou plus théâtral",
-            "paragraphs": [
-              "Une fois la base comprise, tu orientes vers le quotidien, le formel poli ou des directions plus stylisées—selon les contrôles et presets exposés dans ton workspace.",
-              "Beaucoup visent une énergie plus propre pour les profils. D’autres veulent du drame parce que c’est la fantaisie. Les deux sont valides ; l’outil est neutre."
+            "h3": "Conseils pour de bonnes sources",
+            "paragraphs": [],
+            "bullets": [
+              "Place-toi dans une lumière correcte et homogène — pas de filtres extrêmes.",
+              "Visage dégagé : pas de chapeaux, masques ou maquillage trop fort.",
+              "Un téléphone suffit ; l'intention compte plus que le matériel."
             ]
           },
           {
-            "h3": "Enregistrer un look réutilisable",
-            "paragraphs": [
-              "Quand un look te convient, enregistre-le. Ce snapshot devient la base des sessions suivantes au lieu de tout ré-uploader.",
-              "La réutilisabilité accélère le shooting : tu régis pour un look existant, pas une identité reconstruite à chaque crédit."
-            ]
-          },
-          {
-            "h3": "Ce que « préserver l’identité » promet ou non",
-            "paragraphs": [
-              "Le système essaie de te garder reconnaissable, mais aucun modèle n’est parfait. Lunettes, chapeaux, maquillage fort ou fichiers basse résolution peuvent perturber la chaîne.",
-              "Si ça dérive : ajuster les sources, simplifier les accessoires ou régénérer. C’est normal."
-            ]
-          },
-          {
-            "h3": "Pourquoi commencer ici",
-            "paragraphs": [
-              "Sauter l’étape look peut marcher pour l’abstrait ; PublicSelf vise la plausibilité photo. Un look ancré rend les poses suivantes plus crédibles.",
-              "En bref : la patience dans le builder se paie au shooting."
+            "h3": "Enregistrer et réutiliser",
+            "paragraphs": [],
+            "bullets": [
+              "Enregistre un look quand une direction te convient.",
+              "Réutilise-le entre sessions au lieu de tout ré-uploader.",
+              "Un look réutilisable accélère les shoots — tu diriges, tu ne reconstruis pas."
             ]
           }
         ]
       },
       "photoshoot": {
         "h2": "Ton shooting IA : de la direction, pas des dés",
-        "lead": "Au shooting tu joues le directeur créatif : pose, expression, arrière-plan, objets optionnels depuis la bibliothèque de l’app. Le résultat est une nouvelle image de toi—pas un inconnu stock générique.",
+        "lead": "Joue le directeur créatif. Choisis pose, expression, arrière-plan et objets optionnels depuis la bibliothèque de l'app. Le résultat est une nouvelle image de toi.",
         "imageAlt": "Diriger un shooting IA avec pose, expression, décor et objets optionnels",
         "blocks": [
           {
-            "h3": "Pose et expression comme récit",
-            "paragraphs": [
-              "De petits changements d’épaules, de menton ou de regard lisent comme d’autres histoires : coéquipier accessible, penseur silencieux, énergie nocturne, cool éditorial.",
-              "Tu peux viser un portrait classique, un cadrage trois-quarts ou quelque chose de plus ludique. L’enjeu est le contrôle : orienter l’espace des possibles pour que les crédit suivent ton intention."
+            "h3": "Ce que tu contrôles",
+            "paragraphs": [],
+            "bullets": [
+              "Pose et cadrage — portrait, trois-quarts ou éditorial ludique.",
+              "Expression et regard — accessible, concentré ou énergie spontanée.",
+              "Décor et scène — studio, rue, intérieur ou cinéma.",
+              "Objets optionnels de la bibliothèque : sacs, montres, indices d'extérieur."
             ]
           },
           {
-            "h3": "Les décors posent le contexte",
-            "paragraphs": [
-              "Change d’environnement pour voir comment le même outfit et visage se lisent en studio, rue, intérieur doux ou scène plus ciné—dans les options que ton build expose.",
-              "Le décor n’est pas du papier peint : il modifie lumière, profondeur et souvent la plausibilité de la pose."
+            "h3": "À quoi servent les clichés",
+            "paragraphs": [],
+            "bullets": [
+              "Cadres sobres et bien éclairés pour LinkedIn et CV.",
+              "Clichés plus forts et expressifs pour Instagram ou portfolio.",
+              "Expériences calmes et privées que tu ne posteras peut-être jamais."
             ]
           },
           {
-            "h3": "Objets depuis la bibliothèque—pas n’importe quelle URL web",
-            "paragraphs": [
-              "Tu peux enrichir un plan avec des objets proposés dans l’UI : sacs, montres, indices de manteau et autres add-ons livrés comme références structurées.",
-              "Pas de promesse d’injecter n’importe quelle image web comme accessoire garanti. Le chemin fiable est la bibliothèque d’objets plus ta combinaison pose/scène."
-            ]
-          },
-          {
-            "h3": "LinkedIn, Instagram ou dossier privé",
-            "paragraphs": [
-              "Certains veulent un cadre sobre et lumineux « recrutable ». D’autres veulent du plus fort pour les réseaux ou le book. PublicSelf peut servir les deux si tu pilotes honnêtement.",
-              "Télécharge ce qui compte pour toi. Nous ne promettons pas d’hébergement longue durée."
-            ]
-          },
-          {
-            "h3": "Assez peu cher pour pivoter à la dernière minute",
-            "paragraphs": [
-              "Les shootings classiques rendent les virages tardifs chers. Ici, « veste cuir plutôt que tee-shirt » veut surtout dire un cycle de génération de plus—pas une nouvelle journée de facturation.",
-              "C’est la magie pratique : tester un changement de vibe avant d’investir."
-            ]
-          },
-          {
-            "h3": "Quand ça rate : itérer",
-            "paragraphs": [
-              "Mains, bijoux, fines bretelles : points sensibles pour tout générateur. Si c’est presque bon : ajuster pose, encombrement ou décor plutôt que spammer les mêmes réglages.",
-              "PublicSelf récompense la curiosité et les petits ajustements plus que la force brute."
+            "h3": "Quand un cliché est presque bon",
+            "paragraphs": [],
+            "bullets": [
+              "Ajuste la pose ou simplifie le décor avant de re-générer.",
+              "Réduis l'encombrement — mains, bijoux et fines bretelles posent problème.",
+              "De petits ajustements battent la force brute sur des réglages identiques."
             ]
           }
         ]
       },
       "experiment": {
-        "h2": "Expérimenter, itérer, et Tune quand c’est activé",
-        "lead": "Chaque crédit ne sera pas une victoire—c’est assumé. Le produit brille quand tu traites les générations comme des brouillons : regarder, rire, ajuster, parfois Tune pour rapprocher un cadre presque bon.",
+        "h2": "Expérimenter, itérer, et Tune quand c'est activé",
+        "lead": "Traite les générations comme des brouillons : regarde, ris, ajuste. Avec Tune (s'il est activé pour ton workspace), rapproche un cadre presque bon de l'idéal.",
         "imageAlt": "Itérer sur des portraits IA et éditions Tune optionnelles avec références vestimentaires",
         "blocks": [
           {
-            "h3": "Les crédits sont des essais, pas des contrats",
-            "paragraphs": [
-              "Pense par lots : quelques variations modestes battent souvent un « méga prompt » visant la perfection. Les petits mouvements révèlent des heureux hasards.",
-              "Si tu exiges la perfection au premier jet, aucun outil photo IA ne sera confortable. Si tu aimes explorer, celui-ci s’ouvre."
-            ]
-          },
-          {
-            "h3": "Tune : références vêtements et retouches ciblées",
-            "paragraphs": [
-              "Quand Tune est activé pour ton workspace, tu peux retoucher un résultat existant—souvent avec une photo de référence d’un vêtement (haut, manteau, bas, chaussures, accessoire) plus des instructions texte optionnelles.",
-              "Workflow typique : un cadre de shooting que tu aimes surtout, puis ajuster une couche vestimentaire sans tout reconstruire—dans les limites du modèle."
-            ],
+            "h3": "Comment penser tes crédits",
+            "paragraphs": [],
             "bullets": [
-              "Tune peut être désactivé par configuration ; pas garanti sur chaque compte",
-              "Tune n’est pas disponible avec l’identité entraînée / mode LoRA dans l’app—revenir au flux standard pour Tune",
-              "Les références doivent être nettes ; une lumière brouillonne réduit les succès"
+              "Les crédits sont des essais, pas des contrats — les lots battent un méga-prompt.",
+              "De petits mouvements révèlent des heureux hasards que tu n'avais pas prévus.",
+              "Si tu exiges la perfection au premier jet, aucun outil IA ne sera confortable."
             ]
           },
           {
-            "h3": "Pourquoi ça ressemble à un jouet pour adultes",
-            "paragraphs": [
-              "Il y a du plaisir dans une réinvention sans danger : toi dans un manteau que tu n’achèterais jamais, une pose que tu n’essaies pas devant le miroir, ou une version de ton visage d’un autre chapitre.",
-              "Les enjeux sont numériques. Supprimer, régénérer, arrêter. C’est le propos."
+            "h3": "Ce que fait Tune",
+            "paragraphs": [],
+            "bullets": [
+              "Retouches ciblées sur un résultat existant — souvent avec une photo de vêtement.",
+              "Échange ou affine une couche vestimentaire sans tout reconstruire.",
+              "Peut être désactivé par configuration ; pas garanti sur chaque compte.",
+              "Pas disponible avec l'identité entraînée / mode LoRA."
             ]
           },
           {
-            "h3": "Poster sur les réseaux comme répétition à faible risque",
-            "paragraphs": [
-              "Certaines personnes téléchargent, postent, voient ce que ça fait d’être vu ainsi. D’autres restent privées. Les deux sont ok.",
-              "Si tu partages : respecter les règles des plateformes—y compris la transparence sur le contenu synthétique ou assisté par IA quand c’est requis."
-            ]
-          },
-          {
-            "h3": "Rester honnête sur les limites",
-            "paragraphs": [
-              "Pas de promesse de précision médicale, de sécurité biométrique ou de photoréalisme parfait. Les accessoires peuvent se chevaucher ; le texte sur les vêtements peut être absurde.",
-              "C’est transversal à l’industrie. Nous offrons un flux structuré—look, shoot, Tune optionnel—qui itère plus vite que repartir de zéro dans un jouet image générique."
-            ]
-          },
-          {
-            "h3": "Quand tu veux plus de structure",
-            "paragraphs": [
-              "Quand tu as un keeper, télécharge, archive, continue ta journée. PublicSelf marche mieux comme escale créative, pas comme machine à sous obligatoire.",
-              "Si ça n'amuse plus : pause. L’outil sera là pour la prochaine série d’esquisses."
+            "h3": "Limites assumées",
+            "paragraphs": [],
+            "bullets": [
+              "L'IA peut dériver ; les accessoires se collent mal ; le texte sur les vêtements peut être absurde.",
+              "L'hébergement est éphémère — télécharge tout ce que tu veux garder.",
+              "Si tu partages des images IA, indique-le là où ta plateforme l'attend."
             ]
           }
         ]
@@ -199,43 +136,55 @@
     },
     "faq": {
       "h2": "Questions fréquentes",
-      "intro": "Des réponses directes sur le comportement réel de PublicSelf—pour savoir à quoi t’attendre avant de dépenser du temps ou des crédits.",
+      "intro": "Des réponses directes sur le comportement réel de PublicSelf — pour savoir à quoi t'attendre avant de dépenser du temps ou des crédits.",
       "items": [
         {
-          "q": "C’est quoi PublicSelf en une phrase ?",
-          "a": "PublicSelf est une app web qui construit un look à partir de tes photos source, puis lance un shooting photo IA virtuel où tu contrôles pose, expression, arrière-plan et objets optionnels—plus des retouches Tune ciblées quand ce mode est activé pour ton workspace."
+          "q": "C'est quoi PublicSelf en une phrase ?",
+          "a": "PublicSelf est une app web qui construit un look à partir de tes photos source, puis lance un shooting photo IA virtuel où tu contrôles pose, expression, arrière-plan et objets optionnels — plus des retouches Tune ciblées quand ce mode est activé pour ton workspace."
         },
         {
           "q": "Faut-il des photos pro pour commencer ?",
-          "a": "Non. Des photos téléphone claires avec une bonne lumière suffisent. Visage visible, angles raisonnables, pas de filtres extrêmes qui effacent les traits à préserver."
+          "a": "Non. Des photos téléphone claires avec une bonne lumière suffisent. Tu auras une meilleure cohérence si ton visage est visible, les angles raisonnables, et sans filtres beauté qui effacent les traits à préserver."
         },
         {
-          "q": "Puis-je prendre n’importe quelle image produit sur internet comme accessoire ?",
-          "a": "N’attends pas un pipeline « colle n’importe quelle URL ». Les résultats fiables viennent de la bibliothèque d’objets in-app et, quand Tune est dispo, des références uploadées via le flux supporté—pas d’extraction web arbitraire."
+          "q": "Quelle qualité de préservation d'identité ?",
+          "a": "Le système essaie de te garder reconnaissable, mais aucun modèle n'est parfait. Lunettes, chapeaux, maquillage fort ou fichiers basse résolution peuvent perturber la chaîne. Si ça dérive : ajuste les sources, simplifie les accessoires ou régénère — c'est normal."
         },
         {
-          "q": "Qu’est-ce que le mode Tune ?",
-          "a": "Tune est une passe d’édition sur un résultat existant. Quand il est actif, il peut combiner du texte avec une photo de référence d’un vêtement (par ex. veste ou chaussures) pour ajuster les vêtements sans tout reconstruire. La disponibilité dépend de la config ; il n’est pas compatible avec l’identité entraînée / LoRA dans l’app."
+          "q": "Puis-je prendre n'importe quelle image produit du web comme accessoire ?",
+          "a": "Non — n'attends pas un pipeline « colle n'importe quelle URL ». Les résultats fiables viennent de la bibliothèque d'objets in-app et, quand Tune est dispo, des références uploadées via le flux supporté, pas d'extraction web arbitraire."
+        },
+        {
+          "q": "Qu'est-ce que le mode Tune ?",
+          "a": "Tune est une passe d'édition sur un résultat existant. Quand il est actif, il peut combiner du texte avec une photo de référence d'un vêtement (par ex. veste ou chaussures) pour ajuster les vêtements sans tout reconstruire. La disponibilité dépend de la config ; il n'est pas compatible avec l'identité entraînée / LoRA dans l'app."
         },
         {
           "q": "Chaque crédit sera-t-il parfait ?",
-          "a": "Non. Les portraits IA ratent parfois mains, accessoires ou détails de tissu. Itère. De petits changements de réglages battent souvent la régénération identique en boucle."
+          "a": "Non. Les portraits IA ratent parfois mains, accessoires ou détails de tissu. Itère. De petits changements de réglages — autre pose, décor plus simple, moins d'encombrement — battent la régénération identique en boucle."
         },
         {
-          "q": "C’est fait pour la photo e-commerce produit ?",
-          "a": "Non. PublicSelf cible l’exploration d’identité personnelle et des rendus type portrait. Les packshots SKU précis demandent d’autres outils."
+          "q": "Pourquoi un étape « Construire ton look » séparée ?",
+          "a": "Sauter l'étape look peut marcher pour l'abstrait, mais PublicSelf vise la plausibilité photo. Un look ancré rend les poses suivantes plus crédibles : mains, épaules et tissu se comportent mieux quand l'identité de base est stable. La patience dans le builder se paie au shooting."
+        },
+        {
+          "q": "C'est fait pour la photo produit e-commerce ?",
+          "a": "Non. PublicSelf cible l'exploration d'identité personnelle et des rendus type portrait. Les packshots SKU précis demandent d'autres outils."
         },
         {
           "q": "Puis-je utiliser les images sur LinkedIn ou Instagram ?",
-          "a": "Beaucoup le font ; tu restes responsable des règles de chaque plateforme—notamment la transparence sur le média synthétique ou assisté par IA quand c’est requis."
+          "a": "Beaucoup le font ; tu restes responsable des règles de chaque plateforme — notamment la transparence sur le média synthétique ou assisté par IA quand c'est requis."
         },
         {
           "q": "Conservez-vous mes fichiers indéfiniment ?",
-          "a": "Ne compte pas sur nous pour l’archivage long terme. Télécharge ce qui compte ; l’hébergement est pensé comme éphémère par défaut."
+          "a": "Ne compte pas sur nous pour l'archivage long terme. Télécharge ce qui compte ; l'hébergement est pensé comme éphémère par défaut."
         },
         {
           "q": "Comment fonctionnent les crédits ?",
-          "a": "Les crédits paient des tentatives de génération. Les packs sont sur la landing ; des promos d’inscription peuvent ajouter des crédits de départ. Les chiffres exacts dépendent de la configuration en ligne."
+          "a": "Les crédits paient des tentatives de génération. Les packs sont sur la landing ; des promos d'inscription peuvent ajouter des crédits de départ. Les chiffres exacts dépendent de la configuration en ligne."
+        },
+        {
+          "q": "PublicSelf veut-il remplacer les photographes ?",
+          "a": "Non. Le but est un studio privé à la demande pour l'expérimentation individuelle : tester dix idées en soirée, télécharger ce qui plaît, passer à autre chose. Les vrais photographes restent essentiels pour les moments qui le méritent."
         }
       ]
     }

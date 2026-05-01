@@ -10,8 +10,9 @@
     "badge": "On-camera presence",
     "title": "Experiment with how you look on camera, without a real shoot.",
     "description": "Start from your photos, explore outfits and scenes, direct poses like a mini studio, then refine with tune and item tweaks. When you land on a shot you like, export it in a quality that works for LinkedIn, your website, or your portfolio.",
-    "primaryCta": "Try free generations in the studio",
+    "primaryCta": "Start in the studio",
     "secondaryCta": "Log in",
+    "ctaHint": "Free generations to try it out",
     "beforeLabel": "Your input",
     "afterLabel": "Your direction",
     "imageAlt": "A composed portrait on a dark background: calm presence, tailored look, and creative styling",
@@ -119,14 +120,7 @@
     ]
   },
   "footer": {
-    "eyebrow": "Ready when you are",
-    "title": "Start on the studio when you want real generations.",
-    "body": "Use this page to see what PublicSelf is for. Open the studio to build looks, run shoots, tune results, and buy credits when you are ready.",
-    "primaryCta": "Open the studio",
-    "secondaryCta": "Log in",
-    "legalPrefix": "By continuing you agree to our",
     "terms": "Terms",
-    "and": "and",
-    "privacy": "Privacy Policy"
+    "privacy": "Privacy"
   }
 }
