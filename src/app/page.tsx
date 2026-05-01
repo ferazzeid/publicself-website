@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 
 import { MarketingPage } from "@/components/landing/marketing-page";
 import { buildLandingMetadata } from "@/lib/content";
-import { loadMarketingGalleryData, ogPreviewFromFrontPage } from "@/lib/marketing-data";
+import {
+  loadLandingAssets,
+  loadMarketingGalleryData,
+  ogPreviewFromFrontPage,
+} from "@/lib/marketing-data";
 
 export const revalidate = 60;
 
@@ -13,6 +17,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const data = await loadMarketingGalleryData();
-  return <MarketingPage locale="en" showcaseRows={data.showcase} />;
+  const [data, landingAssets] = await Promise.all([
+    loadMarketingGalleryData(),
+    loadLandingAssets(),
+  ]);
+  return (
+    <MarketingPage
+      locale="en"
+      showcaseRows={data.showcase}
+      landingAssets={landingAssets}
+    />
+  );
 }

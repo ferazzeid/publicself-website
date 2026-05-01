@@ -23,15 +23,21 @@ import {
   parseRichBlocks,
 } from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
-import { isSupabaseStorageUrl, pickVariantUrl, type ShowcaseImageRow } from "@/lib/marketing-data";
+import {
+  isSupabaseStorageUrl,
+  pickVariantUrl,
+  type LandingAssetsMap,
+  type ShowcaseImageRow,
+} from "@/lib/marketing-data";
 import { getLocalizedProductUrl, MARKETING_SITE_URL, type Locale } from "@/lib/site";
 
 type MarketingPageProps = {
   locale: Locale;
   showcaseRows: ShowcaseImageRow[];
+  landingAssets?: LandingAssetsMap;
 };
 
-export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
+export function MarketingPage({ locale, showcaseRows, landingAssets }: MarketingPageProps) {
   const messages = getMessages(locale);
   const deep = messages.deep;
 
@@ -43,10 +49,13 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
 
   const heroCaption = messages.hero.slogans[0];
 
+  const heroSrc = landingAssets?.hero || marketingHeroScreenshot;
+  const walkthroughSrc = landingAssets?.walkthrough_slide_1 || marketingProductSlides[0]?.src;
+
   const screenshotSlides = marketingProductSlides.map((item, i) => {
     const caption = messages.screenshots.slides[i]?.caption ?? "";
     return {
-      src: item.src,
+      src: i === 0 && walkthroughSrc ? walkthroughSrc : item.src,
       alt: caption ? `${messages.screenshots.title} — ${caption}` : messages.hero.imageAlt,
       caption: caption || messages.screenshots.title,
     };
@@ -93,9 +102,9 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
     ed && typeof ed === "object" && ed !== null && "blocks" in ed ? (ed as { blocks: unknown }).blocks : undefined,
   );
 
-  const img0 = howItWorksImages.buildLook;
-  const img1 = howItWorksImages.aiPhotoshoot;
-  const img2 = howItWorksImages.experiment;
+  const img0 = landingAssets?.pillar_build_look || howItWorksImages.buildLook;
+  const img1 = landingAssets?.pillar_photoshoot || howItWorksImages.aiPhotoshoot;
+  const img2 = landingAssets?.pillar_experiment || howItWorksImages.experiment;
 
   const jsonLd = buildLandingJsonLd({
     baseUrl: MARKETING_SITE_URL,
@@ -161,13 +170,14 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
             <div className="lg:col-span-5">
               <div className="relative ml-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-2xl bg-zinc-900 ring-1 ring-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
                 <Image
-                  src={marketingHeroScreenshot}
+                  src={heroSrc}
                   alt={messages.hero.imageAlt}
                   fill
                   sizes="(min-width: 1024px) 420px, (min-width: 640px) 60vw, 80vw"
                   quality={90}
                   className="object-cover object-center"
                   priority
+                  unoptimized={isSupabaseStorageUrl(heroSrc)}
                 />
               </div>
             </div>

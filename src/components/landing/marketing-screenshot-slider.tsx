@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
+import { isSupabaseStorageUrl } from "@/lib/marketing-data";
+
 export type MarketingSliderSlide = {
   src: string;
   alt: string;
@@ -50,6 +52,7 @@ export function MarketingScreenshotSlider({ slides, prevLabel, nextLabel }: Mark
           sizes="(max-width: 1024px) 100vw, 896px"
           className="object-contain object-center"
           priority={index === 0}
+          unoptimized={isSupabaseStorageUrl(slide.src)}
         />
       </div>
 

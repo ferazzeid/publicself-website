@@ -68,3 +68,43 @@ export const loadMarketingGalleryData = cache(async (): Promise<{
     showcase: (shRes.data ?? []) as ShowcaseImageRow[],
   };
 });
+
+export type LandingAssetSlot =
+  | "hero"
+  | "pillar_build_look"
+  | "pillar_photoshoot"
+  | "pillar_experiment"
+  | "walkthrough_slide_1";
+
+export type LandingAssetsMap = Partial<Record<LandingAssetSlot, string>>;
+
+/**
+ * Fetch admin-managed landing-page image URLs from public.landing_assets.
+ * Returns an empty map if Supabase isn't configured or the table is missing —
+ * callers should fall back to bundled static defaults in landing-assets.ts.
+ */
+export const loadLandingAssets = cache(async (): Promise<LandingAssetsMap> => {
+  const supabase = createPublicSupabaseClient();
+  if (!supabase) return {};
+
+  const { data, error } = await supabase
+    .from("landing_assets")
+    .select("slot, url");
+
+  if (error || !data) return {};
+
+  const out: LandingAssetsMap = {};
+  for (const row of data as { slot: string; url: string | null }[]) {
+    if (!row.url) continue;
+    if (
+      row.slot === "hero" ||
+      row.slot === "pillar_build_look" ||
+      row.slot === "pillar_photoshoot" ||
+      row.slot === "pillar_experiment" ||
+      row.slot === "walkthrough_slide_1"
+    ) {
+      out[row.slot] = row.url;
+    }
+  }
+  return out;
+});
