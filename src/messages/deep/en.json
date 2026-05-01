@@ -7,128 +7,133 @@
       { "anchor": "why-identity", "label": "What it is" },
       { "anchor": "pillar-build-look", "label": "Build your look" },
       { "anchor": "pillar-photoshoot", "label": "AI photoshoot" },
-      { "anchor": "pillar-experiment", "label": "Experiment & Tune" },
+      { "anchor": "pillar-experiment", "label": "Tune & iterate" },
       { "anchor": "faq", "label": "FAQ" },
       { "anchor": "pricing", "label": "Credits" }
     ],
     "editorial": {
-      "h2": "A low-stakes playground for who you could be",
-      "lead": "Try on versions of yourself without booking a studio, buying a wardrobe, or committing to a new haircut. Credits buy attempts, not guarantees.",
+      "h2": "Play with how you look on camera — no shoot required",
+      "lead": "Two photos, an outfit choice, a pose, a background. Generate. See what comes back. Some results surprise you. Some you'll keep. 5 free credits to find out.",
       "blocks": [
         {
-          "h3": "What PublicSelf is for",
+          "h3": "This is for",
           "paragraphs": [],
           "bullets": [
-            "Sketch alternate selves before spending money on clothes or shoots.",
-            "Generate profile-ready frames alongside playful, story-driven shots.",
-            "Iterate quickly: same you, different pose, background, or outfit direction.",
-            "Treat credits as sketch paper—some pages are keepers, some are not.",
-            "Built for personal portraits, not for SKU-perfect product photography."
+            "Seeing yourself in an outfit before you buy it.",
+            "Trying different poses and energies for your social profiles.",
+            "Having fun with AI portraits without needing to code or write prompts.",
+            "Experimenting with creative looks you'd never try at a real shoot.",
+            "Not for e-commerce product shots or guaranteed professional headshots."
           ]
         }
       ]
     },
     "pillars": {
       "buildLook": {
-        "h2": "Build your look from seed photos",
-        "lead": "Start with a small set of seed images—usually a full-body frame plus a clear face reference. PublicSelf turns them into a reusable visual identity.",
-        "imageAlt": "Building a personal look from seed photos for an AI portrait session",
+        "h2": "Build your look from two photos",
+        "lead": "You need one full-body photo and one face close-up. That's the starting point. The app uses them as a reference to keep your likeness consistent across generations.",
+        "imageAlt": "Building a personal look from reference photos for an AI portrait session",
         "blocks": [
           {
-            "h3": "What seed photos anchor",
+            "h3": "What you upload",
             "paragraphs": [],
             "bullets": [
-              "Skin tone, facial structure, hairline, and body proportions.",
-              "A consistent target so later generations stay recognizable.",
-              "Better lighting and clearer angles mean fewer surprises."
+              "Photo 1: full body, head-to-toe, good lighting.",
+              "Photo 2: face close-up, eyes visible, no heavy filters.",
+              "Optional: a third photo from a different angle — may help in some cases.",
+              "Can't get a clean face shot? The studio can crop one from photo 1."
             ]
           },
           {
-            "h3": "Tips for good seeds",
+            "h3": "Then pick an outfit direction",
             "paragraphs": [],
             "bullets": [
-              "Stand in reasonable, even light—no extreme filters.",
-              "Show your face unobstructed; avoid hats, masks, heavy makeup.",
-              "A phone camera is fine; intention matters more than gear."
+              "Formal: suit, tuxedo, jacket — full detail control.",
+              "Casual: top, outerwear, bottom — with headwear and accessory options.",
+              "Each choice shapes the prompt the AI works from."
             ]
           },
           {
-            "h3": "Save and reuse",
+            "h3": "About identity preservation",
             "paragraphs": [],
             "bullets": [
-              "Save a look when one direction feels right.",
-              "Reuse it across sessions instead of re-uploading every time.",
-              "Reusable looks make later shoots fast: you direct, not rebuild."
+              "The system tries to keep you recognizable — it does not lock your face deterministically.",
+              "Better photos = more consistent results. Low light, blurry, or heavy-filtered photos degrade results.",
+              "Drift happens. When it does, regenerate or try different settings — that's normal."
             ]
           }
         ]
       },
       "photoshoot": {
-        "h2": "Your AI photoshoot: direction, not dice rolls",
-        "lead": "Behave like a creative director. Choose pose, expression, background, and optional items from the in-app library. The output is a fresh frame of you.",
+        "h2": "Run a shoot: you direct, AI generates",
+        "lead": "Pick a pose from the library, choose a background, and optionally add items you've uploaded. Each combination is a generation — a few credits, a few seconds.",
         "imageAlt": "Directing an AI photoshoot with pose, expression, background, and optional items",
         "blocks": [
           {
-            "h3": "What you control",
+            "h3": "What you choose",
             "paragraphs": [],
             "bullets": [
-              "Pose and framing—headshot, three-quarter, or playful editorial.",
-              "Expression and gaze—approachable, focused, or candid energy.",
-              "Background and scene—studio, street, interior, or cinematic.",
-              "Optional items from the curated library: bags, watches, outerwear cues."
+              "Pose: 100+ options — studio, editorial, seated, dynamic, social, and more.",
+              "Background: studio seamless, architectural wall, luxury office, city night, and more.",
+              "Expression and camera angle are set per pose, or you can override them.",
+              "Items: upload your own (jacket, shoes, accessory, etc.) to layer into the shot."
             ]
           },
           {
-            "h3": "Where the shots fit",
+            "h3": "What to expect",
             "paragraphs": [],
             "bullets": [
-              "Restrained, well-lit frames for LinkedIn and CV.",
-              "Louder, more expressive shots for Instagram or portfolios.",
-              "Quiet, private experiments you may never post."
+              "Most shots take seconds. Results vary — that's built into the experience.",
+              "Hands, thin straps, and jewelry are harder for any AI to render cleanly.",
+              "Simpler combinations tend to give more consistent results.",
+              "Download what works. Skip what doesn't."
             ]
           },
           {
-            "h3": "When a shot is close but not quite",
+            "h3": "What you can use results for",
             "paragraphs": [],
             "bullets": [
-              "Tweak pose or simplify the background before re-rolling.",
-              "Reduce clutter—hands, jewelry, and thin straps trip up every generator.",
-              "Small adjustments beat brute-forcing identical settings."
+              "Social media profile pictures — some people use them for Instagram or LinkedIn.",
+              "Creative experimentation — seeing yourself in a style you'd never try in real life.",
+              "Fun — that's genuinely part of the point.",
+              "No guarantees on photorealism or identity accuracy — results vary."
             ]
           }
         ]
       },
       "experiment": {
-        "h2": "Experiment, iterate, and Tune when it's on",
-        "lead": "Treat generations as drafts: review, laugh, adjust. Use Tune (when enabled for your workspace) to nudge a nearly-right frame closer.",
-        "imageAlt": "Iterating on AI portrait results and optional Tune edits with garment references",
+        "h2": "Tune, iterate, and download what you keep",
+        "lead": "Not every generation will land. When one is close but not quite right, Tune lets you swap or refine a layer without rebuilding the whole shot.",
+        "imageAlt": "Iterating on AI portrait results and Tune edits with garment references",
         "blocks": [
           {
-            "h3": "How to think about credits",
+            "h3": "How Tune works",
             "paragraphs": [],
             "bullets": [
-              "Credits are tries, not contracts—batches beat one mega-prompt.",
-              "Small moves surface happy accidents you didn't plan for.",
-              "If you need every frame perfect on the first try, no AI tool will feel comfortable."
+              "Select an existing result and open Tune.",
+              "Add a text instruction, optionally upload a garment photo (jacket, shoes, top, etc.).",
+              "Tune edits the clothing layer while keeping the rest of the shot intact — within model limits.",
+              "Tune is enabled by default but can be turned off by configuration."
             ]
           },
           {
-            "h3": "What Tune mode does",
+            "h3": "How credits work",
             "paragraphs": [],
             "bullets": [
-              "Targeted edits on an existing result—often using a reference garment photo.",
-              "Swap or refine a clothing layer without rebuilding the whole scene.",
-              "May be disabled by configuration; not guaranteed on every account.",
-              "Not available alongside trained / LoRA identity modes."
+              "Each generation costs credits. Tune costs credits too.",
+              "You get 5 free credits at signup — no payment needed.",
+              "Think in batches: a few modest variations usually beat one perfect prompt attempt.",
+              "Small changes (different pose, simpler background) often fix a near-miss."
             ]
           },
           {
             "h3": "Honest limits",
             "paragraphs": [],
             "bullets": [
-              "AI can drift; accessories may glue oddly; text on clothing can gibberish.",
-              "Hosting is ephemeral—download anything you want to keep.",
-              "If you share AI-generated images, label them where your platform expects it."
+              "AI portraits are not photorealistic in a guaranteed sense — results vary widely.",
+              "Identity drift is real: some generations will look less like you than others.",
+              "Accessories, hands, and fine fabric detail are known weak spots.",
+              "We don't store your outputs long-term — download what you want to keep."
             ]
           }
         ]
@@ -136,55 +141,51 @@
     },
     "faq": {
       "h2": "Frequently asked questions",
-      "intro": "Straight answers about how PublicSelf behaves in practice—so you know what to expect before you spend time or credits.",
+      "intro": "Honest answers about what PublicSelf does and doesn't do.",
       "items": [
         {
-          "q": "What is PublicSelf in one sentence?",
-          "a": "PublicSelf is a web app that builds a look from your seed photos, then runs an AI-directed virtual photoshoot where you control pose, expression, background, and optional items—plus targeted Tune edits when that mode is enabled for your workspace."
+          "q": "What is PublicSelf?",
+          "a": "A web app where you upload two photos of yourself, pick an outfit, pose, and background, and generate an AI portrait. It's for experimenting with how you look on camera — not for guaranteed professional headshots."
         },
         {
-          "q": "Do I need professional photos to start?",
-          "a": "No. Clear phone photos with decent lighting work. You will get better consistency if your face is visible, angles are reasonable, and you avoid heavy beauty filters that erase the traits you want preserved."
+          "q": "How many photos do I need to upload?",
+          "a": "Two: one full-body photo (head to toe, good lighting) and one face close-up (eyes visible, no heavy filters). A third photo from a different angle is optional and may help in some cases. If you can only get a clear full-body shot, the studio can crop a face reference from it."
         },
         {
-          "q": "How well does PublicSelf preserve my identity?",
-          "a": "The system tries to keep you recognizable across variations, but no model is perfect. Glasses, hats, heavy makeup, or low-resolution uploads can confuse the pipeline. If something drifts, adjust your seeds, simplify accessories, or regenerate—that is normal, not a sign you are using it wrong."
+          "q": "Do I get any free credits?",
+          "a": "Yes — you get 5 free credits when you sign up, no payment required. That's enough to try a couple of generations and see if the experience works for you."
         },
         {
-          "q": "Can I pull any random product image from the internet as a prop?",
-          "a": "No—do not expect a free-form 'paste any URL' pipeline. Reliable results come from the in-app item library and, where Tune is available, from reference images you supply through the supported upload flow, not from arbitrary scraping."
+          "q": "Will it look exactly like me?",
+          "a": "It tries to. The system uses your reference photos to guide the generation, but it doesn't lock your face deterministically — AI models have limits. Better photos (clear lighting, visible features, no heavy filters) give more consistent results. Some generations will be closer than others."
+        },
+        {
+          "q": "Can I use the results on LinkedIn or Instagram?",
+          "a": "Many people do. You're responsible for following each platform's rules, including disclosure where required for AI-generated or AI-assisted content. Results vary — some generations are good enough to post, many won't be."
         },
         {
           "q": "What is Tune mode?",
-          "a": "Tune is an edit pass on an existing result. When enabled, it can combine text instructions with a reference photo of a garment (for example a jacket or shoes) so you can nudge clothing without rebuilding the entire shot. Availability depends on site configuration, and it is not compatible with trained / LoRA identity mode in the app."
+          "a": "Tune is an edit pass on an existing result. It lets you swap or refine a clothing layer — often using a garment photo you upload — without regenerating the whole image. It costs credits and works within model limits. Tune is enabled by default but can be turned off."
         },
         {
-          "q": "Will every credit look perfect?",
-          "a": "No. AI portraits sometimes miss hands, accessories, or fine fabric detail. Expect to iterate. Small setting changes—a different pose, a simpler background, less clutter—usually beat spamming identical regenerations."
+          "q": "What happens when a generation doesn't look right?",
+          "a": "Regenerate with small changes. Try a different pose, a simpler background, or less clutter. Hands, thin straps, and accessories are the most common weak points for AI portrait generators. Iteration is part of the process — not a bug."
         },
         {
-          "q": "Why is there a separate 'Build your look' step?",
-          "a": "Skipping the look step might work for abstract art, but PublicSelf is optimized for photographic plausibility. A grounded look file keeps later poses believable: hands, shoulders, and fabric behave more coherently when the base identity is stable. Patience in the builder pays off in the photoshoot."
+          "q": "Can I upload any outfit image as a reference?",
+          "a": "You can upload your own items (jackets, shoes, accessories, etc.) and the studio will try to incorporate them. There's no general 'paste any URL' feature — you upload via the item uploader in the studio."
         },
         {
-          "q": "Is this meant for e-commerce product photography?",
-          "a": "No. PublicSelf targets personal identity exploration and portrait-style outputs. If you need SKU-accurate merchandise shots, use tooling built for catalogs."
+          "q": "Is this for professional headshots or e-commerce?",
+          "a": "No. PublicSelf is for personal experimentation with how you look on camera. It's not designed for SKU-accurate product photography or guaranteed professional headshots. Some people get results they use for LinkedIn — that's a bonus, not the promise."
         },
         {
-          "q": "Can I use the images on LinkedIn or Instagram?",
-          "a": "Many users do, but you are responsible for following each platform's rules—including disclosure expectations for synthetic or AI-assisted media where they apply."
-        },
-        {
-          "q": "Do you keep my files forever?",
-          "a": "Do not rely on us as long-term storage. Download what you care about; the product is explicit that hosting is ephemeral by default."
+          "q": "Do you store my photos or results?",
+          "a": "Your reference photos are used for generation. Results are stored temporarily — we don't promise long-term hosting. Download anything you want to keep."
         },
         {
           "q": "How do credits work?",
-          "a": "Credits pay for generation attempts. Bundles are sold on the landing page; occasional signup promotions may add starter credits. Exact numbers depend on live configuration."
-        },
-        {
-          "q": "Is PublicSelf trying to replace photographers?",
-          "a": "No. The goal is a private studio on demand for individual experimentation: try ten ideas in an evening, download what you like, move on. Real photographers still matter for the moments that warrant them."
+          "a": "Credits pay for generation attempts. You start with 5 free credits. Additional packs are available on this page. Exact credit costs per generation depend on the current configuration in the studio."
         }
       ]
     }

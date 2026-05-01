@@ -46,11 +46,13 @@ export const showcaseImages = [
   },
 ];
 
+/**
+ * Pillar section images — tall portrait format (4:5 or 3:4 recommended).
+ * Replace these files to change what appears next to each pillar section.
+ * Files live under /public/marketing/pillars/.
+ */
 export const howItWorksImages = {
-  buildLook:
-    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop",
-  aiPhotoshoot:
-    "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=800&auto=format&fit=crop",
-  experiment:
-    "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop",
+  buildLook: "/marketing/pillars/pillar-build-look.jpg",
+  aiPhotoshoot: "/marketing/pillars/pillar-photoshoot.jpg",
+  experiment: "/marketing/pillars/pillar-experiment.jpg",
 } as const;

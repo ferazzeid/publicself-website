@@ -4,131 +4,136 @@
     "tocTitle": "Sur cette page",
     "tocItems": [
       { "anchor": "gallery", "label": "Galerie" },
-      { "anchor": "why-identity", "label": "À quoi ça sert" },
-      { "anchor": "pillar-build-look", "label": "Créer ton look" },
+      { "anchor": "why-identity", "label": "Ce que c'est" },
+      { "anchor": "pillar-build-look", "label": "Construire un look" },
       { "anchor": "pillar-photoshoot", "label": "Shooting IA" },
-      { "anchor": "pillar-experiment", "label": "Expérimenter & Tune" },
+      { "anchor": "pillar-experiment", "label": "Tuner & itérer" },
       { "anchor": "faq", "label": "FAQ" },
       { "anchor": "pricing", "label": "Crédits" }
     ],
     "editorial": {
-      "h2": "Une aire de jeu à faible enjeu pour qui tu pourrais être",
-      "lead": "Essaie des versions de toi sans réserver un studio, acheter une garde-robe ou t'engager dans une nouvelle coupe. Les crédits achètent des tentatives, pas des garanties.",
+      "h2": "Joue avec ton apparence à la caméra — sans vrai shooting",
+      "lead": "Deux photos, un choix de tenue, une pose, un décor. Génère. Vois ce qui revient. Certains résultats surprennent. D'autres valent la peine d'être gardés. 5 crédits gratuits pour le découvrir.",
       "blocks": [
         {
-          "h3": "À quoi sert PublicSelf",
+          "h3": "C'est fait pour toi si tu veux",
           "paragraphs": [],
           "bullets": [
-            "Esquisser des versions alternatives de toi avant d'investir dans des vêtements ou un shooting.",
-            "Générer des cadrages prêts pour le profil à côté de clichés plus ludiques et narratifs.",
-            "Itérer rapidement : toujours toi, autre pose, décor ou direction de tenue.",
-            "Traiter les crédits comme du papier à croquis — certaines pages sont des hits, d'autres non.",
-            "Pensé pour les portraits personnels, pas pour la photo produit SKU-parfaite."
+            "Te voir dans une tenue avant de l'acheter.",
+            "Tester différentes poses et énergies pour tes profils sociaux.",
+            "T'amuser avec des portraits IA sans coder ni écrire de prompts.",
+            "Expérimenter des looks créatifs que tu n'essaierais jamais lors d'un vrai shooting.",
+            "Pas pour les photos produit e-commerce ou les headshots professionnels garantis."
           ]
         }
       ]
     },
     "pillars": {
       "buildLook": {
-        "h2": "Construis ton look à partir de photos source",
-        "lead": "Pars d'un petit jeu d'images source — souvent un plan corps entier plus une référence visage nette. PublicSelf en déduit une identité visuelle réutilisable.",
-        "imageAlt": "Construire un look personnel à partir de photos source pour une séance portrait IA",
+        "h2": "Construire un look à partir de deux photos",
+        "lead": "Tu as besoin d'une photo corps entier et d'un gros plan visage. C'est le point de départ. L'app les utilise comme référence pour conserver ta ressemblance d'une génération à l'autre.",
+        "imageAlt": "Créer un look personnel à partir de photos de référence pour une session portrait IA",
         "blocks": [
           {
-            "h3": "Ce que les photos source ancrent",
+            "h3": "Ce que tu téléverses",
             "paragraphs": [],
             "bullets": [
-              "Teint, structure du visage, ligne des cheveux et proportions du corps.",
-              "Une cible cohérente pour que les générations suivantes restent reconnaissables.",
-              "Mieux éclairées et plus claires, elles réduisent les surprises."
+              "Photo 1 : corps entier, tête aux pieds, bonne lumière.",
+              "Photo 2 : gros plan visage, yeux visibles, sans filtres lourds.",
+              "Optionnel : une troisième photo sous un angle différent — peut aider dans certains cas.",
+              "Pas de gros plan propre ? Le studio peut en recadrer un depuis la photo 1."
             ]
           },
           {
-            "h3": "Conseils pour de bonnes sources",
+            "h3": "Puis choisir une direction de tenue",
             "paragraphs": [],
             "bullets": [
-              "Place-toi dans une lumière correcte et homogène — pas de filtres extrêmes.",
-              "Visage dégagé : pas de chapeaux, masques ou maquillage trop fort.",
-              "Un téléphone suffit ; l'intention compte plus que le matériel."
+              "Formelle : costume, smoking, veste — contrôle complet des détails.",
+              "Décontractée : haut, vêtement d'extérieur, bas — avec options couvre-chef et accessoires.",
+              "Chaque choix façonne le prompt utilisé par l'IA."
             ]
           },
           {
-            "h3": "Enregistrer et réutiliser",
+            "h3": "À propos de la préservation d'identité",
             "paragraphs": [],
             "bullets": [
-              "Enregistre un look quand une direction te convient.",
-              "Réutilise-le entre sessions au lieu de tout ré-uploader.",
-              "Un look réutilisable accélère les shoots — tu diriges, tu ne reconstruis pas."
+              "Le système essaie de te garder reconnaissable — il ne verrouille pas ton visage de façon déterministe.",
+              "Meilleures photos = résultats plus cohérents. Mauvaise lumière ou filtres lourds dégradent les résultats.",
+              "La dérive arrive. Quand c'est le cas, régénère ou essaie des réglages différents — c'est normal."
             ]
           }
         ]
       },
       "photoshoot": {
-        "h2": "Ton shooting IA : de la direction, pas des dés",
-        "lead": "Joue le directeur créatif. Choisis pose, expression, arrière-plan et objets optionnels depuis la bibliothèque de l'app. Le résultat est une nouvelle image de toi.",
-        "imageAlt": "Diriger un shooting IA avec pose, expression, décor et objets optionnels",
+        "h2": "Lancer un shooting : tu diriges, l'IA génère",
+        "lead": "Choisis une pose dans la bibliothèque, un décor, et ajoute en option des items que tu as téléversés. Chaque combinaison est une génération — quelques crédits, quelques secondes.",
+        "imageAlt": "Diriger un shooting IA avec pose, expression, décor et items optionnels",
         "blocks": [
           {
-            "h3": "Ce que tu contrôles",
+            "h3": "Ce que tu choisis",
             "paragraphs": [],
             "bullets": [
-              "Pose et cadrage — portrait, trois-quarts ou éditorial ludique.",
-              "Expression et regard — accessible, concentré ou énergie spontanée.",
-              "Décor et scène — studio, rue, intérieur ou cinéma.",
-              "Objets optionnels de la bibliothèque : sacs, montres, indices d'extérieur."
+              "Pose : 100+ options — studio, éditorial, assis, dynamique, social et plus.",
+              "Décor : studio seamless, mur architectural, bureau luxueux, ville la nuit et plus.",
+              "Expression et angle caméra sont définis par pose, ou tu peux les modifier.",
+              "Items : téléverse les tiens (veste, chaussures, accessoire, etc.) pour les intégrer au shot."
             ]
           },
           {
-            "h3": "À quoi servent les clichés",
+            "h3": "À quoi s'attendre",
             "paragraphs": [],
             "bullets": [
-              "Cadres sobres et bien éclairés pour LinkedIn et CV.",
-              "Clichés plus forts et expressifs pour Instagram ou portfolio.",
-              "Expériences calmes et privées que tu ne posteras peut-être jamais."
+              "La plupart des shots prennent quelques secondes. Les résultats varient — c'est inhérent à l'expérience.",
+              "Les mains, fines bretelles et bijoux sont plus difficiles à rendre proprement pour toute IA.",
+              "Les combinaisons simples donnent des résultats plus cohérents.",
+              "Télécharge ce qui fonctionne. Passe ce qui ne convient pas."
             ]
           },
           {
-            "h3": "Quand un cliché est presque bon",
+            "h3": "Ce que tu peux faire avec les résultats",
             "paragraphs": [],
             "bullets": [
-              "Ajuste la pose ou simplifie le décor avant de re-générer.",
-              "Réduis l'encombrement — mains, bijoux et fines bretelles posent problème.",
-              "De petits ajustements battent la force brute sur des réglages identiques."
+              "Photos de profil sur les réseaux sociaux — certains les utilisent pour Instagram ou LinkedIn.",
+              "Expérimentation créative — se voir dans un style qu'on n'essaierait jamais dans la vraie vie.",
+              "S'amuser — c'est vraiment une partie du but.",
+              "Aucune garantie de photoréalisme ou de précision d'identité — les résultats varient."
             ]
           }
         ]
       },
       "experiment": {
-        "h2": "Expérimenter, itérer, et Tune quand c'est activé",
-        "lead": "Traite les générations comme des brouillons : regarde, ris, ajuste. Avec Tune (s'il est activé pour ton workspace), rapproche un cadre presque bon de l'idéal.",
-        "imageAlt": "Itérer sur des portraits IA et éditions Tune optionnelles avec références vestimentaires",
+        "h2": "Tuner, itérer et garder ce qui compte",
+        "lead": "Toutes les générations ne seront pas réussies. Quand l'une est presque bonne mais pas tout à fait, Tune te permet d'échanger ou d'affiner une couche sans tout reconstruire.",
+        "imageAlt": "Itérer sur des résultats de portraits IA et affiner avec Tune",
         "blocks": [
           {
-            "h3": "Comment penser tes crédits",
+            "h3": "Comment fonctionne Tune",
             "paragraphs": [],
             "bullets": [
-              "Les crédits sont des essais, pas des contrats — les lots battent un méga-prompt.",
-              "De petits mouvements révèlent des heureux hasards que tu n'avais pas prévus.",
-              "Si tu exiges la perfection au premier jet, aucun outil IA ne sera confortable."
+              "Sélectionne un résultat existant et ouvre Tune.",
+              "Ajoute une instruction texte, téléverse en option une photo de vêtement (veste, chaussures, haut, etc.).",
+              "Tune modifie la couche vestimentaire en laissant le reste du shot intact — dans les limites du modèle.",
+              "Tune est activé par défaut mais peut être désactivé par configuration."
             ]
           },
           {
-            "h3": "Ce que fait Tune",
+            "h3": "Comment fonctionnent les crédits",
             "paragraphs": [],
             "bullets": [
-              "Retouches ciblées sur un résultat existant — souvent avec une photo de vêtement.",
-              "Échange ou affine une couche vestimentaire sans tout reconstruire.",
-              "Peut être désactivé par configuration ; pas garanti sur chaque compte.",
-              "Pas disponible avec l'identité entraînée / mode LoRA."
+              "Chaque génération coûte des crédits. Tune coûte aussi des crédits.",
+              "Tu reçois 5 crédits gratuits à l'inscription — aucun paiement requis.",
+              "Pense en lots : quelques variations modestes valent généralement mieux qu'une tentative de prompt parfait.",
+              "De petits changements (autre pose, décor plus simple) règlent souvent un quasi-succès."
             ]
           },
           {
-            "h3": "Limites assumées",
+            "h3": "Limites honnêtes",
             "paragraphs": [],
             "bullets": [
-              "L'IA peut dériver ; les accessoires se collent mal ; le texte sur les vêtements peut être absurde.",
-              "L'hébergement est éphémère — télécharge tout ce que tu veux garder.",
-              "Si tu partages des images IA, indique-le là où ta plateforme l'attend."
+              "Les portraits IA ne sont pas photoréalistes de façon garantie — les résultats varient beaucoup.",
+              "La dérive d'identité est réelle : certaines générations te ressembleront moins que d'autres.",
+              "Les accessoires, les mains et les détails fins de tissu sont des points faibles connus.",
+              "Nous ne stockons pas tes résultats à long terme — télécharge ce que tu veux conserver."
             ]
           }
         ]
@@ -136,55 +141,51 @@
     },
     "faq": {
       "h2": "Questions fréquentes",
-      "intro": "Des réponses directes sur le comportement réel de PublicSelf — pour savoir à quoi t'attendre avant de dépenser du temps ou des crédits.",
+      "intro": "Des réponses honnêtes sur ce que PublicSelf fait et ne fait pas.",
       "items": [
         {
-          "q": "C'est quoi PublicSelf en une phrase ?",
-          "a": "PublicSelf est une app web qui construit un look à partir de tes photos source, puis lance un shooting photo IA virtuel où tu contrôles pose, expression, arrière-plan et objets optionnels — plus des retouches Tune ciblées quand ce mode est activé pour ton workspace."
+          "q": "Qu'est-ce que PublicSelf ?",
+          "a": "Une application web où tu téléverses deux photos de toi, choisis une tenue, une pose et un décor, et génères un portrait IA. C'est pour expérimenter avec ton apparence à la caméra — pas pour des headshots professionnels garantis."
         },
         {
-          "q": "Faut-il des photos pro pour commencer ?",
-          "a": "Non. Des photos téléphone claires avec une bonne lumière suffisent. Tu auras une meilleure cohérence si ton visage est visible, les angles raisonnables, et sans filtres beauté qui effacent les traits à préserver."
+          "q": "Combien de photos dois-je téléverser ?",
+          "a": "Deux : une photo corps entier (tête aux pieds, bonne lumière) et un gros plan visage (yeux visibles, sans filtres lourds). Une troisième photo sous un angle différent est optionnelle et peut aider dans certains cas. Si tu n'as qu'un cliché corps entier, le studio peut en recadrer une référence visage."
         },
         {
-          "q": "Quelle qualité de préservation d'identité ?",
-          "a": "Le système essaie de te garder reconnaissable, mais aucun modèle n'est parfait. Lunettes, chapeaux, maquillage fort ou fichiers basse résolution peuvent perturber la chaîne. Si ça dérive : ajuste les sources, simplifie les accessoires ou régénère — c'est normal."
+          "q": "Est-ce que je reçois des crédits gratuits ?",
+          "a": "Oui — tu reçois 5 crédits gratuits à l'inscription, sans paiement requis. C'est suffisant pour essayer quelques générations et voir si l'expérience te convient."
         },
         {
-          "q": "Puis-je prendre n'importe quelle image produit du web comme accessoire ?",
-          "a": "Non — n'attends pas un pipeline « colle n'importe quelle URL ». Les résultats fiables viennent de la bibliothèque d'objets in-app et, quand Tune est dispo, des références uploadées via le flux supporté, pas d'extraction web arbitraire."
+          "q": "Est-ce que ça me ressemblera exactement ?",
+          "a": "Le système essaie. Il utilise tes photos de référence pour guider la génération, mais ne verrouille pas ton visage de façon déterministe — les modèles IA ont leurs limites. De meilleures photos (lumière claire, traits visibles, sans filtres lourds) donnent des résultats plus cohérents. Certaines générations seront plus proches que d'autres."
+        },
+        {
+          "q": "Puis-je utiliser les résultats sur LinkedIn ou Instagram ?",
+          "a": "Beaucoup le font. Tu es responsable du respect des règles de chaque plateforme, y compris la divulgation lorsqu'elle est requise pour les contenus générés ou assistés par IA. Les résultats varient — certaines générations sont assez bonnes pour être publiées, beaucoup ne le seront pas."
         },
         {
           "q": "Qu'est-ce que le mode Tune ?",
-          "a": "Tune est une passe d'édition sur un résultat existant. Quand il est actif, il peut combiner du texte avec une photo de référence d'un vêtement (par ex. veste ou chaussures) pour ajuster les vêtements sans tout reconstruire. La disponibilité dépend de la config ; il n'est pas compatible avec l'identité entraînée / LoRA dans l'app."
+          "a": "Tune est un pass d'édition sur un résultat existant. Il te permet d'échanger ou d'affiner une couche vestimentaire — souvent avec une photo de vêtement que tu téléverses — sans régénérer toute l'image. Ça coûte des crédits et fonctionne dans les limites du modèle. Tune est activé par défaut mais peut être désactivé."
         },
         {
-          "q": "Chaque crédit sera-t-il parfait ?",
-          "a": "Non. Les portraits IA ratent parfois mains, accessoires ou détails de tissu. Itère. De petits changements de réglages — autre pose, décor plus simple, moins d'encombrement — battent la régénération identique en boucle."
+          "q": "Que faire quand une génération ne rend pas bien ?",
+          "a": "Régénère avec de petits changements. Essaie une autre pose, un décor plus simple, ou moins d'éléments. Les mains, fines bretelles et accessoires sont les points faibles les plus courants pour les générateurs de portraits IA. L'itération fait partie du processus — ce n'est pas un bug."
         },
         {
-          "q": "Pourquoi un étape « Construire ton look » séparée ?",
-          "a": "Sauter l'étape look peut marcher pour l'abstrait, mais PublicSelf vise la plausibilité photo. Un look ancré rend les poses suivantes plus crédibles : mains, épaules et tissu se comportent mieux quand l'identité de base est stable. La patience dans le builder se paie au shooting."
+          "q": "Puis-je téléverser n'importe quelle image de tenue comme référence ?",
+          "a": "Tu peux téléverser tes propres items (vestes, chaussures, accessoires, etc.) et le studio essaiera de les incorporer. Il n'y a pas de fonctionnalité « coller n'importe quelle URL » — tu téléverses via l'outil d'upload d'items dans le studio."
         },
         {
-          "q": "C'est fait pour la photo produit e-commerce ?",
-          "a": "Non. PublicSelf cible l'exploration d'identité personnelle et des rendus type portrait. Les packshots SKU précis demandent d'autres outils."
+          "q": "Est-ce fait pour les headshots professionnels ou l'e-commerce ?",
+          "a": "Non. PublicSelf est pour l'expérimentation personnelle avec ton apparence à la caméra. Ce n'est pas conçu pour la photographie produit précise ou les headshots professionnels garantis. Certaines personnes obtiennent des résultats qu'elles utilisent pour LinkedIn — c'est un bonus, pas la promesse."
         },
         {
-          "q": "Puis-je utiliser les images sur LinkedIn ou Instagram ?",
-          "a": "Beaucoup le font ; tu restes responsable des règles de chaque plateforme — notamment la transparence sur le média synthétique ou assisté par IA quand c'est requis."
-        },
-        {
-          "q": "Conservez-vous mes fichiers indéfiniment ?",
-          "a": "Ne compte pas sur nous pour l'archivage long terme. Télécharge ce qui compte ; l'hébergement est pensé comme éphémère par défaut."
+          "q": "Stockez-vous mes photos ou résultats ?",
+          "a": "Tes photos de référence sont utilisées pour la génération. Les résultats sont stockés temporairement — nous ne promettons pas d'hébergement à long terme. Télécharge tout ce que tu veux conserver."
         },
         {
           "q": "Comment fonctionnent les crédits ?",
-          "a": "Les crédits paient des tentatives de génération. Les packs sont sur la landing ; des promos d'inscription peuvent ajouter des crédits de départ. Les chiffres exacts dépendent de la configuration en ligne."
-        },
-        {
-          "q": "PublicSelf veut-il remplacer les photographes ?",
-          "a": "Non. Le but est un studio privé à la demande pour l'expérimentation individuelle : tester dix idées en soirée, télécharger ce qui plaît, passer à autre chose. Les vrais photographes restent essentiels pour les moments qui le méritent."
+          "a": "Les crédits paient les tentatives de génération. Tu commences avec 5 crédits gratuits. Des packs supplémentaires sont disponibles sur cette page. Le coût exact en crédits par génération dépend de la configuration actuelle dans le studio."
         }
       ]
     }

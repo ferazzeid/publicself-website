@@ -93,9 +93,9 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
     ed && typeof ed === "object" && ed !== null && "blocks" in ed ? (ed as { blocks: unknown }).blocks : undefined,
   );
 
-  const img0 = pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook;
-  const img1 = pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot;
-  const img2 = pickVariantUrl(showcaseRows[2]) ?? howItWorksImages.experiment;
+  const img0 = howItWorksImages.buildLook;
+  const img1 = howItWorksImages.aiPhotoshoot;
+  const img2 = howItWorksImages.experiment;
 
   const jsonLd = buildLandingJsonLd({
     baseUrl: MARKETING_SITE_URL,
@@ -117,7 +117,7 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
           fill
           sizes="100vw"
           quality={88}
-          className="object-contain object-center lg:object-right"
+          className="object-contain object-center lg:object-cover lg:[object-position:82%_center]"
           priority
         />
         <div

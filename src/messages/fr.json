@@ -1,96 +1,96 @@
 {
   "seo": {
-    "title": "PublicSelf — essaie tenues, poses et finitions sur tes propres photos",
-    "description": "Téléverse des références visage et corps, explore des tenues formelles ou décontractées, lance un shooting IA dirigé avec les poses de ton choix, puis ajuste ou échange les détails — avec des exports prêts pour LinkedIn quand tu en veux."
+    "title": "PublicSelf — joue avec ton apparence à la caméra, sans vrai shooting",
+    "description": "Téléverse deux photos, choisis une tenue, une pose et un décor, et vois comment tu rends dans un portrait généré par IA. Rapide, simple, sans réservation. 5 crédits gratuits pour essayer."
   },
   "nav": {
     "wordmark": "PUBLICSELF"
   },
   "hero": {
     "badge": "Présence à la caméra",
-    "title": "Teste comment tu rends à la caméra, sans vrai shooting.",
-    "description": "Pars de tes photos, explore tenues et décors, dirige les poses comme un mini-studio, puis affine avec Tune et les ajustements d'objets. Quand un cliché te plaît, exporte-le dans une qualité utilisable sur LinkedIn, ton site ou ton portfolio.",
+    "title": "Teste comment tu rends à la caméra — sans vrai shooting.",
+    "description": "Téléverse deux photos de toi, choisis une direction de tenue, une pose et un décor, et génère. Certains résultats surprennent. D'autres valent la peine d'être gardés. Dans tous les cas c'est rapide — et tu as 5 crédits gratuits pour le découvrir.",
     "primaryCta": "Démarrer dans le studio",
     "secondaryCta": "Se connecter",
-    "ctaHint": "Générations gratuites pour essayer",
+    "ctaHint": "5 crédits gratuits — aucun paiement requis",
     "beforeLabel": "Ton entrée",
     "afterLabel": "Ta direction",
-    "imageAlt": "Un portrait composé sur fond sombre : présence calme, tenue soignée et style créatif",
+    "imageAlt": "Un portrait composé sur fond sombre — présence calme, tenue soignée, style créatif",
     "slogans": [
-      "Tenue, pose et décor — guidés pour que ça reste toi.",
-      "Même personne, nouvelle tenue, nouvelle pose — guidé plutôt qu'aléatoire.",
-      "Ajuste l'image qui te plaît au lieu de tout reprendre à zéro à chaque fois."
+      "Tenue, pose et décor — vois le résultat avant de t'engager.",
+      "Toujours toi, énergie différente — guidé pour que ça reste toi.",
+      "Ajuste un cliché qui te plaît au lieu de tout reprendre à zéro."
     ],
     "featureCards": [
       {
-        "title": "Créer une tenue",
-        "body": "À partir de tes références, compose un look qui reste crédible pour toi."
+        "title": "Construire un look",
+        "body": "Téléverse deux photos et choisis une direction de tenue — formelle, décontractée ou plus dramatique."
       },
       {
-        "title": "Créer un shooting dans une nouvelle tenue",
-        "body": "Lance un shooting avec poses, cadrage et décors au choix."
+        "title": "Lancer un shooting",
+        "body": "Choisis une pose et un décor, ajoute des objets en option. Génère et vois ce que ça donne."
       },
       {
-        "title": "Ajuster, télécharger ou upscaler",
-        "body": "Affine une image qui te plaît, puis exporte ou augmente la résolution de ce que tu veux garder."
+        "title": "Tuner ou télécharger",
+        "body": "Quand un cliché est presque bon, utilise Tune pour l'ajuster. Télécharge ce que tu veux garder."
       }
     ]
   },
   "screenshots": {
     "eyebrow": "Dans le studio",
     "title": "Comment ça s'articule",
-    "prev": "Image précédente",
-    "next": "Image suivante",
+    "prev": "Diapositive précédente",
+    "next": "Diapositive suivante",
     "slides": [
       {
-        "caption": "Prépare tes références, puis explore tenues, poses et finitions dans l'espace shoot."
+        "caption": "Le studio : téléverse tes photos, construis un look, lance un shooting, ajuste les résultats."
       }
     ]
   },
   "gallery": {
     "eyebrow": "Exemples",
     "title": "Vois ce que tu peux créer",
-    "description": "Un mélange de directions d'exemple — tenues, poses et finitions. Quand le studio partage des exemples à mettre en avant, ils apparaissent ici automatiquement.",
+    "description": "Des résultats générés par des utilisateurs — tenues, poses et ambiances différentes. Chaque génération ne sera pas un hit, mais quand ça clique, ça vaut le coup.",
     "carouselPrev": "Exemples précédents",
     "carouselNext": "Exemples suivants",
     "items": [
       {
-        "title": "Headshots propres",
-        "body": "Un cadrage net quand tu veux quelque chose de pro sans réserver un photographe."
+        "title": "Studio sombre",
+        "body": "Fond noir, cadrage net — une direction simple et forte."
       },
       {
-        "title": "Exploration de tenues",
-        "body": "Teste comment différentes tenues rendent à la caméra avant de t'engager."
+        "title": "Tenue formelle",
+        "body": "Essaie un costume, un smoking ou une direction formelle avant de t'engager."
       },
       {
-        "title": "Variantes de pose",
-        "body": "Même identité, posture et énergie différentes — utile pour profils et clichés créatifs."
+        "title": "Pose et énergie",
+        "body": "Différentes postures donnent des lectures différentes — détendu, concentré, éditorial."
       },
       {
-        "title": "Extérieur & lieu",
-        "body": "Change la scène tout en gardant reconnaissance et proportions crédibles."
+        "title": "Ambiance extérieure",
+        "body": "Change le contexte du décor tout en gardant la même identité."
       },
       {
-        "title": "Décontracté ou formel",
-        "body": "Compare les tonalités côte à côte au lieu de deviner depuis un seul portrait statique."
+        "title": "Direction décontractée",
+        "body": "Teste un look plus doux et quotidien pour voir comment il rend à la caméra."
       },
       {
-        "title": "Exports affinés",
-        "body": "Quand ça te plaît, télécharge quelque chose d'utilisable sur LinkedIn ou ton portfolio."
+        "title": "Affinement Tune",
+        "body": "Quand un cliché est presque bon, Tune aide à échanger ou affiner une couche."
       }
     ]
   },
   "pricing": {
     "eyebrow": "Crédits",
-    "title": "Prêt à prendre des crédits dans le studio ?",
-    "description": "Les mêmes packs et prix que dans l'app. Choisis un pack ici, puis connecte-toi au studio pour payer en toute sécurité.",
+    "title": "Prêt à aller au-delà des crédits gratuits ?",
+    "description": "Tu reçois 5 crédits gratuits à l'inscription. Pour plus de place pour itérer, choisis un pack ici — mêmes prix que dans le studio.",
     "cta": "Acheter des crédits dans le studio",
     "creditsUnit": "crédits",
     "plans": [
       {
         "label": "Starter",
         "name": "PublicSelf Starter",
-        "body": "De quoi tester plusieurs tenues et poses, comparer les résultats et garder une première série de téléchargements."
+        "body": "De quoi tester plusieurs directions de tenue et de pose, comparer les résultats et télécharger ceux qui te plaisent."
       },
       {
         "label": "Studio",
@@ -103,19 +103,19 @@
     "eyebrow": "Comment ça marche",
     "sections": [
       {
-        "title": "Construis ton look à partir de photos seed",
-        "subtitle": "Décontracté ou formel – à toi de choisir",
-        "body": "Utilise deux selfies pour créer un look. Choisis une version décontractée ou formelle, enregistre celle qui te plaît et réutilise-la plus tard pour un résultat plus fort."
+        "title": "Téléverse deux photos",
+        "subtitle": "Corps entier + gros plan visage",
+        "body": "Une photo corps entier et un gros plan visage. C'est le minimum. De meilleures photos donnent de meilleurs résultats — bonne lumière, pas de filtres, visage clairement visible."
       },
       {
-        "title": "Ton shooting photo IA",
-        "subtitle": "Pose, expression, décor – et plus",
-        "body": "Choisis la pose, l'expression faciale et le décor. Crée des portraits prêts pour le profil, des gros plans et de meilleures images sociales sans organiser un vrai studio."
+        "title": "Construis un look et lance un shooting",
+        "subtitle": "Tenue, pose, décor",
+        "body": "Choisis une direction de tenue (formelle ou décontractée), une pose et un décor depuis la bibliothèque, puis génère. Tu diriges ; l'IA produit le cadre."
       },
       {
-        "title": "Expérimente et amuse-toi",
-        "subtitle": "Chaque crédit n'est pas parfait – et c'est normal",
-        "body": "Ici tu peux tester plusieurs directions visuelles. Essaie de nouvelles poses, de nouveaux looks et de nouveaux cadrages jusqu'à trouver la version la plus utile."
+        "title": "Tune, itère ou télécharge",
+        "subtitle": "Garde ce qui fonctionne",
+        "body": "Quand une génération est presque bonne, utilise Tune pour échanger ou affiner une couche. Télécharge ce que tu veux garder. Les crédits sont des essais — pas des garanties."
       }
     ]
   },
