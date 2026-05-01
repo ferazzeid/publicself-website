@@ -111,25 +111,11 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
       <LandingJsonLd data={jsonLd} />
 
       <section className="relative isolate w-full overflow-hidden bg-black">
-        <Image
-          src={marketingHeroScreenshot}
-          alt={messages.hero.imageAlt}
-          fill
-          sizes="100vw"
-          quality={88}
-          className="object-contain object-center lg:object-cover lg:[object-position:82%_center]"
-          priority
-        />
-        <div
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.55)_0%,rgba(0,0,0,0.25)_22%,rgba(0,0,0,0.25)_60%,rgba(0,0,0,0.55)_100%)] lg:bg-[linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.78)_38%,rgba(0,0,0,0.25)_62%,transparent_88%)]"
-          aria-hidden
-        />
-
         <div className="absolute inset-x-0 top-0 z-20 pt-[max(1.25rem,env(safe-area-inset-top))]">
           <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 sm:px-10 lg:px-12">
             <Link
               href="/"
-              className="text-[11px] font-semibold uppercase tracking-[0.38em] text-white [text-shadow:0_1px_14px_rgba(0,0,0,0.55)] sm:text-xs"
+              className="text-[11px] font-semibold uppercase tracking-[0.38em] text-white sm:text-xs"
             >
               {messages.nav.wordmark}
             </Link>
@@ -147,17 +133,17 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
 
         <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl flex-col justify-center px-6 pb-16 pt-[clamp(7rem,16vw,9.5rem)] sm:px-10 lg:px-12">
           <div className="grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-6 xl:col-span-7">
+            <div className="lg:col-span-7">
               <div className="mb-6 flex items-center gap-4">
                 <span className="h-px w-10 shrink-0 bg-white/45 sm:w-12" aria-hidden />
                 <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80 sm:text-[11px]">
                   {messages.hero.badge}
                 </p>
               </div>
-              <h1 className="text-[clamp(1.95rem,4.4vw,3.5rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-white [text-shadow:0_2px_48px_rgba(0,0,0,0.55)]">
+              <h1 className="text-[clamp(1.95rem,4.4vw,3.5rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-white">
                 {messages.hero.title}
               </h1>
-              <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.125rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/90 [text-shadow:0_1px_24px_rgba(0,0,0,0.55)]">
+              <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.125rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/90">
                 {heroCaption}
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -172,7 +158,19 @@ export function MarketingPage({ locale, showcaseRows }: MarketingPageProps) {
                 </p>
               </div>
             </div>
-            <div className="hidden lg:col-span-6 lg:block xl:col-span-5" aria-hidden />
+            <div className="lg:col-span-5">
+              <div className="relative ml-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-2xl bg-zinc-900 ring-1 ring-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
+                <Image
+                  src={marketingHeroScreenshot}
+                  alt={messages.hero.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 420px, (min-width: 640px) 60vw, 80vw"
+                  quality={90}
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
