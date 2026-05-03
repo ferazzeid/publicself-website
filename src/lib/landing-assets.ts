@@ -5,8 +5,8 @@
 export const marketingHeroScreenshot = "/marketing/hero-main.jpg";
 
 /**
- * Product walkthrough slides (optimized JPEGs under /public/marketing/slides/).
- * Add slide-02.jpg … and entries here when you have more screens.
+ * Product walkthrough slides — fallback when Supabase `landing_assets` has no walkthrough URLs.
+ * Admin: Marketing tab → Walkthrough 1–3.
  */
 export const marketingProductSlides = [{ id: "01", src: "/marketing/slides/slide-01.jpg" }] as const;
 

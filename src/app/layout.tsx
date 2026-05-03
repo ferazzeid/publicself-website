@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(MARKETING_SITE_URL),
   title: "PublicSelf",
   description: "Professional profile photos in minutes.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

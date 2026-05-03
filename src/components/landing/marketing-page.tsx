@@ -26,18 +26,18 @@ import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import {
   isSupabaseStorageUrl,
   pickVariantUrl,
-  type LandingAssetsMap,
   type ShowcaseImageRow,
+  type WalkthroughSlideFromCms,
 } from "@/lib/marketing-data";
 import { getLocalizedProductUrl, MARKETING_SITE_URL, type Locale } from "@/lib/site";
 
 type MarketingPageProps = {
   locale: Locale;
   showcaseRows: ShowcaseImageRow[];
-  landingAssets?: LandingAssetsMap;
+  walkthroughSlides?: WalkthroughSlideFromCms[];
 };
 
-export function MarketingPage({ locale, showcaseRows, landingAssets }: MarketingPageProps) {
+export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: MarketingPageProps) {
   const messages = getMessages(locale);
   const deep = messages.deep;
 
@@ -49,17 +49,29 @@ export function MarketingPage({ locale, showcaseRows, landingAssets }: Marketing
 
   const heroCaption = messages.hero.slogans[0];
 
-  const heroSrc = landingAssets?.hero || marketingHeroScreenshot;
-  const walkthroughSrc = landingAssets?.walkthrough_slide_1 || marketingProductSlides[0]?.src;
-
-  const screenshotSlides = marketingProductSlides.map((item, i) => {
-    const caption = messages.screenshots.slides[i]?.caption ?? "";
-    return {
-      src: i === 0 && walkthroughSrc ? walkthroughSrc : item.src,
-      alt: caption ? `${messages.screenshots.title} — ${caption}` : messages.hero.imageAlt,
-      caption: caption || messages.screenshots.title,
-    };
-  });
+  const screenshotSlides = (() => {
+    const captionSlides = messages.screenshots.slides;
+    const fromCms = walkthroughSlides.map(({ src, slotIndex }) => {
+      const caption =
+        captionSlides[slotIndex]?.caption ??
+        captionSlides[0]?.caption ??
+        "";
+      return {
+        src,
+        alt: caption ? `${messages.screenshots.title} — ${caption}` : messages.hero.imageAlt,
+        caption: caption || messages.screenshots.title,
+      };
+    });
+    if (fromCms.length > 0) return fromCms;
+    return marketingProductSlides.map((item, i) => {
+      const caption = captionSlides[i]?.caption ?? "";
+      return {
+        src: item.src,
+        alt: caption ? `${messages.screenshots.title} — ${caption}` : messages.hero.imageAlt,
+        caption: caption || messages.screenshots.title,
+      };
+    });
+  })();
 
   const galleryTiles = (() => {
     const fromDb = showcaseRows
@@ -68,7 +80,8 @@ export function MarketingPage({ locale, showcaseRows, landingAssets }: Marketing
         if (!src) return null;
         const fallback = messages.gallery.items[index % messages.gallery.items.length];
         const title = row.slide_title || fallback.title;
-        return { src, alt: title, title, body: fallback.body };
+        const body = row.slide_description?.trim() || fallback.body;
+        return { src, alt: title, title, body };
       })
       .filter((t): t is NonNullable<typeof t> => t !== null);
 
@@ -102,9 +115,9 @@ export function MarketingPage({ locale, showcaseRows, landingAssets }: Marketing
     ed && typeof ed === "object" && ed !== null && "blocks" in ed ? (ed as { blocks: unknown }).blocks : undefined,
   );
 
-  const img0 = landingAssets?.pillar_build_look || howItWorksImages.buildLook;
-  const img1 = landingAssets?.pillar_photoshoot || howItWorksImages.aiPhotoshoot;
-  const img2 = landingAssets?.pillar_experiment || howItWorksImages.experiment;
+  const img0 = pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook;
+  const img1 = pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot;
+  const img2 = pickVariantUrl(showcaseRows[2]) ?? howItWorksImages.experiment;
 
   const jsonLd = buildLandingJsonLd({
     baseUrl: MARKETING_SITE_URL,
@@ -119,67 +132,65 @@ export function MarketingPage({ locale, showcaseRows, landingAssets }: Marketing
       <DocumentLang locale={locale} />
       <LandingJsonLd data={jsonLd} />
 
-      <section className="relative isolate w-full overflow-hidden bg-black">
+      <section className="relative isolate min-h-[100dvh] w-full overflow-hidden bg-black">
+        <Image
+          src={marketingHeroScreenshot}
+          alt={messages.hero.imageAlt}
+          fill
+          sizes="100vw"
+          quality={88}
+          className="object-contain object-center"
+          priority
+        />
+        <div
+          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.42)_0%,transparent_26%,transparent_62%,rgba(0,0,0,0.48)_100%)]"
+          aria-hidden
+        />
+
         <div className="absolute inset-x-0 top-0 z-20 pt-[max(1.25rem,env(safe-area-inset-top))]">
-          <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-6 sm:px-10 lg:px-12">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-12">
             <Link
               href="/"
-              className="text-[11px] font-semibold uppercase tracking-[0.38em] text-white sm:text-xs"
+              className="text-[11px] font-semibold uppercase tracking-[0.38em] text-white [text-shadow:0_1px_14px_rgba(0,0,0,0.55)] sm:text-xs"
             >
               {messages.nav.wordmark}
             </Link>
-            <div className="flex items-center gap-5 sm:gap-7">
-              <LanguageSwitcher currentLocale={locale} overlay />
-              <Link
-                href={loginHref}
-                className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80 transition hover:text-white"
-              >
-                {messages.hero.secondaryCta}
-              </Link>
-            </div>
+            <LanguageSwitcher currentLocale={locale} overlay />
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl flex-col justify-center px-6 pb-16 pt-[clamp(7rem,16vw,9.5rem)] sm:px-10 lg:px-12">
-          <div className="grid w-full items-center gap-10 lg:grid-cols-12 lg:gap-12">
-            <div className="lg:col-span-7">
+        <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl flex-col justify-between px-6 pb-12 pt-[clamp(5.75rem,15vw,8.5rem)] sm:px-10 lg:px-12">
+          <div className="flex flex-1 flex-col justify-center">
+            <div className="w-full max-w-2xl text-left">
               <div className="mb-6 flex items-center gap-4">
                 <span className="h-px w-10 shrink-0 bg-white/45 sm:w-12" aria-hidden />
                 <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80 sm:text-[11px]">
                   {messages.hero.badge}
                 </p>
               </div>
-              <h1 className="text-[clamp(1.95rem,4.4vw,3.5rem)] font-semibold leading-[1.06] tracking-[-0.035em] text-white">
+              <h1 className="text-[clamp(1.85rem,4.2vw,3.35rem)] font-semibold leading-[1.08] tracking-[-0.035em] text-white [text-shadow:0_2px_48px_rgba(0,0,0,0.42)]">
                 {messages.hero.title}
               </h1>
-              <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.125rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/90">
+              <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.125rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/88 [text-shadow:0_1px_24px_rgba(0,0,0,0.38)]">
                 {heroCaption}
               </p>
-              <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
-                <Link
-                  href={signupHref}
-                  className="inline-flex min-h-14 items-center justify-center rounded-full bg-amber-500 px-9 text-[12px] font-semibold uppercase tracking-[0.18em] !text-zinc-950 shadow-[0_18px_50px_rgba(245,158,11,0.35)] transition hover:bg-amber-400"
-                >
-                  {messages.hero.primaryCta}
-                </Link>
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/65">
-                  {messages.hero.ctaHint}
-                </p>
-              </div>
             </div>
-            <div className="lg:col-span-5">
-              <div className="relative ml-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-2xl bg-zinc-900 ring-1 ring-white/5 shadow-[0_30px_80px_rgba(0,0,0,0.55)]">
-                <Image
-                  src={heroSrc}
-                  alt={messages.hero.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 420px, (min-width: 640px) 60vw, 80vw"
-                  quality={90}
-                  className="object-cover object-center"
-                  priority
-                  unoptimized={isSupabaseStorageUrl(heroSrc)}
-                />
-              </div>
+          </div>
+
+          <div className="w-full max-w-2xl space-y-6">
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <Link
+                href={signupHref}
+                className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-8 text-[11px] font-semibold uppercase tracking-[0.16em] !text-zinc-950 transition hover:bg-zinc-100"
+              >
+                {messages.hero.primaryCta}
+              </Link>
+              <Link
+                href={loginHref}
+                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/22 bg-white/[0.08] px-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-white backdrop-blur-md transition hover:bg-white/[0.12]"
+              >
+                {messages.hero.secondaryCta}
+              </Link>
             </div>
           </div>
         </div>
@@ -393,21 +404,37 @@ export function MarketingPage({ locale, showcaseRows, landingAssets }: Marketing
         <LandingFaq id="faq" h2={faqH2} intro={faqIntro || undefined} items={faqItems} />
       ) : null}
 
-      <footer className="bg-black px-6 py-10 sm:px-10 lg:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-[12px] text-zinc-500 sm:flex-row">
-          <p className="font-semibold uppercase tracking-[0.28em] text-zinc-400">
-            {messages.nav.wordmark}
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-            <Link href={termsHref} className="uppercase tracking-[0.18em] text-zinc-400 transition hover:text-white">
-              {messages.footer.terms}
+      <footer className="bg-black px-6 py-16 sm:px-10 lg:px-12">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.footer.eyebrow}</p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{messages.footer.title}</h2>
+            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.footer.body}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-zinc-400">
+              <span>{messages.footer.legalPrefix}</span>
+              <Link href={termsHref} className="text-white hover:text-zinc-300">
+                {messages.footer.terms}
+              </Link>
+              <span>{messages.footer.and}</span>
+              <Link href={privacyHref} className="text-white hover:text-zinc-300">
+                {messages.footer.privacy}
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={signupHref}
+              className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] !text-zinc-950 transition hover:bg-zinc-200 hover:!text-zinc-950"
+            >
+              {messages.footer.primaryCta}
             </Link>
-            <Link href={privacyHref} className="uppercase tracking-[0.18em] text-zinc-400 transition hover:text-white">
-              {messages.footer.privacy}
+            <Link
+              href={loginHref}
+              className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/20 bg-white/6 px-7 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-white/12"
+            >
+              {messages.footer.secondaryCta}
             </Link>
-            <span className="tracking-[0.06em] text-zinc-600">
-              © {new Date().getFullYear()} PublicSelf
-            </span>
           </div>
         </div>
       </footer>

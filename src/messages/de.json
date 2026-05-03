@@ -1,101 +1,106 @@
 {
   "seo": {
-    "title": "PublicSelf — spiel mit deiner Wirkung vor der Kamera, ohne echtes Shooting",
-    "description": "Lade zwei Fotos hoch, wähle ein Outfit, eine Pose und einen Hintergrund, und sieh, wie du in einem KI-generierten Portrait wirkst. Schnell, unkompliziert, kein Booking nötig. 5 kostenlose Credits zum Ausprobieren."
+    "title": "PublicSelf – Professionelle Profilfotos in Minuten",
+    "description": "Lade ein paar Selfies hoch, wähle ein kuratiertes Preset und erzeuge saubere Profilfotos auf einer voll indexierbaren Landingpage."
   },
   "nav": {
     "wordmark": "PUBLICSELF"
   },
   "hero": {
-    "badge": "Wirkung vor der Kamera",
-    "title": "Teste, wie du auf der Kamera wirkst — ohne echtes Shooting.",
-    "description": "Lade zwei Fotos von dir hoch, wähle eine Outfit-Richtung, Pose und Hintergrund, und generiere. Manche Ergebnisse überraschen. Manche willst du behalten. In jedem Fall geht es schnell und unkompliziert — und du bekommst 5 kostenlose Credits, um es auszuprobieren.",
-    "primaryCta": "Im Studio starten",
+    "badge": "Saubere Profilfotos, schnell",
+    "title": "Professionelle Profilfotos in Minuten.",
+    "description": "Lade ein paar Selfies hoch, wähle ein kuratiertes Preset und erzeuge saubere Profilbilder für LinkedIn, Portfolios und deine persönliche Marke.",
+    "primaryCta": "3 kostenlose Generierungen testen",
     "secondaryCta": "Einloggen",
-    "ctaHint": "5 kostenlose Credits — keine Zahlung nötig",
-    "beforeLabel": "Deine Eingabe",
-    "afterLabel": "Deine Regie",
-    "imageAlt": "Ein komponiertes Portrait auf dunklem Hintergrund — ruhige Präsenz, sauberes Outfit, kreatives Styling",
+    "beforeLabel": "Vorher",
+    "afterLabel": "Nachher",
+    "imageAlt": "Ein mit PublicSelf erzeugtes Profilportrait",
     "slogans": [
-      "Outfit, Pose und Setting — sieh wie es aussieht, bevor du dich festlegst.",
-      "Gleiche Person, andere Energie — geführt, damit es trotzdem nach dir wirkt.",
-      "Verfeinere einen Shot, der fast passt, statt von vorne anzufangen."
+      "Fortgeschrittene KI hält deine Identität auch bei neuen Looks wiedererkennbar.",
+      "Vom lockeren Selfie zum profiltauglichen Portrait in kurzer Zeit.",
+      "Nutze deine besten Looks für Headshots, 3/4-Crops und sauberere Hintergründe erneut."
     ],
     "featureCards": [
       {
-        "title": "Look bauen",
-        "body": "Zwei Fotos hochladen und eine Outfit-Richtung wählen — formal, casual oder dramatischer."
+        "title": "Outfit erstellen",
+        "body": "Starte mit Referenzen und forme einen Look, der trotzdem nach dir wirkt."
       },
       {
-        "title": "Fotoshooting durchführen",
-        "body": "Pose und Hintergrund wählen, optional eigene Items hinzufügen. Generieren und sehen was rauskommt."
+        "title": "Fotoshooting im neuen Outfit",
+        "body": "Führe ein Shooting mit Posen, Ausschnitt und Szenen, die du wählst."
       },
       {
-        "title": "Tunen oder downloaden",
-        "body": "Wenn ein Shot fast passt, mit Tune anpassen. Alles, was dir gefällt, downloaden."
+        "title": "Anpassen, laden, hochskalieren",
+        "body": "Feinschliff für ein geliebtes Bild, dann Export oder Upscale dessen, was du behalten willst."
       }
     ]
   },
   "screenshots": {
     "eyebrow": "Im Studio",
     "title": "So fügt es sich zusammen",
-    "prev": "Vorherige Folie",
-    "next": "Nächste Folie",
+    "prev": "Vorheriges Bild",
+    "next": "Nächstes Bild",
     "slides": [
       {
-        "caption": "Das Studio: Fotos hochladen, Look bauen, Shooting starten, Ergebnisse tunen."
+        "caption": "Bereite Referenzen vor und erkunde Outfits, Posen und Feinschliff im Shoot‑Workspace."
+      },
+      {
+        "caption": "Wechsel zwischen Erstellen und Shoot, steuere Optionen und sieh dir Ergebnisse in der Galerie an."
+      },
+      {
+        "caption": "Iteriere einen Look, bis er passt — laden herunter oder weiter verfeinern."
       }
     ]
   },
   "gallery": {
     "eyebrow": "Beispiele",
-    "title": "Sieh, was du erstellen kannst",
-    "description": "Ergebnisse, die Nutzer generiert haben — verschiedene Outfits, Posen und Stimmungen. Nicht jede Generierung wird ein Treffer, aber wenn eine sitzt, lohnt es sich.",
+    "title": "Eine Landingpage, die ihre visuelle Richtung sofort zeigt",
+    "description": "Statt erst im Browser Inhalte nachzuladen, liefert die erste Version Text, Struktur und Beispiele direkt im HTML aus.",
     "carouselPrev": "Vorherige Beispiele",
     "carouselNext": "Weitere Beispiele",
     "items": [
       {
-        "title": "Dunkles Studio",
-        "body": "Dunkler Hintergrund, klarer Anschnitt — eine einfache und starke Richtung."
+        "title": "Saubere Headshots",
+        "body": "Professioneller Anschnitt für Lebenslauf, LinkedIn und Profilfotos."
       },
       {
-        "title": "Formelles Outfit",
-        "body": "Einen Anzug, Smoking oder formelle Richtung ausprobieren, bevor du kaufst."
+        "title": "Stärkeres Styling",
+        "body": "Saubere Outfits, Licht und Hintergründe ohne komplettes Fotoshooting."
       },
       {
-        "title": "Pose und Energie",
-        "body": "Verschiedene Haltungen wirken anders — entspannt, fokussiert, editorial."
+        "title": "Editoriale Varianten",
+        "body": "Nutze dieselbe Identität auch in stärkeren und ausdrucksvolleren Bildrichtungen."
       },
       {
-        "title": "Outdoor-Feeling",
-        "body": "Den Hintergrundkontext wechseln, während die Identität gleich bleibt."
+        "title": "Outdoor-Energie",
+        "body": "Dein Gesicht bleibt erkennbar, während Setting und Stimmung wechseln."
       },
       {
-        "title": "Casual-Richtung",
-        "body": "Einen weicheren, alltäglicheren Look ausprobieren und sehen, wie er wirkt."
+        "title": "Lifestyle-Looks",
+        "body": "Teste weichere und lockerere Profilbilder, wenn du etwas weniger Formelles willst."
       },
       {
-        "title": "Tune-Verfeinerung",
-        "body": "Wenn ein Shot fast passt, hilft Tune beim Austauschen oder Verfeinern einer Schicht."
+        "title": "Konsistente Marke",
+        "body": "Baue eine stärkere öffentliche Präsenz mit Bildern auf, die trotzdem nach dir aussehen."
       }
     ]
   },
   "pricing": {
     "eyebrow": "Credits",
-    "title": "Bereit für mehr als die kostenlosen Credits?",
-    "description": "Du bekommst 5 kostenlose Credits bei der Anmeldung. Wenn du mehr Spielraum zum Iterieren willst, wähle hier ein Paket — gleiche Preise wie im Studio.",
-    "cta": "Credits im Studio kaufen",
+    "title": "Bereit für Credits im Studio?",
+    "description": "Gleiche Pakete und Preise wie in der App. Wähle hier ein Paket und schließe den Kauf nach dem Login im Studio sicher ab.",
+    "cta": "In der App starten",
     "creditsUnit": "Credits",
     "plans": [
       {
         "label": "Starter",
         "name": "PublicSelf Starter",
-        "body": "Genug, um mehrere Outfit- und Pose-Richtungen zu testen, Ergebnisse zu vergleichen und die besten zu downloaden."
+        "body": "Ein kleineres Paket, um Headshots zu testen, Presets zu vergleichen und die ersten Profilbilder zu erzeugen."
       },
       {
         "label": "Studio",
         "name": "PublicSelf Studio",
-        "body": "Mehr Spielraum zum Iterieren — zusätzliche Posen, mehr Tune-Durchläufe und mehr Keeper ohne ständiges Nachkaufen."
+        "body": "Ein größeres Paket für mehr Looks, mehr Posen und mehr downloadbare Ergebnisse."
       }
     ]
   },
@@ -103,24 +108,31 @@
     "eyebrow": "So funktioniert es",
     "sections": [
       {
-        "title": "Zwei Fotos hochladen",
-        "subtitle": "Ganzkörper + Gesicht-Nahaufnahme",
-        "body": "Ein Ganzkörperfoto und eine Gesicht-Nahaufnahme. Das ist das Minimum. Bessere Fotos geben bessere Ergebnisse — gutes Licht, keine Filter, Gesicht klar sichtbar."
+        "title": "Erstelle deinen Look aus Seed-Fotos",
+        "subtitle": "Casual oder formell – du entscheidest",
+        "body": "Nutze zwei Selfies, um einen Look zu erstellen. Wähle casual oder formell, speichere die Variante, die dir gefällt, und nutze sie später für stärkere Shootingergebnisse erneut."
       },
       {
-        "title": "Look bauen und Shooting starten",
-        "subtitle": "Outfit, Pose, Hintergrund",
-        "body": "Wähle eine Outfit-Richtung (formal oder casual), Pose und Hintergrund aus der Bibliothek und generiere. Du regiest; die KI produziert das Bild."
+        "title": "Dein KI-Fotoshooting",
+        "subtitle": "Pose, Ausdruck, Hintergrund – und mehr",
+        "body": "Wähle Pose, Gesichtsausdruck und Hintergrund. Erzeuge profiltaugliche Portraits, Nahaufnahmen und bessere Social-Bilder, ohne ein echtes Studio zu organisieren."
       },
       {
-        "title": "Tunen, iterieren oder downloaden",
-        "subtitle": "Behalte, was funktioniert",
-        "body": "Wenn eine Generierung fast stimmt, nutze Tune, um eine Schicht auszutauschen oder zu verfeinern. Downloade alles, was du behalten willst. Credits sind Versuche — keine Garantien."
+        "title": "Experimentiere und hab Spaß",
+        "subtitle": "Nicht jeder Credit ist perfekt – und das ist okay",
+        "body": "Hier kannst du verschiedene visuelle Richtungen testen. Probiere neue Posen, Looks und Anschnitte aus, bis du die nützlichste Version gefunden hast."
       }
     ]
   },
   "footer": {
+    "eyebrow": "Wenn du bereit bist",
+    "title": "Hier starten, im Studio weitermachen.",
+    "body": "Auf dieser Seite siehst du, wie PublicSelf funktioniert. Wenn du loslegen willst, melde dich auf der Studio-Seite an, um Looks zu bauen, Shoots zu starten und Ergebnisse herunterzuladen.",
+    "primaryCta": "Konto erstellen",
+    "secondaryCta": "App öffnen",
+    "legalPrefix": "Mit dem Fortfahren stimmst du unseren",
     "terms": "AGB",
-    "privacy": "Datenschutz"
+    "and": "und",
+    "privacy": "Datenschutzrichtlinien"
   }
 }

@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "PublicSelf — play with how you look on camera, without a real shoot",
-    "description": "Upload two photos, pick an outfit, choose a pose and background, and see how you look in an AI-generated portrait. Fun, fast, and no booking required. 5 free credits to try."
+    "title": "PublicSelf — try outfits, poses, and polish on your own photos",
+    "description": "Upload face and body references, explore formal and casual outfits, run a controlled AI photoshoot with poses you pick, then tune or swap details—plus LinkedIn-ready exports when you want them."
   },
   "nav": {
     "wordmark": "PUBLICSELF"
@@ -9,93 +9,98 @@
   "hero": {
     "badge": "On-camera presence",
     "title": "Experiment with how you look on camera, without a real shoot.",
-    "description": "Upload two photos of yourself, pick an outfit direction, choose a pose and background, and generate. Some results surprise you. Some you'll want to keep. Either way it's fast and low-effort — and you get 5 free credits to find out.",
-    "primaryCta": "Start in the studio",
+    "description": "Start from your photos, explore outfits and scenes, direct poses like a mini studio, then refine with tune and item tweaks. When you land on a shot you like, export it in a quality that works for LinkedIn, your website, or your portfolio.",
+    "primaryCta": "Try free generations in the studio",
     "secondaryCta": "Log in",
-    "ctaHint": "5 free credits — no payment needed",
     "beforeLabel": "Your input",
     "afterLabel": "Your direction",
-    "imageAlt": "A composed portrait on a dark background — calm presence, tailored look, creative styling",
+    "imageAlt": "A composed portrait on a dark background: calm presence, tailored look, and creative styling",
     "slogans": [
-      "Outfit, pose, and setting — see how it looks before committing.",
-      "Same you, different energy — guided so it still feels like you.",
-      "Tune a shot you like instead of starting from scratch every time."
+      "Outfit, pose, and setting, guided so it still feels like you.",
+      "Same person, new outfit, new pose, guided instead of random.",
+      "Tune the shot you like instead of starting from scratch every time."
     ],
     "featureCards": [
       {
-        "title": "Build your look",
-        "body": "Upload two photos and shape an outfit direction — formal, casual, or somewhere dramatic."
+        "title": "Create outfit",
+        "body": "Start from your references and shape a look that still feels like you."
       },
       {
-        "title": "Run a photoshoot",
-        "body": "Pick a pose, a background, and optional items. Generate and see what comes back."
+        "title": "Create photoshoot in a new outfit",
+        "body": "Run a shoot with poses, framing, and scenes you choose."
       },
       {
-        "title": "Tune or download",
-        "body": "When a shot is close, use Tune to nudge it. Download whatever you want to keep."
+        "title": "Adjust, download, or upscale",
+        "body": "Fine-tune a shot you like, then export or upscale what you want to keep."
       }
     ]
   },
   "screenshots": {
     "eyebrow": "Inside the studio",
     "title": "How it comes together",
-    "prev": "Previous slide",
-    "next": "Next slide",
+    "prev": "Previous image",
+    "next": "Next image",
     "slides": [
       {
-        "caption": "The studio: upload your photos, build a look, run a shoot, and tune the results."
+        "caption": "Prepare your references, then explore outfits, poses, and polish in the shoot workspace."
+      },
+      {
+        "caption": "Switch between create and shoot modes, tune controls, and review results in the gallery rail."
+      },
+      {
+        "caption": "Iterate on a look you like — download or refine until the shot feels right."
       }
     ]
   },
   "gallery": {
     "eyebrow": "Examples",
     "title": "See what you can create",
-    "description": "Results people have generated — different outfits, poses, and moods. Not every generation is a keeper, but when one clicks it's worth it.",
+    "description": "A mix of sample directions—outfits, poses, and polish. When the studio has shared examples to highlight, they appear here automatically.",
     "carouselPrev": "Previous examples",
     "carouselNext": "Next examples",
     "items": [
       {
-        "title": "Dark studio",
-        "body": "Dark background, clean framing — a simple and strong direction."
+        "title": "Headshot polish",
+        "body": "Clean framing when you want something professional without booking a photographer."
       },
       {
-        "title": "Formal outfit",
-        "body": "Try a suit, tuxedo, or formal direction before you commit to buying one."
+        "title": "Outfit exploration",
+        "body": "Test how different clothes read on camera before you commit to a look."
       },
       {
-        "title": "Pose and energy",
-        "body": "Different posture reads differently — relaxed, focused, editorial."
+        "title": "Pose variants",
+        "body": "Same identity, different posture and energy—useful for profiles and creative shots."
       },
       {
-        "title": "Outdoor feel",
-        "body": "Change the background context while keeping the same identity."
+        "title": "Outdoor & location",
+        "body": "Change the scene while keeping recognition and proportions believable."
       },
       {
-        "title": "Casual direction",
-        "body": "Try a softer, more everyday look to see how it reads on camera."
+        "title": "Casual vs formal",
+        "body": "Compare tones side by side instead of guessing from one static headshot."
       },
       {
-        "title": "Tune refinement",
-        "body": "When a shot is almost right, Tune helps swap or refine a layer."
+        "title": "Refined exports",
+        "body": "When you are happy, download something you can use on LinkedIn or your portfolio."
       }
     ]
   },
   "pricing": {
     "eyebrow": "Credits",
-    "title": "Ready to go beyond the free credits?",
-    "description": "You get 5 free credits when you sign up. If you want more room to iterate, pick a pack here — same prices as inside the studio.",
+    "title": "Ready to try credits in the studio?",
+    "description": "Same packs and prices as inside the app. Pick a pack here, then sign in on the studio to complete checkout securely.",
     "cta": "Buy credits in the studio",
     "creditsUnit": "credits",
     "plans": [
       {
         "label": "Starter",
         "name": "PublicSelf Starter",
-        "body": "Enough to try several outfit and pose directions, compare results, and download the ones you like."
+        "body": "Enough to try several outfits and poses, compare results, and keep a first batch of downloads."
       },
       {
         "label": "Studio",
         "name": "PublicSelf Studio",
-        "body": "More room to iterate — extra poses, more Tune passes, and more keepers without topping up."
+        "body": "More room to iterate—extra poses, more tune passes, and more keepers without topping up as often."
       }
     ]
   },
@@ -103,24 +108,31 @@
     "eyebrow": "How it works",
     "sections": [
       {
-        "title": "Upload two photos",
-        "subtitle": "Full body + face close-up",
-        "body": "One full-body photo and one face close-up. That's the minimum. Better photos give better results — good lighting, no filters, face clearly visible."
+        "title": "Build your look from reference photos",
+        "subtitle": "Face and body context",
+        "body": "Upload the references the studio asks for so outfits, proportions, and likeness stay grounded. Save a look when one direction feels right so you can reuse it later."
       },
       {
-        "title": "Build a look and run a shoot",
-        "subtitle": "Outfit, pose, background",
-        "body": "Choose an outfit direction (formal or casual), pick a pose and background from the library, and generate. You direct it; the AI produces the frame."
+        "title": "Run the studio like a photoshoot",
+        "subtitle": "Poses, crops, and scenes you choose",
+        "body": "Direct the session: poses, framing, and backgrounds that match how you want to appear online. Iterate until something feels usable—not just the first generation."
       },
       {
-        "title": "Tune, iterate, or download",
-        "subtitle": "Keep what works",
-        "body": "When a generation is close but not quite right, use Tune to swap or refine a layer. Download anything you want to keep. Credits are tries — not guarantees."
+        "title": "Tune, swap, and export",
+        "subtitle": "Refine instead of reinventing",
+        "body": "When a pose is close, tune details or swap pieces. Download what you want to keep; treat LinkedIn-ready output as one outcome among many, not the whole story."
       }
     ]
   },
   "footer": {
+    "eyebrow": "Ready when you are",
+    "title": "Start on the studio when you want real generations.",
+    "body": "Use this page to see what PublicSelf is for. Open the studio to build looks, run shoots, tune results, and buy credits when you are ready.",
+    "primaryCta": "Open the studio",
+    "secondaryCta": "Log in",
+    "legalPrefix": "By continuing you agree to our",
     "terms": "Terms",
-    "privacy": "Privacy"
+    "and": "and",
+    "privacy": "Privacy Policy"
   }
 }

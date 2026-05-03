@@ -18,6 +18,20 @@ export type ShowcaseImageRow = {
   medium_url: string | null;
   large_url: string | null;
   slide_title: string | null;
+  slide_description: string | null;
+};
+
+/** Slot order matches Admin "walkthrough" uploads (captions from messages.screenshots.slides[i]). */
+export const LANDING_WALKTHROUGH_SLOTS = [
+  "walkthrough_slide_1",
+  "walkthrough_slide_2",
+  "walkthrough_slide_3",
+] as const;
+
+export type WalkthroughSlideFromCms = {
+  src: string;
+  /** 0 = slide_1 … 2 = slide_3 — used to pick i18n caption even if earlier slots are empty */
+  slotIndex: number;
 };
 
 export function pickVariantUrl(
@@ -52,20 +66,36 @@ export function ogPreviewFromFrontPage(frontPage: FrontPageImageRow[]): string |
 export const loadMarketingGalleryData = cache(async (): Promise<{
   frontPage: FrontPageImageRow[];
   showcase: ShowcaseImageRow[];
+  walkthroughSlides: WalkthroughSlideFromCms[];
 }> => {
   const supabase = createPublicSupabaseClient();
   if (!supabase) {
-    return { frontPage: [], showcase: [] };
+    return { frontPage: [], showcase: [], walkthroughSlides: [] };
   }
 
-  const [fpRes, shRes] = await Promise.all([
+  const [fpRes, shRes, laRes] = await Promise.all([
     supabase.rpc("list_front_page_images_thumbs", { p_limit: 3 }),
     supabase.rpc("list_showcase_images", { p_limit: 24 }),
+    supabase.from("landing_assets").select("slot, url").in("slot", [...LANDING_WALKTHROUGH_SLOTS]),
   ]);
+
+  const bySlot = new Map<string, string>();
+  for (const row of (laRes.data ?? []) as { slot: string; url: string }[]) {
+    if (row.slot && row.url?.trim()) {
+      bySlot.set(row.slot, row.url.trim());
+    }
+  }
+
+  const walkthroughSlides: WalkthroughSlideFromCms[] = LANDING_WALKTHROUGH_SLOTS.map((slot, slotIndex) => {
+    const url = bySlot.get(slot);
+    if (!url) return null;
+    return { src: url, slotIndex };
+  }).filter((x): x is WalkthroughSlideFromCms => x !== null);
 
   return {
     frontPage: (fpRes.data ?? []) as FrontPageImageRow[],
     showcase: (shRes.data ?? []) as ShowcaseImageRow[],
+    walkthroughSlides,
   };
 });
 
