@@ -1,106 +1,106 @@
 {
   "seo": {
-    "title": "PublicSelf — try outfits, poses, and polish on your own photos",
-    "description": "Upload face and body references, explore formal and casual outfits, run a controlled AI photoshoot with poses you pick, then tune or swap details—plus LinkedIn-ready exports when you want them."
+    "title": "PublicSelf — play with your own image",
+    "description": "Upload a couple of photos, dress up, drop in props, and play around with new versions of yourself. A playful studio for portraits with your own face."
   },
   "nav": {
     "wordmark": "PUBLICSELF"
   },
   "hero": {
-    "badge": "On-camera presence",
-    "title": "Experiment with how you look on camera, without a real shoot.",
-    "description": "Start from your photos, explore outfits and scenes, direct poses like a mini studio, then refine with tune and item tweaks. When you land on a shot you like, export it in a quality that works for LinkedIn, your website, or your portfolio.",
-    "primaryCta": "Try free generations in the studio",
+    "badge": "A playground for your image",
+    "title": "Dress up, drop in props, see another version of yourself.",
+    "description": "Bring a couple of photos. Pick an outfit, a pose, a setting — or upload a piece of clothing and try it on. Play around. Keep what you like.",
+    "primaryCta": "Start playing — 5 free credits",
     "secondaryCta": "Log in",
     "beforeLabel": "Your input",
     "afterLabel": "Your direction",
-    "imageAlt": "A composed portrait on a dark background: calm presence, tailored look, and creative styling",
+    "imageAlt": "A composed portrait on a dark background — calm presence, tailored look",
     "slogans": [
-      "Outfit, pose, and setting, guided so it still feels like you.",
-      "Same person, new outfit, new pose, guided instead of random.",
-      "Tune the shot you like instead of starting from scratch every time."
+      "Bring your face. Pick a look. Play around.",
+      "Same you, new outfit, new pose — without the shoot.",
+      "Tweak the version you like instead of starting over."
     ],
     "featureCards": [
       {
-        "title": "Create outfit",
-        "body": "Start from your references and shape a look that still feels like you."
+        "title": "Build a look",
+        "body": "Start from your photos and shape an outfit that still feels like you."
       },
       {
-        "title": "Create photoshoot in a new outfit",
-        "body": "Run a shoot with poses, framing, and scenes you choose."
+        "title": "Try it on",
+        "body": "Pick a pose, a setting, drop in a clothing item — see how it lands."
       },
       {
-        "title": "Adjust, download, or upscale",
-        "body": "Fine-tune a shot you like, then export or upscale what you want to keep."
+        "title": "Tweak and save",
+        "body": "Refine the ones that are close, keep the ones you like."
       }
     ]
   },
   "screenshots": {
-    "eyebrow": "Inside the studio",
-    "title": "How it comes together",
+    "eyebrow": "How it works",
+    "title": "Upload, dress up, generate.",
     "prev": "Previous image",
     "next": "Next image",
     "slides": [
       {
-        "caption": "Prepare your references, then explore outfits, poses, and polish in the shoot workspace."
+        "caption": "Bring in a couple of photos — they keep your face and body consistent."
       },
       {
-        "caption": "Switch between create and shoot modes, tune controls, and review results in the gallery rail."
+        "caption": "Pick an outfit, a pose, a setting. Drop in your own clothing item if you have one."
       },
       {
-        "caption": "Iterate on a look you like — download or refine until the shot feels right."
+        "caption": "Tweak what's close, save the ones you like."
       }
     ]
   },
   "gallery": {
-    "eyebrow": "Examples",
-    "title": "See what you can create",
-    "description": "A mix of sample directions—outfits, poses, and polish. When the studio has shared examples to highlight, they appear here automatically.",
+    "eyebrow": "A few examples",
+    "title": "Versions of you",
+    "description": "Some directions to play with — outfits, moods, settings. Save what feels right.",
     "carouselPrev": "Previous examples",
     "carouselNext": "Next examples",
     "items": [
       {
-        "title": "Headshot polish",
-        "body": "Clean framing when you want something professional without booking a photographer."
+        "title": "Cleaner version of you",
+        "body": "Sharper and calmer, still recognizably you."
       },
       {
-        "title": "Outfit exploration",
-        "body": "Test how different clothes read on camera before you commit to a look."
+        "title": "Try on a different look",
+        "body": "See how an outfit changes the whole mood."
       },
       {
-        "title": "Pose variants",
-        "body": "Same identity, different posture and energy—useful for profiles and creative shots."
+        "title": "Same you, different energy",
+        "body": "Shift from relaxed to sharp, soft to bold."
       },
       {
-        "title": "Outdoor & location",
-        "body": "Change the scene while keeping recognition and proportions believable."
+        "title": "Step into a scene",
+        "body": "Change the setting without losing yourself."
       },
       {
-        "title": "Casual vs formal",
-        "body": "Compare tones side by side instead of guessing from one static headshot."
+        "title": "Drop in your own item",
+        "body": "Upload a jacket or accessory and try it on."
       },
       {
-        "title": "Refined exports",
-        "body": "When you are happy, download something you can use on LinkedIn or your portfolio."
+        "title": "Save what you like",
+        "body": "Download anything that feels worth keeping."
       }
     ]
   },
   "pricing": {
     "eyebrow": "Credits",
-    "title": "Ready to try credits in the studio?",
-    "description": "Same packs and prices as inside the app. Pick a pack here, then sign in on the studio to complete checkout securely.",
+    "title": "Want more rounds?",
+    "description": "5 free credits to start. Pick a pack here, then sign in to the studio to check out.",
     "cta": "Buy credits in the studio",
     "creditsUnit": "credits",
     "plans": [
       {
         "label": "Starter",
         "name": "PublicSelf Starter",
-        "body": "Enough to try several outfits and poses, compare results, and keep a first batch of downloads."
+        "body": "Enough to play with a few outfits and poses and keep a first batch you like."
       },
       {
         "label": "Studio",
         "name": "PublicSelf Studio",
-        "body": "More room to iterate—extra poses, more tune passes, and more keepers without topping up as often."
+        "body": "More room to keep playing — extra poses, more tweaks, more keepers."
       }
     ]
   },
@@ -108,26 +108,26 @@
     "eyebrow": "How it works",
     "sections": [
       {
-        "title": "Build your look from reference photos",
-        "subtitle": "Face and body context",
-        "body": "Upload the references the studio asks for so outfits, proportions, and likeness stay grounded. Save a look when one direction feels right so you can reuse it later."
+        "title": "Bring your photos",
+        "subtitle": "Face and body reference",
+        "body": "Upload a couple of photos so the studio keeps your likeness consistent across generations."
       },
       {
-        "title": "Run the studio like a photoshoot",
-        "subtitle": "Poses, crops, and scenes you choose",
-        "body": "Direct the session: poses, framing, and backgrounds that match how you want to appear online. Iterate until something feels usable—not just the first generation."
+        "title": "Pick a look",
+        "subtitle": "Outfit, pose, setting",
+        "body": "Choose an outfit, a pose, a backdrop. Drop in your own clothing item if you want to try it on."
       },
       {
-        "title": "Tune, swap, and export",
-        "subtitle": "Refine instead of reinventing",
-        "body": "When a pose is close, tune details or swap pieces. Download what you want to keep; treat LinkedIn-ready output as one outcome among many, not the whole story."
+        "title": "Tweak and save",
+        "subtitle": "Refine instead of restart",
+        "body": "When something is close, tweak the details. Download what you want to keep."
       }
     ]
   },
   "footer": {
     "eyebrow": "Ready when you are",
-    "title": "Start on the studio when you want real generations.",
-    "body": "Use this page to see what PublicSelf is for. Open the studio to build looks, run shoots, tune results, and buy credits when you are ready.",
+    "title": "Open the studio when you want to play.",
+    "body": "5 free credits to start. Bring a couple of photos and see what you make.",
     "primaryCta": "Open the studio",
     "secondaryCta": "Log in",
     "legalPrefix": "By continuing you agree to our",

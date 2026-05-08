@@ -5,26 +5,16 @@ import { DocumentLang } from "@/components/document-lang";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
 import { MarketingScreenshotSlider } from "@/components/landing/marketing-screenshot-slider";
 import { MarketingGalleryCarousel } from "@/components/landing/marketing-gallery-carousel";
-import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
-import { LandingPillar } from "@/components/landing/landing-pillar";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
 import {
-  howItWorksImages,
   marketingHeroScreenshot,
   marketingProductSlides,
   showcaseImages,
 } from "@/lib/landing-assets";
-import {
-  isRecord,
-  parseFaqItems,
-  parsePillar,
-  parseRichBlocks,
-} from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import {
-  isSupabaseStorageUrl,
   pickVariantUrl,
   type ShowcaseImageRow,
   type WalkthroughSlideFromCms,
@@ -39,7 +29,6 @@ type MarketingPageProps = {
 
 export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: MarketingPageProps) {
   const messages = getMessages(locale);
-  const deep = messages.deep;
 
   const signupHref = getLocalizedProductUrl(locale, "/auth");
   const loginHref = getLocalizedProductUrl(locale, "/auth");
@@ -98,33 +87,12 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
     });
   })();
 
-  const pillarsRoot = isRecord(deep.pillars) ? deep.pillars : null;
-  const pillarBuild = parsePillar(pillarsRoot?.buildLook);
-  const pillarShoot = parsePillar(pillarsRoot?.photoshoot);
-  const pillarExperiment = parsePillar(pillarsRoot?.experiment);
-
-  const faqRoot = isRecord(deep.faq) ? deep.faq : null;
-  const faqH2 = faqRoot && typeof faqRoot.h2 === "string" ? faqRoot.h2 : "";
-  const faqIntro = faqRoot && typeof faqRoot.intro === "string" ? faqRoot.intro : "";
-  const faqItems = parseFaqItems(faqRoot?.items);
-
-  const ed = deep.editorial;
-  const editorialH2 = typeof ed?.h2 === "string" ? ed.h2 : "";
-  const editorialLead = typeof ed?.lead === "string" ? ed.lead : "";
-  const editorialBlocks = parseRichBlocks(
-    ed && typeof ed === "object" && ed !== null && "blocks" in ed ? (ed as { blocks: unknown }).blocks : undefined,
-  );
-
-  const img0 = pickVariantUrl(showcaseRows[0]) ?? howItWorksImages.buildLook;
-  const img1 = pickVariantUrl(showcaseRows[1]) ?? howItWorksImages.aiPhotoshoot;
-  const img2 = pickVariantUrl(showcaseRows[2]) ?? howItWorksImages.experiment;
-
   const jsonLd = buildLandingJsonLd({
     baseUrl: MARKETING_SITE_URL,
     locale,
     siteName: "PublicSelf",
     description: messages.seo.description,
-    faqItems,
+    faqItems: [],
   });
 
   return (
@@ -139,7 +107,7 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
           fill
           sizes="100vw"
           quality={88}
-          className="object-contain object-center"
+          className="object-contain object-right"
           priority
         />
         <div
@@ -196,52 +164,6 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
         </div>
       </section>
 
-      {editorialH2 || editorialLead || editorialBlocks.length > 0 ? (
-        <section
-          id="why-identity"
-          className="scroll-mt-20 border-t border-white/[0.06] border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12"
-          aria-labelledby={editorialH2 ? "why-identity-heading" : undefined}
-        >
-          <div className="mx-auto max-w-3xl">
-            {editorialH2 ? (
-              <h2
-                id="why-identity-heading"
-                className="text-3xl font-black tracking-tight text-white sm:text-4xl"
-              >
-                {editorialH2}
-              </h2>
-            ) : null}
-            {editorialLead ? (
-              <p className="mt-5 text-lg font-medium leading-8 text-zinc-400">{editorialLead}</p>
-            ) : null}
-            {editorialBlocks.length > 0 ? (
-              <div
-                id="why-identity-body"
-                className="mt-12 space-y-12 text-lg leading-8 text-zinc-300"
-              >
-                {editorialBlocks.map((block, i) => (
-                  <div key={`${block.h3}-${i}`}>
-                    <h3 className="text-xl font-bold tracking-tight text-white">{block.h3}</h3>
-                    {block.paragraphs.map((p, j) => (
-                      <p key={j} className="mt-4">
-                        {p}
-                      </p>
-                    ))}
-                    {block.bullets && block.bullets.length > 0 ? (
-                      <ul className="mt-4 list-disc space-y-2 pl-5">
-                        {block.bullets.map((b, k) => (
-                          <li key={k}>{b}</li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </div>
-                ))}
-              </div>
-            ) : null}
-          </div>
-        </section>
-      ) : null}
-
       <section
         id="studio-walkthrough"
         className="scroll-mt-20 border-t border-white/[0.06] bg-zinc-950 px-6 py-20 md:py-28 sm:px-10 lg:px-12"
@@ -262,23 +184,24 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
               nextLabel={messages.screenshots.next}
             />
           </div>
-          <p className="mx-auto mt-16 max-w-3xl text-left text-[17px] leading-relaxed tracking-[-0.01em] text-zinc-300 md:mt-20 md:text-lg">
-            {messages.hero.description}
-          </p>
         </div>
       </section>
 
-      <section className="border-t border-white/[0.06] bg-zinc-950 px-6 py-16 sm:px-10 lg:px-12">
-        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3 md:gap-6">
-          {messages.hero.featureCards.map((card) => (
-            <article
-              key={card.title}
-              className="rounded-2xl border border-white/[0.06] bg-transparent px-6 py-8 md:px-7 md:py-9"
-            >
-              <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">{card.title}</h3>
-              <p className="mt-4 text-[15px] leading-relaxed tracking-[-0.01em] text-zinc-300">{card.body}</p>
-            </article>
-          ))}
+      <section id="gallery" className="scroll-mt-20 border-t border-white/[0.06] bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.gallery.eyebrow}</p>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{messages.gallery.title}</h2>
+            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.gallery.description}</p>
+          </div>
+
+          <div className="mt-12">
+            <MarketingGalleryCarousel
+              tiles={galleryTiles}
+              prevLabel={messages.gallery.carouselPrev}
+              nextLabel={messages.gallery.carouselNext}
+            />
+          </div>
         </div>
       </section>
 
@@ -346,96 +269,16 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
         </div>
       </section>
 
-      <section id="gallery" className="scroll-mt-20 border-b border-white/10 bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-2xl">
-            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.gallery.eyebrow}</p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{messages.gallery.title}</h2>
-            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.gallery.description}</p>
-          </div>
-
-          <div className="mt-12">
-            <MarketingGalleryCarousel
-              tiles={galleryTiles}
-              prevLabel={messages.gallery.carouselPrev}
-              nextLabel={messages.gallery.carouselNext}
-            />
-          </div>
-        </div>
-      </section>
-
-      {pillarBuild ? (
-        <LandingPillar
-          id="pillar-build-look"
-          h2={pillarBuild.h2}
-          lead={pillarBuild.lead}
-          blocks={pillarBuild.blocks}
-          imageSrc={img0}
-          imageAlt={pillarBuild.imageAlt}
-          imageRight={true}
-        />
-      ) : null}
-
-      {pillarShoot ? (
-        <LandingPillar
-          id="pillar-photoshoot"
-          h2={pillarShoot.h2}
-          lead={pillarShoot.lead}
-          blocks={pillarShoot.blocks}
-          imageSrc={img1}
-          imageAlt={pillarShoot.imageAlt}
-          imageRight={false}
-        />
-      ) : null}
-
-      {pillarExperiment ? (
-        <LandingPillar
-          id="pillar-experiment"
-          h2={pillarExperiment.h2}
-          lead={pillarExperiment.lead}
-          blocks={pillarExperiment.blocks}
-          imageSrc={img2}
-          imageAlt={pillarExperiment.imageAlt}
-          imageRight={true}
-        />
-      ) : null}
-
-      {faqH2 && faqItems.length > 0 ? (
-        <LandingFaq id="faq" h2={faqH2} intro={faqIntro || undefined} items={faqItems} />
-      ) : null}
-
-      <footer className="bg-black px-6 py-16 sm:px-10 lg:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 rounded-[2rem] border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <p className="text-[11px] font-black uppercase tracking-[0.28em] text-white/55">{messages.footer.eyebrow}</p>
-            <h2 className="mt-4 text-3xl font-black tracking-tight text-white sm:text-4xl">{messages.footer.title}</h2>
-            <p className="mt-4 text-lg leading-8 text-zinc-300">{messages.footer.body}</p>
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-zinc-400">
-              <span>{messages.footer.legalPrefix}</span>
-              <Link href={termsHref} className="text-white hover:text-zinc-300">
-                {messages.footer.terms}
-              </Link>
-              <span>{messages.footer.and}</span>
-              <Link href={privacyHref} className="text-white hover:text-zinc-300">
-                {messages.footer.privacy}
-              </Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={signupHref}
-              className="inline-flex min-h-14 items-center justify-center rounded-2xl bg-white px-7 text-sm font-black uppercase tracking-[0.18em] !text-zinc-950 transition hover:bg-zinc-200 hover:!text-zinc-950"
-            >
-              {messages.footer.primaryCta}
-            </Link>
-            <Link
-              href={loginHref}
-              className="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/20 bg-white/6 px-7 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:bg-white/12"
-            >
-              {messages.footer.secondaryCta}
-            </Link>
-          </div>
+      <footer className="bg-black px-6 py-10 sm:px-10 lg:px-12">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 text-sm text-zinc-400">
+          <span>{messages.footer.legalPrefix}</span>
+          <Link href={termsHref} className="text-white hover:text-zinc-300">
+            {messages.footer.terms}
+          </Link>
+          <span>{messages.footer.and}</span>
+          <Link href={privacyHref} className="text-white hover:text-zinc-300">
+            {messages.footer.privacy}
+          </Link>
         </div>
       </footer>
     </main>
