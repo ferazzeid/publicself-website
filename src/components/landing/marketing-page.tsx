@@ -151,7 +151,7 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:h-[min(80dvh,720px)] lg:aspect-auto">
+          <div className="relative w-full aspect-[3/4] lg:aspect-auto lg:h-[min(88dvh,840px)]">
             <Image
               src={marketingHeroScreenshot}
               alt={messages.hero.imageAlt}
