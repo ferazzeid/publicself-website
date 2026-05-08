@@ -35,6 +35,11 @@
       }
     ]
   },
+  "intro": {
+    "eyebrow": "Was ist das?",
+    "title": "Ein privates Studio, um mit deinem eigenen Bild zu spielen.",
+    "body": "Bring ein paar Fotos mit. Probiere Outfits, Settings, Posen und Stimmungen aus, die du im echten Leben so nie aufziehen würdest. Manche Aufnahmen sitzen, andere nicht – das ist Teil des Spaßes. Behalte, was dir gefällt."
+  },
   "screenshots": {
     "eyebrow": "Im Studio",
     "title": "So fügt es sich zusammen",

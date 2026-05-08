@@ -35,6 +35,11 @@
       }
     ]
   },
+  "intro": {
+    "eyebrow": "C’est quoi ?",
+    "title": "Un studio privé pour jouer avec ta propre image.",
+    "body": "Apporte quelques photos. Essaie des tenues, des décors, des poses et des ambiances que tu ne mettrais jamais en place pour un vrai shooting. Certains clichés tomberont juste, d’autres non — c’est ça qui est drôle. Garde ce qui te plaît."
+  },
   "screenshots": {
     "eyebrow": "Dans le studio",
     "title": "Comment ça s’articule",

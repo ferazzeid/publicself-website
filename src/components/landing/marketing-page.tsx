@@ -5,6 +5,7 @@ import { DocumentLang } from "@/components/document-lang";
 import { LanguageSwitcher } from "@/components/landing/language-switcher";
 import { MarketingScreenshotSlider } from "@/components/landing/marketing-screenshot-slider";
 import { MarketingGalleryCarousel } from "@/components/landing/marketing-gallery-carousel";
+import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
 import { getMessages } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
@@ -13,6 +14,7 @@ import {
   marketingProductSlides,
   showcaseImages,
 } from "@/lib/landing-assets";
+import { isRecord, parseFaqItems } from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import {
   pickVariantUrl,
@@ -29,6 +31,7 @@ type MarketingPageProps = {
 
 export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: MarketingPageProps) {
   const messages = getMessages(locale);
+  const deep = messages.deep;
 
   const signupHref = getLocalizedProductUrl(locale, "/auth");
   const loginHref = getLocalizedProductUrl(locale, "/auth");
@@ -87,12 +90,17 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
     });
   })();
 
+  const faqRoot = isRecord(deep.faq) ? deep.faq : null;
+  const faqH2 = faqRoot && typeof faqRoot.h2 === "string" ? faqRoot.h2 : "";
+  const faqIntro = faqRoot && typeof faqRoot.intro === "string" ? faqRoot.intro : "";
+  const faqItems = parseFaqItems(faqRoot?.items);
+
   const jsonLd = buildLandingJsonLd({
     baseUrl: MARKETING_SITE_URL,
     locale,
     siteName: "PublicSelf",
     description: messages.seo.description,
-    faqItems: [],
+    faqItems,
   });
 
   return (
@@ -100,26 +108,12 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
       <DocumentLang locale={locale} />
       <LandingJsonLd data={jsonLd} />
 
-      <section className="relative isolate min-h-[100dvh] w-full overflow-hidden bg-black">
-        <Image
-          src={marketingHeroScreenshot}
-          alt={messages.hero.imageAlt}
-          fill
-          sizes="100vw"
-          quality={88}
-          className="object-contain object-right"
-          priority
-        />
-        <div
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.42)_0%,transparent_26%,transparent_62%,rgba(0,0,0,0.48)_100%)]"
-          aria-hidden
-        />
-
+      <section className="relative isolate w-full overflow-hidden bg-black">
         <div className="absolute inset-x-0 top-0 z-20 pt-[max(1.25rem,env(safe-area-inset-top))]">
           <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 sm:px-10 lg:px-12">
             <Link
               href="/"
-              className="text-[11px] font-semibold uppercase tracking-[0.38em] text-white [text-shadow:0_1px_14px_rgba(0,0,0,0.55)] sm:text-xs"
+              className="text-[11px] font-semibold uppercase tracking-[0.38em] text-white sm:text-xs"
             >
               {messages.nav.wordmark}
             </Link>
@@ -127,26 +121,21 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[100dvh] w-full max-w-7xl flex-col justify-between px-6 pb-12 pt-[clamp(5.75rem,15vw,8.5rem)] sm:px-10 lg:px-12">
-          <div className="flex flex-1 flex-col justify-center">
-            <div className="w-full max-w-2xl text-left">
-              <div className="mb-6 flex items-center gap-4">
-                <span className="h-px w-10 shrink-0 bg-white/45 sm:w-12" aria-hidden />
-                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80 sm:text-[11px]">
-                  {messages.hero.badge}
-                </p>
-              </div>
-              <h1 className="text-[clamp(1.85rem,4.2vw,3.35rem)] font-semibold leading-[1.08] tracking-[-0.035em] text-white [text-shadow:0_2px_48px_rgba(0,0,0,0.42)]">
-                {messages.hero.title}
-              </h1>
-              <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.125rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/88 [text-shadow:0_1px_24px_rgba(0,0,0,0.38)]">
-                {heroCaption}
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-6 pb-16 pt-28 sm:px-10 sm:pt-32 lg:min-h-[100dvh] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12 lg:px-12 lg:py-0">
+          <div className="flex flex-col justify-center">
+            <div className="mb-6 flex items-center gap-4">
+              <span className="h-px w-10 shrink-0 bg-white/45 sm:w-12" aria-hidden />
+              <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80 sm:text-[11px]">
+                {messages.hero.badge}
               </p>
             </div>
-          </div>
-
-          <div className="w-full max-w-2xl space-y-6">
-            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <h1 className="text-[clamp(1.85rem,4.2vw,3.35rem)] font-semibold leading-[1.08] tracking-[-0.035em] text-white">
+              {messages.hero.title}
+            </h1>
+            <p className="mt-5 max-w-xl text-[clamp(0.95rem,2vw,1.125rem)] font-medium leading-relaxed tracking-[-0.015em] text-white/88">
+              {heroCaption}
+            </p>
+            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href={signupHref}
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-8 text-[11px] font-semibold uppercase tracking-[0.16em] !text-zinc-950 transition hover:bg-zinc-100"
@@ -160,6 +149,51 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
                 {messages.hero.secondaryCta}
               </Link>
             </div>
+          </div>
+
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm sm:max-w-md lg:max-w-none lg:h-[min(80dvh,720px)] lg:aspect-auto">
+            <Image
+              src={marketingHeroScreenshot}
+              alt={messages.hero.imageAlt}
+              fill
+              sizes="(max-width: 1024px) 90vw, 50vw"
+              quality={92}
+              className="object-contain object-center"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="what-it-is"
+        className="scroll-mt-20 border-t border-white/[0.06] bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-zinc-500">
+              {messages.intro.eyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">
+              {messages.intro.title}
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-zinc-300">{messages.intro.body}</p>
+          </div>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3 md:gap-6">
+            {messages.hero.featureCards.map((card) => (
+              <article
+                key={card.title}
+                className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-6 py-7 md:px-7 md:py-8"
+              >
+                <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed tracking-[-0.01em] text-zinc-300">
+                  {card.body}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -268,6 +302,10 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
           </div>
         </div>
       </section>
+
+      {faqH2 && faqItems.length > 0 ? (
+        <LandingFaq id="faq" h2={faqH2} intro={faqIntro || undefined} items={faqItems} />
+      ) : null}
 
       <footer className="bg-black px-6 py-10 sm:px-10 lg:px-12">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 text-sm text-zinc-400">

@@ -140,52 +140,28 @@
       }
     },
     "faq": {
-      "h2": "Frequently asked questions",
-      "intro": "Honest answers about what PublicSelf does and doesn't do.",
+      "h2": "Questions worth asking",
+      "intro": "Quick answers about what PublicSelf is and isn't.",
       "items": [
         {
           "q": "What is PublicSelf?",
-          "a": "A web app where you upload two photos of yourself, pick an outfit, pose, and background, and generate an AI portrait. It's for experimenting with how you look on camera — not for guaranteed professional headshots."
+          "a": "A studio for trying on outfits, poses, and settings on your own face — without setting up a real shoot. Think playground, not headshot service."
         },
         {
           "q": "How many photos do I need to upload?",
-          "a": "Two: one full-body photo (head to toe, good lighting) and one face close-up (eyes visible, no heavy filters). A third photo from a different angle is optional and may help in some cases. If you can only get a clear full-body shot, the studio can crop a face reference from it."
+          "a": "Two: one full-body and one face close-up. Good lighting, no heavy filters. The studio uses them to keep your likeness consistent across generations."
         },
         {
-          "q": "Do I get any free credits?",
-          "a": "Yes — you get 5 free credits when you sign up, no payment required. That's enough to try a couple of generations and see if the experience works for you."
+          "q": "Will it actually look like me?",
+          "a": "Mostly. Better reference photos give better consistency. Some shots land closer than others — regenerate or tweak when one's off. That iteration is part of the fun."
         },
         {
-          "q": "Will it look exactly like me?",
-          "a": "It tries to. The system uses your reference photos to guide the generation, but it doesn't lock your face deterministically — AI models have limits. Better photos (clear lighting, visible features, no heavy filters) give more consistent results. Some generations will be closer than others."
-        },
-        {
-          "q": "Can I use the results on LinkedIn or Instagram?",
-          "a": "Many people do. You're responsible for following each platform's rules, including disclosure where required for AI-generated or AI-assisted content. Results vary — some generations are good enough to post, many won't be."
-        },
-        {
-          "q": "What is Tune mode?",
-          "a": "Tune is an edit pass on an existing result. It lets you swap or refine a clothing layer — often using a garment photo you upload — without regenerating the whole image. It costs credits and works within model limits. Tune is enabled by default but can be turned off."
-        },
-        {
-          "q": "What happens when a generation doesn't look right?",
-          "a": "Regenerate with small changes. Try a different pose, a simpler background, or less clutter. Hands, thin straps, and accessories are the most common weak points for AI portrait generators. Iteration is part of the process — not a bug."
-        },
-        {
-          "q": "Can I upload any outfit image as a reference?",
-          "a": "You can upload your own items (jackets, shoes, accessories, etc.) and the studio will try to incorporate them. There's no general 'paste any URL' feature — you upload via the item uploader in the studio."
-        },
-        {
-          "q": "Is this for professional headshots or e-commerce?",
-          "a": "No. PublicSelf is for personal experimentation with how you look on camera. It's not designed for SKU-accurate product photography or guaranteed professional headshots. Some people get results they use for LinkedIn — that's a bonus, not the promise."
-        },
-        {
-          "q": "Do you store my photos or results?",
-          "a": "Your reference photos are used for generation. Results are stored temporarily — we don't promise long-term hosting. Download anything you want to keep."
+          "q": "Can I post these on social media?",
+          "a": "Plenty of people do — Instagram, LinkedIn, dating profiles, group chats. You're responsible for each platform's AI disclosure rules."
         },
         {
           "q": "How do credits work?",
-          "a": "Credits pay for generation attempts. You start with 5 free credits. Additional packs are available on this page. Exact credit costs per generation depend on the current configuration in the studio."
+          "a": "5 free credits at signup, no payment needed. Each generation costs a few credits. Buy more packs from the studio whenever you want another round."
         }
       ]
     }

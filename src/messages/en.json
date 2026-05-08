@@ -35,6 +35,11 @@
       }
     ]
   },
+  "intro": {
+    "eyebrow": "What is this?",
+    "title": "A private studio for playing with your own image.",
+    "body": "Bring a couple of photos. Try on outfits, settings, poses, and energies you'd never set up for a real shoot. Some shots will land, some won't — that's the fun. Keep what you like."
+  },
   "screenshots": {
     "eyebrow": "How it works",
     "title": "Upload, dress up, generate.",
