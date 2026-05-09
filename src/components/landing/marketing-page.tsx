@@ -17,7 +17,10 @@ import {
 import { isRecord, parseFaqItems } from "@/lib/landingDeepParse";
 import { buildLandingJsonLd } from "@/lib/landingStructuredData";
 import {
+  isSupabaseStorageUrl,
+  LANDING_EXAMPLE_SLOTS,
   pickVariantUrl,
+  type LandingAssetsMap,
   type ShowcaseImageRow,
   type WalkthroughSlideFromCms,
 } from "@/lib/marketing-data";
@@ -27,9 +30,15 @@ type MarketingPageProps = {
   locale: Locale;
   showcaseRows: ShowcaseImageRow[];
   walkthroughSlides?: WalkthroughSlideFromCms[];
+  landingAssets?: LandingAssetsMap;
 };
 
-export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: MarketingPageProps) {
+export function MarketingPage({
+  locale,
+  showcaseRows,
+  walkthroughSlides = [],
+  landingAssets,
+}: MarketingPageProps) {
   const messages = getMessages(locale);
   const deep = messages.deep;
 
@@ -40,6 +49,11 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
   const privacyHref = getLocalizedProductUrl(locale, "/privacy");
 
   const heroCaption = messages.hero.slogans[0];
+
+  // Single source of truth for marketing imagery: admin uploads in
+  // `landing_assets` win, with bundled defaults as fallback so the page
+  // renders even before any uploads land.
+  const heroSrc = landingAssets?.hero || marketingHeroScreenshot;
 
   const screenshotSlides = (() => {
     const captionSlides = messages.screenshots.slides;
@@ -66,6 +80,17 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
   })();
 
   const galleryTiles = (() => {
+    // Primary: per-slot uploads from the admin Marketing tab.
+    const fromAdmin = LANDING_EXAMPLE_SLOTS.map((slot, index) => {
+      const src = landingAssets?.[slot];
+      if (!src) return null;
+      const fallback = messages.gallery.items[index % messages.gallery.items.length];
+      return { src, alt: fallback.title, title: fallback.title, body: fallback.body };
+    }).filter((t): t is NonNullable<typeof t> => t !== null);
+
+    if (fromAdmin.length > 0) return fromAdmin;
+
+    // Fallback 1: DB showcase rows (legacy `front_page`/`showcase` flow).
     const fromDb = showcaseRows
       .map((row, index) => {
         const src = pickVariantUrl(row);
@@ -79,6 +104,7 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
 
     if (fromDb.length > 0) return fromDb;
 
+    // Fallback 2: bundled local defaults so the page never renders empty.
     return showcaseImages.map((image, index) => {
       const fallback = messages.gallery.items[index % messages.gallery.items.length];
       return {
@@ -153,13 +179,14 @@ export function MarketingPage({ locale, showcaseRows, walkthroughSlides = [] }: 
 
           <div className="relative w-full aspect-[3/4] lg:aspect-auto lg:h-[min(88dvh,840px)]">
             <Image
-              src={marketingHeroScreenshot}
+              src={heroSrc}
               alt={messages.hero.imageAlt}
               fill
               sizes="(max-width: 1024px) 90vw, 50vw"
               quality={92}
               className="object-contain object-center"
               priority
+              unoptimized={typeof heroSrc === "string" && isSupabaseStorageUrl(heroSrc)}
             />
           </div>
         </div>

@@ -3,7 +3,11 @@ import { notFound } from "next/navigation";
 
 import { MarketingPage } from "@/components/landing/marketing-page";
 import { buildLandingMetadata } from "@/lib/content";
-import { loadMarketingGalleryData, ogPreviewFromFrontPage } from "@/lib/marketing-data";
+import {
+  loadLandingAssets,
+  loadMarketingGalleryData,
+  ogPreviewFromFrontPage,
+} from "@/lib/marketing-data";
 import { isSupportedLocale, type Locale } from "@/lib/site";
 
 type LocalePageProps = {
@@ -35,12 +39,16 @@ export default async function LocalizedHome({ params }: LocalePageProps) {
     notFound();
   }
 
-  const data = await loadMarketingGalleryData();
+  const [data, landingAssets] = await Promise.all([
+    loadMarketingGalleryData(),
+    loadLandingAssets(),
+  ]);
   return (
     <MarketingPage
       locale={locale as Locale}
       showcaseRows={data.showcase}
       walkthroughSlides={data.walkthroughSlides}
+      landingAssets={landingAssets}
     />
   );
 }

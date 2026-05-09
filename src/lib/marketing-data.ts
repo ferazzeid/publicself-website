@@ -99,19 +99,51 @@ export const loadMarketingGalleryData = cache(async (): Promise<{
   };
 });
 
+export const LANDING_EXAMPLE_SLOTS = [
+  "example_1",
+  "example_2",
+  "example_3",
+  "example_4",
+  "example_5",
+  "example_6",
+  "example_7",
+  "example_8",
+  "example_9",
+] as const;
+
+export type LandingExampleSlot = (typeof LANDING_EXAMPLE_SLOTS)[number];
+
 export type LandingAssetSlot =
   | "hero"
   | "pillar_build_look"
   | "pillar_photoshoot"
   | "pillar_experiment"
-  | "walkthrough_slide_1";
+  | "walkthrough_slide_1"
+  | "walkthrough_slide_2"
+  | "walkthrough_slide_3"
+  | LandingExampleSlot;
 
 export type LandingAssetsMap = Partial<Record<LandingAssetSlot, string>>;
+
+const KNOWN_SLOTS: ReadonlySet<string> = new Set([
+  "hero",
+  "pillar_build_look",
+  "pillar_photoshoot",
+  "pillar_experiment",
+  "walkthrough_slide_1",
+  "walkthrough_slide_2",
+  "walkthrough_slide_3",
+  ...LANDING_EXAMPLE_SLOTS,
+]);
 
 /**
  * Fetch admin-managed landing-page image URLs from public.landing_assets.
  * Returns an empty map if Supabase isn't configured or the table is missing —
  * callers should fall back to bundled static defaults in landing-assets.ts.
+ *
+ * Single source of truth for the marketing site: hero, pillars, walkthrough
+ * screenshots, and the examples carousel are all driven by this map. The
+ * admin Marketing tab writes to these same slots.
  */
 export const loadLandingAssets = cache(async (): Promise<LandingAssetsMap> => {
   const supabase = createPublicSupabaseClient();
@@ -126,14 +158,8 @@ export const loadLandingAssets = cache(async (): Promise<LandingAssetsMap> => {
   const out: LandingAssetsMap = {};
   for (const row of data as { slot: string; url: string | null }[]) {
     if (!row.url) continue;
-    if (
-      row.slot === "hero" ||
-      row.slot === "pillar_build_look" ||
-      row.slot === "pillar_photoshoot" ||
-      row.slot === "pillar_experiment" ||
-      row.slot === "walkthrough_slide_1"
-    ) {
-      out[row.slot] = row.url;
+    if (KNOWN_SLOTS.has(row.slot)) {
+      out[row.slot as LandingAssetSlot] = row.url;
     }
   }
   return out;
