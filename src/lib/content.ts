@@ -27,6 +27,11 @@ export function getMessages(locale: Locale): LandingMessages {
   return { ...messagesByLocale[locale], deep: deepByLocale[locale] };
 }
 
+/** Substitute the `{credits}` placeholder in a translation string. */
+export function withCredits(input: string, credits: number): string {
+  return input.replace(/\{credits\}/g, String(credits));
+}
+
 export function buildLandingMetadata(locale: Locale, previewImageUrl?: string): Metadata {
   const messages = getMessages(locale);
   const canonical = getLocaleUrl(locale);

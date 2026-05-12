@@ -13,7 +13,7 @@
     ],
     "editorial": {
       "h2": "Joue avec ton apparence à la caméra — sans vrai shooting",
-      "lead": "Deux photos, un choix de tenue, une pose, un décor. Génère. Vois ce qui revient. Certains résultats surprennent. D'autres valent la peine d'être gardés. 5 crédits gratuits pour le découvrir.",
+      "lead": "Deux photos, un choix de tenue, une pose, un décor. Génère. Vois ce qui revient. Certains résultats surprennent. D'autres valent la peine d'être gardés. {credits} crédits gratuits pour le découvrir.",
       "blocks": [
         {
           "h3": "C'est fait pour toi si tu veux",
@@ -121,7 +121,7 @@
             "paragraphs": [],
             "bullets": [
               "Chaque génération coûte des crédits. Tune coûte aussi des crédits.",
-              "Tu reçois 5 crédits gratuits à l'inscription — aucun paiement requis.",
+              "Tu reçois {credits} crédits gratuits à l'inscription — aucun paiement requis.",
               "Pense en lots : quelques variations modestes valent généralement mieux qu'une tentative de prompt parfait.",
               "De petits changements (autre pose, décor plus simple) règlent souvent un quasi-succès."
             ]
@@ -153,7 +153,7 @@
         },
         {
           "q": "Est-ce que je reçois des crédits gratuits ?",
-          "a": "Oui — tu reçois 5 crédits gratuits à l'inscription, sans paiement requis. C'est suffisant pour essayer quelques générations et voir si l'expérience te convient."
+          "a": "Oui — tu reçois {credits} crédits gratuits à l'inscription, sans paiement requis. C'est suffisant pour essayer quelques générations et voir si l'expérience te convient."
         },
         {
           "q": "Est-ce que ça me ressemblera exactement ?",
@@ -185,7 +185,7 @@
         },
         {
           "q": "Comment fonctionnent les crédits ?",
-          "a": "Les crédits paient les tentatives de génération. Tu commences avec 5 crédits gratuits. Des packs supplémentaires sont disponibles sur cette page. Le coût exact en crédits par génération dépend de la configuration actuelle dans le studio."
+          "a": "Les crédits paient les tentatives de génération. Tu commences avec {credits} crédits gratuits. Des packs supplémentaires sont disponibles sur cette page. Le coût exact en crédits par génération dépend de la configuration actuelle dans le studio."
         }
       ]
     }

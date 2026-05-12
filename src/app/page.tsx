@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { MarketingPage } from "@/components/landing/marketing-page";
 import { buildLandingMetadata } from "@/lib/content";
 import {
+  loadDefaultSignupCredits,
   loadLandingAssets,
   loadMarketingGalleryData,
   ogPreviewFromFrontPage,
@@ -17,9 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const [data, landingAssets] = await Promise.all([
+  const [data, landingAssets, signupCredits] = await Promise.all([
     loadMarketingGalleryData(),
     loadLandingAssets(),
+    loadDefaultSignupCredits(),
   ]);
   return (
     <MarketingPage
@@ -27,6 +29,7 @@ export default async function Home() {
       showcaseRows={data.showcase}
       walkthroughSlides={data.walkthroughSlides}
       landingAssets={landingAssets}
+      signupCredits={signupCredits}
     />
   );
 }

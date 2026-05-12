@@ -10,7 +10,7 @@
     "badge": "A playground for your image",
     "title": "Dress up, drop in props, see another version of yourself.",
     "description": "Bring a couple of photos. Pick an outfit, a pose, a setting — or upload a piece of clothing and try it on. Play around. Keep what you like.",
-    "primaryCta": "Start playing — 5 free credits",
+    "primaryCta": "Start playing — {credits} free credits",
     "secondaryCta": "Log in",
     "beforeLabel": "Your input",
     "afterLabel": "Your direction",
@@ -93,7 +93,7 @@
   "pricing": {
     "eyebrow": "Credits",
     "title": "Want more rounds?",
-    "description": "5 free credits to start. Pick a pack here, then sign in to the studio to check out.",
+    "description": "{credits} free credits to start. Pick a pack here, then sign in to the studio to check out.",
     "cta": "Buy credits in the studio",
     "creditsUnit": "credits",
     "plans": [
@@ -132,7 +132,7 @@
   "footer": {
     "eyebrow": "Ready when you are",
     "title": "Open the studio when you want to play.",
-    "body": "5 free credits to start. Bring a couple of photos and see what you make.",
+    "body": "{credits} free credits to start. Bring a couple of photos and see what you make.",
     "primaryCta": "Open the studio",
     "secondaryCta": "Log in",
     "legalPrefix": "By continuing you agree to our",

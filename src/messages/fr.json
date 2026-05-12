@@ -10,7 +10,7 @@
     "badge": "Photos de profil propres, rapidement",
     "title": "Des photos de profil professionnelles en quelques minutes.",
     "description": "Télécharge quelques selfies, choisis un preset sélectionné et génère des images de profil propres pour LinkedIn, les portfolios et ta marque personnelle.",
-    "primaryCta": "Essayer 3 générations gratuites",
+    "primaryCta": "Essayer {credits} générations gratuites",
     "secondaryCta": "Se connecter",
     "beforeLabel": "Avant",
     "afterLabel": "Après",

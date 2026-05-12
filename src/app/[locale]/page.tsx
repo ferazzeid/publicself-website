@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MarketingPage } from "@/components/landing/marketing-page";
 import { buildLandingMetadata } from "@/lib/content";
 import {
+  loadDefaultSignupCredits,
   loadLandingAssets,
   loadMarketingGalleryData,
   ogPreviewFromFrontPage,
@@ -39,9 +40,10 @@ export default async function LocalizedHome({ params }: LocalePageProps) {
     notFound();
   }
 
-  const [data, landingAssets] = await Promise.all([
+  const [data, landingAssets, signupCredits] = await Promise.all([
     loadMarketingGalleryData(),
     loadLandingAssets(),
+    loadDefaultSignupCredits(),
   ]);
   return (
     <MarketingPage
@@ -49,6 +51,7 @@ export default async function LocalizedHome({ params }: LocalePageProps) {
       showcaseRows={data.showcase}
       walkthroughSlides={data.walkthroughSlides}
       landingAssets={landingAssets}
+      signupCredits={signupCredits}
     />
   );
 }

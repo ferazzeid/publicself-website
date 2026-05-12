@@ -13,7 +13,7 @@
     ],
     "editorial": {
       "h2": "Spiel mit deiner Wirkung vor der Kamera — kein Shooting nötig",
-      "lead": "Zwei Fotos, eine Outfit-Wahl, eine Pose, ein Hintergrund. Generieren. Sehen was rauskommt. Manche Ergebnisse überraschen. Manche behältst du. 5 kostenlose Credits, um es herauszufinden.",
+      "lead": "Zwei Fotos, eine Outfit-Wahl, eine Pose, ein Hintergrund. Generieren. Sehen was rauskommt. Manche Ergebnisse überraschen. Manche behältst du. {credits} kostenlose Credits, um es herauszufinden.",
       "blocks": [
         {
           "h3": "Das ist für dich, wenn du",
@@ -121,7 +121,7 @@
             "paragraphs": [],
             "bullets": [
               "Jede Generierung kostet Credits. Tune kostet auch Credits.",
-              "Du bekommst 5 kostenlose Credits bei der Anmeldung — keine Zahlung nötig.",
+              "Du bekommst {credits} kostenlose Credits bei der Anmeldung — keine Zahlung nötig.",
               "Denk in Batches: ein paar bescheidene Variationen schlagen meist einen perfekten Prompt-Versuch.",
               "Kleine Änderungen (andere Pose, einfacherer Hintergrund) beheben oft einen Fast-Treffer."
             ]
@@ -153,7 +153,7 @@
         },
         {
           "q": "Bekomme ich kostenlose Credits?",
-          "a": "Ja — du bekommst 5 kostenlose Credits bei der Anmeldung, ohne Zahlung. Das reicht für ein paar Generierungen, um zu sehen, ob das für dich funktioniert."
+          "a": "Ja — du bekommst {credits} kostenlose Credits bei der Anmeldung, ohne Zahlung. Das reicht für ein paar Generierungen, um zu sehen, ob das für dich funktioniert."
         },
         {
           "q": "Wird es genau wie ich aussehen?",
@@ -185,7 +185,7 @@
         },
         {
           "q": "Wie funktionieren Credits?",
-          "a": "Credits bezahlen Generierungsversuche. Du startest mit 5 kostenlosen Credits. Weitere Pakete sind auf dieser Seite verfügbar. Genaue Credit-Kosten pro Generierung hängen von der aktuellen Studio-Konfiguration ab."
+          "a": "Credits bezahlen Generierungsversuche. Du startest mit {credits} kostenlosen Credits. Weitere Pakete sind auf dieser Seite verfügbar. Genaue Credit-Kosten pro Generierung hängen von der aktuellen Studio-Konfiguration ab."
         }
       ]
     }

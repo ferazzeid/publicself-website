@@ -7,7 +7,7 @@ import { MarketingScreenshotSlider } from "@/components/landing/marketing-screen
 import { MarketingGalleryCarousel } from "@/components/landing/marketing-gallery-carousel";
 import { LandingFaq } from "@/components/landing/landing-faq";
 import { LandingJsonLd } from "@/components/landing/landing-json-ld";
-import { getMessages } from "@/lib/content";
+import { getMessages, withCredits } from "@/lib/content";
 import { CREDIT_PACKS_LIST } from "@/lib/credit-packs";
 import {
   marketingHeroScreenshot,
@@ -31,6 +31,8 @@ type MarketingPageProps = {
   showcaseRows: ShowcaseImageRow[];
   walkthroughSlides?: WalkthroughSlideFromCms[];
   landingAssets?: LandingAssetsMap;
+  /** Free credits granted at signup — drives `{credits}` substitution in copy. */
+  signupCredits: number;
 };
 
 export function MarketingPage({
@@ -38,9 +40,12 @@ export function MarketingPage({
   showcaseRows,
   walkthroughSlides = [],
   landingAssets,
+  signupCredits,
 }: MarketingPageProps) {
   const messages = getMessages(locale);
   const deep = messages.deep;
+  const heroPrimaryCta = withCredits(messages.hero.primaryCta, signupCredits);
+  const pricingDescription = withCredits(messages.pricing.description, signupCredits);
 
   const signupHref = getLocalizedProductUrl(locale, "/auth");
   const loginHref = getLocalizedProductUrl(locale, "/auth");
@@ -119,7 +124,10 @@ export function MarketingPage({
   const faqRoot = isRecord(deep.faq) ? deep.faq : null;
   const faqH2 = faqRoot && typeof faqRoot.h2 === "string" ? faqRoot.h2 : "";
   const faqIntro = faqRoot && typeof faqRoot.intro === "string" ? faqRoot.intro : "";
-  const faqItems = parseFaqItems(faqRoot?.items);
+  const faqItems = parseFaqItems(faqRoot?.items).map((item) => ({
+    q: withCredits(item.q, signupCredits),
+    a: withCredits(item.a, signupCredits),
+  }));
 
   const jsonLd = buildLandingJsonLd({
     baseUrl: MARKETING_SITE_URL,
@@ -166,7 +174,7 @@ export function MarketingPage({
                 href={signupHref}
                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-8 text-[11px] font-semibold uppercase tracking-[0.16em] !text-zinc-950 transition hover:bg-zinc-100"
               >
-                {messages.hero.primaryCta}
+                {heroPrimaryCta}
               </Link>
               <Link
                 href={loginHref}
@@ -283,7 +291,7 @@ export function MarketingPage({
               {messages.pricing.title}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-zinc-300 md:text-xl md:leading-relaxed">
-              {messages.pricing.description}
+              {pricingDescription}
             </p>
           </div>
 

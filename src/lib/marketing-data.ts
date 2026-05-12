@@ -137,6 +137,33 @@ const KNOWN_SLOTS: ReadonlySet<string> = new Set([
 ]);
 
 /**
+ * Free credits granted at signup. Read from the same `app_config` row the
+ * studio's admin tab writes (key: `default_signup_credits`, value shape:
+ * `{ credits: number }`). Public read is granted by the stepin migration
+ * `allow_public_read_default_signup_credits`. Falls back to 5 if Supabase
+ * isn't configured or the row is missing.
+ */
+const FALLBACK_SIGNUP_CREDITS = 5;
+
+export const loadDefaultSignupCredits = cache(async (): Promise<number> => {
+  const supabase = createPublicSupabaseClient();
+  if (!supabase) return FALLBACK_SIGNUP_CREDITS;
+
+  const { data, error } = await supabase
+    .from("app_config")
+    .select("value")
+    .eq("key", "default_signup_credits")
+    .maybeSingle();
+
+  if (error || !data) return FALLBACK_SIGNUP_CREDITS;
+  const value = (data as { value?: { credits?: number } }).value;
+  if (typeof value?.credits === "number" && value.credits >= 0) {
+    return Math.min(1000, Math.floor(value.credits));
+  }
+  return FALLBACK_SIGNUP_CREDITS;
+});
+
+/**
  * Fetch admin-managed landing-page image URLs from public.landing_assets.
  * Returns an empty map if Supabase isn't configured or the table is missing —
  * callers should fall back to bundled static defaults in landing-assets.ts.

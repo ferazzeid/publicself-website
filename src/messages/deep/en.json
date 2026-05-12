@@ -13,7 +13,7 @@
     ],
     "editorial": {
       "h2": "Play with how you look on camera — no shoot required",
-      "lead": "Two photos, an outfit choice, a pose, a background. Generate. See what comes back. Some results surprise you. Some you'll keep. 5 free credits to find out.",
+      "lead": "Two photos, an outfit choice, a pose, a background. Generate. See what comes back. Some results surprise you. Some you'll keep. {credits} free credits to find out.",
       "blocks": [
         {
           "h3": "This is for",
@@ -121,7 +121,7 @@
             "paragraphs": [],
             "bullets": [
               "Each generation costs credits. Tune costs credits too.",
-              "You get 5 free credits at signup — no payment needed.",
+              "You get {credits} free credits at signup — no payment needed.",
               "Think in batches: a few modest variations usually beat one perfect prompt attempt.",
               "Small changes (different pose, simpler background) often fix a near-miss."
             ]
@@ -161,7 +161,7 @@
         },
         {
           "q": "How do credits work?",
-          "a": "5 free credits at signup, no payment needed. Each generation costs a few credits. Buy more packs from the studio whenever you want another round."
+          "a": "{credits} free credits at signup, no payment needed. Each generation costs a few credits. Buy more packs from the studio whenever you want another round."
         }
       ]
     }
