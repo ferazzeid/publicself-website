@@ -7,16 +7,16 @@
     "wordmark": "PUBLICSELF"
   },
   "hero": {
-    "badge": "Saubere Profilfotos, schnell",
-    "title": "Professionelle Profilfotos in Minuten.",
+    "badge": "Probier dich in neuen Foto-Ideen",
+    "title": "Erschaffe überraschende, nützliche und unterhaltsame Bilder von dir.",
     "description": "Lade ein paar Selfies hoch, wähle ein kuratiertes Preset und erzeuge saubere Profilbilder für LinkedIn, Portfolios und deine persönliche Marke.",
-    "primaryCta": "{credits} kostenlose Generierungen testen",
+    "primaryCta": "Diese zuerst probieren — {credits} Gratis-Credits",
     "secondaryCta": "Einloggen",
     "beforeLabel": "Vorher",
     "afterLabel": "Nachher",
     "imageAlt": "Ein mit PublicSelf erzeugtes Profilportrait",
     "slogans": [
-      "Fortgeschrittene KI hält deine Identität auch bei neuen Looks wiedererkennbar.",
+      "Wähl eine Idee. Sieh dich darin. Ändere, was du willst.",
       "Vom lockeren Selfie zum profiltauglichen Portrait in kurzer Zeit.",
       "Nutze deine besten Looks für Headshots, 3/4-Crops und sauberere Hintergründe erneut."
     ],
@@ -131,7 +131,7 @@
   },
   "footer": {
     "eyebrow": "Wenn du bereit bist",
-    "title": "Hier starten, im Studio weitermachen.",
+    "title": "Probier dich in einer neuen Idee.",
     "body": "Auf dieser Seite siehst du, wie PublicSelf funktioniert. Wenn du loslegen willst, melde dich auf der Studio-Seite an, um Looks zu bauen, Shoots zu starten und Ergebnisse herunterzuladen.",
     "primaryCta": "Konto erstellen",
     "secondaryCta": "App öffnen",
