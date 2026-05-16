@@ -108,6 +108,26 @@
     ],
     "closing": "Wähl eine Idee. Sieh dich darin. Ändere, was du willst."
   },
+  "studio": {
+    "eyebrow": "Im Studio",
+    "title": "Was du tatsächlich tust.",
+    "lead": "Drei Dinge, die aus einer Idee ein fertiges Shooting machen.",
+    "items": [
+      {
+        "title": "Bau einen Look einmal, nutz ihn wieder.",
+        "body": "Konfiguriere Outfit und Styling, speichere den Look und setz ihn für spätere Shootings ein, ohne von vorn anzufangen."
+      },
+      {
+        "title": "Eine ganze Serie, nicht nur ein Bild.",
+        "body": "Wähl eine Photoshoot-Vorlage, leg Pose, Kamerawinkel, Ausdruck und Szene fest und erzeug ein zusammenhängendes Set in einem Rutsch."
+      },
+      {
+        "title": "Bring eigene Kleidung mit.",
+        "body": "Lad eine Jacke, Schuhe oder ein Accessoire hoch — sie taucht im Bild auf."
+      }
+    ],
+    "kicker": "Lad herunter, was du behältst. Hochskalieren oder Hintergrund entfernen, wenn du es brauchst."
+  },
   "pricing": {
     "eyebrow": "Credits",
     "title": "Bereit für Credits im Studio?",

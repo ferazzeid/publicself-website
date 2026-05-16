@@ -108,6 +108,26 @@
     ],
     "closing": "Pick an idea. See yourself in it. Change what you want."
   },
+  "studio": {
+    "eyebrow": "Inside the studio",
+    "title": "What you actually do.",
+    "lead": "Three things that turn an idea into a finished shoot.",
+    "items": [
+      {
+        "title": "Build a Look once, reuse it.",
+        "body": "Configure an outfit and styling, save the Look, and apply it to any shoot later without redoing the setup."
+      },
+      {
+        "title": "Run a full series, not one shot.",
+        "body": "Pick a photoshoot template, set the pose, angle, expression, and scene, and generate a connected set in one go."
+      },
+      {
+        "title": "Drop in your own clothing.",
+        "body": "Upload a jacket, shoes, or an accessory — it shows up in the shot."
+      }
+    ],
+    "kicker": "Download what you keep. Upscale or clean the background when you need to."
+  },
   "pricing": {
     "eyebrow": "Credits",
     "title": "Want more rounds?",

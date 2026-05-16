@@ -309,6 +309,45 @@ export function MarketingPage({
       </section>
 
       <section
+        id="studio"
+        className="scroll-mt-20 border-t border-white/[0.06] bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-zinc-500">
+              {messages.studio.eyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">
+              {messages.studio.title}
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-zinc-300">
+              {messages.studio.lead}
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
+            {messages.studio.items.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-7 py-8"
+              >
+                <h3 className="text-lg font-semibold tracking-[-0.015em] text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed tracking-[-0.01em] text-zinc-300">
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+
+          <p className="mt-10 max-w-2xl text-base leading-relaxed text-zinc-400">
+            {messages.studio.kicker}
+          </p>
+        </div>
+      </section>
+
+      <section
         id="pricing"
         className="scroll-mt-20 relative overflow-hidden border-y border-amber-500/25 bg-zinc-950 px-6 py-24 md:py-32 sm:px-10 lg:px-12"
       >

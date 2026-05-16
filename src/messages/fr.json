@@ -108,6 +108,26 @@
     ],
     "closing": "Choisis une idée. Vois-toi dedans. Change ce que tu veux."
   },
+  "studio": {
+    "eyebrow": "Dans le studio",
+    "title": "Ce que tu fais vraiment.",
+    "lead": "Trois choses qui transforment une idée en un vrai shoot.",
+    "items": [
+      {
+        "title": "Construis un Look une fois, réutilise-le.",
+        "body": "Configure tenue et style, sauvegarde le Look, et applique-le à n'importe quel shoot plus tard sans tout recommencer."
+      },
+      {
+        "title": "Une série complète, pas un seul cliché.",
+        "body": "Choisis un modèle de shoot, règle la pose, l'angle, l'expression et la scène, et génère une série cohérente d'un coup."
+      },
+      {
+        "title": "Glisse tes propres vêtements.",
+        "body": "Upload une veste, des chaussures ou un accessoire — ça apparaît dans le shoot."
+      }
+    ],
+    "kicker": "Télécharge ce que tu gardes. Upscale ou nettoie le fond quand tu en as besoin."
+  },
   "pricing": {
     "eyebrow": "Crédits",
     "title": "Prêt à prendre des crédits dans le studio ?",
