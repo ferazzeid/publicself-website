@@ -275,6 +275,40 @@ export function MarketingPage({
       </section>
 
       <section
+        id="try-ideas"
+        className="scroll-mt-20 border-t border-white/[0.06] bg-zinc-950 px-6 py-20 sm:px-10 lg:px-12"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-2xl">
+            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-zinc-500">
+              {messages.tryIdeas.eyebrow}
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">
+              {messages.tryIdeas.title}
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-zinc-300">
+              {messages.tryIdeas.lead}
+            </p>
+          </div>
+
+          <ul className="mt-10 flex flex-wrap gap-2.5">
+            {messages.tryIdeas.tags.map((tag) => (
+              <li
+                key={tag}
+                className="rounded-full border border-white/12 bg-white/[0.04] px-4 py-2 text-sm text-zinc-200"
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-12 max-w-2xl text-lg font-medium tracking-[-0.015em] text-white/90 sm:text-xl">
+            {messages.tryIdeas.closing}
+          </p>
+        </div>
+      </section>
+
+      <section
         id="pricing"
         className="scroll-mt-20 relative overflow-hidden border-y border-amber-500/25 bg-zinc-950 px-6 py-24 md:py-32 sm:px-10 lg:px-12"
       >

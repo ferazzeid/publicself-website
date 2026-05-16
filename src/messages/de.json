@@ -90,6 +90,24 @@
       }
     ]
   },
+  "tryIdeas": {
+    "eyebrow": "Wofür ist das?",
+    "title": "Probier dich in einer neuen Foto-Idee.",
+    "lead": "Wähl eine kuratierte Richtung, sieh dich darin, ändere, was du willst. Ums Prompten kümmert sich das Studio.",
+    "tags": [
+      "Probier ein Founder-Portrait",
+      "Probier ein sauberes LinkedIn-Foto",
+      "Probier ein Schwarz-weiß-Editorial",
+      "Probier ein Luxushotel-Shooting",
+      "Probier eine Street-Style-Serie",
+      "Probier ein Dating-Profilfoto",
+      "Probier ein Magazine-Portrait",
+      "Probier ein kreatives Profilbild",
+      "Probier ein minimalistisches Studio-Portrait",
+      "Probier ein Outdoor-Sommershooting"
+    ],
+    "closing": "Wähl eine Idee. Sieh dich darin. Ändere, was du willst."
+  },
   "pricing": {
     "eyebrow": "Credits",
     "title": "Bereit für Credits im Studio?",

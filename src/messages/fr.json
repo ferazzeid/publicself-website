@@ -90,6 +90,24 @@
       }
     ]
   },
+  "tryIdeas": {
+    "eyebrow": "C'est pour quoi ?",
+    "title": "Essaie-toi dans une nouvelle idée photo.",
+    "lead": "Choisis une direction, vois-toi dedans, change ce que tu veux. Pas de prompt à écrire — le studio s'en occupe.",
+    "tags": [
+      "Essaie un portrait de fondateur",
+      "Essaie un LinkedIn propre",
+      "Essaie un éditorial noir & blanc",
+      "Essaie un shoot hôtel de luxe",
+      "Essaie une série street-style",
+      "Essaie une photo de profil dating",
+      "Essaie un portrait magazine",
+      "Essaie une photo de profil créative",
+      "Essaie un portrait studio minimaliste",
+      "Essaie un shoot estival en extérieur"
+    ],
+    "closing": "Choisis une idée. Vois-toi dedans. Change ce que tu veux."
+  },
   "pricing": {
     "eyebrow": "Crédits",
     "title": "Prêt à prendre des crédits dans le studio ?",

@@ -90,6 +90,24 @@
       }
     ]
   },
+  "tryIdeas": {
+    "eyebrow": "What is this for?",
+    "title": "Try yourself in a new photo idea.",
+    "lead": "Pick a curated direction, see yourself in it, change what you want. No prompting — the studio takes care of that part.",
+    "tags": [
+      "Try a founder portrait",
+      "Try a clean LinkedIn shot",
+      "Try a black-and-white editorial",
+      "Try a luxury hotel shoot",
+      "Try a street-style set",
+      "Try a dating profile image",
+      "Try a magazine-style portrait",
+      "Try a creative profile photo",
+      "Try a minimal studio portrait",
+      "Try an outdoor summer shoot"
+    ],
+    "closing": "Pick an idea. See yourself in it. Change what you want."
+  },
   "pricing": {
     "eyebrow": "Credits",
     "title": "Want more rounds?",
