@@ -7,16 +7,16 @@
     "wordmark": "PUBLICSELF"
   },
   "hero": {
-    "badge": "Try yourself in new photo ideas",
-    "title": "Create surprising, useful, and fun images of yourself.",
+    "badge": "A playground for your image",
+    "title": "Dress up, drop in props, see another version of yourself.",
     "description": "Bring a couple of photos. Pick an outfit, a pose, a setting — or upload a piece of clothing and try it on. Play around. Keep what you like.",
-    "primaryCta": "Try these first — {credits} free credits",
+    "primaryCta": "Start playing — {credits} free credits",
     "secondaryCta": "Log in",
     "beforeLabel": "Your input",
     "afterLabel": "Your direction",
     "imageAlt": "A composed portrait on a dark background — calm presence, tailored look",
     "slogans": [
-      "Pick an idea. See yourself in it. Change what you want.",
+      "Bring your face. Pick a look. Play around.",
       "Same you, new outfit, new pose — without the shoot.",
       "Tweak the version you like instead of starting over."
     ],
@@ -131,7 +131,7 @@
   },
   "footer": {
     "eyebrow": "Ready when you are",
-    "title": "Try yourself in a new idea.",
+    "title": "Open the studio when you want to play.",
     "body": "{credits} free credits to start. Bring a couple of photos and see what you make.",
     "primaryCta": "Open the studio",
     "secondaryCta": "Log in",
